@@ -156,7 +156,7 @@ repo_name: 'Xcash-Labs/xcashlabs-docs'
 repo_url: 'https://github.com/Xcash-Labs/xcashlabs-docs'
 # todo: change to master branch
 edit_uri: blob/master/docs/
-
+ 
 markdown_extensions:
   # https://squidfunk.github.io/mkdocs-material/extensions/admonition/
   - admonition
