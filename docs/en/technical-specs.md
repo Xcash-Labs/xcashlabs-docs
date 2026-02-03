@@ -1,48 +1,42 @@
 ---
-title: Monero Technical Specification
+title: XCash-Labs Technical Specification
 ---
-# Monero Technical Specs
+# XCash-Labs Technical Specs
 
 ## Live
 
-* Monero blockchain is live since 18 April 2014
+* XCash-Labs blockchain is live since 2026-01-10 (genesis)
 
 ## No premine, no instamine, no ICO, no token
 
-* Monero had no premine or instamine
-* Monero did not sell any token
-* Monero had no presale of any kind
+* XCash-Labs launched with no premine and no instamine
+* No ICO / no presale / no airdrop
+* XCK is the native coin of the network (not a token)
 
-## Proof of Work
+## Delegated Proof of Private Stake (DPoPS)
 
-* CryptoNight
-    * v0 since block height 0
-    * v1 since block height 1546000 (forked on 2018-04-06)
-    * v2 since block height 1685555 (forked on 2018-10-18)
-    * v3 since block height 1788000 (forked on 2019-03-09); "CryptonightR"
-* RandomX
-    * v0 since block height 1978433 (forked on 2019-11-30)
+* DPOPS
+    * Consensus: DPoPS (Delegated Proof of Private Stake)
+    * Active since: genesis (block height 0/1)
+    * Based on Monero protocol era v18 (core codebase v0.18)
 
 ## Difficulty retarget
 
-* every block
-* based on the last 720 blocks (24h), excluding 20% of the timestamp outliers
+* XCash-Labs uses DPoPS block production, therefore PoW difficulty retargeting is not used (PoW hash fields may exist for format compatibility)
 
 ## Block time
 
-* 2 minutes
-* may change in the future as long as emission curve is preserved
+* 1 minute
 
 ## Block reward
 
 * smoothly decreasing and subject to penalties for blocks greater than median size of the last 100 blocks (M100)
-* 0.6 XMR as of June 2023; for the current reward check the coinbase transaction of the [latest block](https://xmrchain.net/)
+* 47.070 XMR as of February ; for the current reward check the coinbase transaction of the [latest block](https://xmrchain.net/)
 
 ## Block size
 
 * dynamic
-* maximum of two times the median size of the last 100 blocks (2 * M100)
-* ~50KB as of June 2020; check [the latest block size](https://bitinfocharts.com/comparison/monero-size.html#3m)
+* Block size penalties apply when blocks exceed the median size window
 
 ## Current blockchain size
 
@@ -53,25 +47,26 @@ title: Monero Technical Specification
 
 ### Main emission
 
-* first, the main emission is about to produce ~18.132 million coins by the end of May 2022
-* as of June 2023 the emission is about 3 XMR per 10 minutes
-* see [charts and details](https://www.reddit.com/r/Monero/comments/512kwh/useful_for_learning_about_monero_coin_emission/)
+* ~50% emitted (~50M XCK): ~2.8 years
+* ~90% emitted (~90M XCK): ~9.2 years
+* Emission model: Monero-style exponential decay toward the supply target, with a fixed tail emission floor
+
 
 ### Tail emission
 
-* the tail emission kicked in after main emission is done
-* it will produce 0.6 XMR per 2-minute block
-* this translates to <1% inflation decreasing over time
+* Tail emission begins when remaining supply is ~1,468,006.4 XCK, meaning about 98,531,993.6 XCK are emitted beforehand
+* The tail emission kick in after main emission is done (around ~16.8 years after genesis)
+* Tail emission: 0.700000 XCK per minute (after main emission drops below the floor)
+* tail emission produces ~367,920 XCK/year, which is: ~0.37% annual inflation at 100M supply and will decrease over time
 
 ## Max supply
 
-* ~18.293 million XMR + 0.6 XMR per 2 minutes
+* Total intended base supply: 100,000,000 XCK (6 decimals; 1 XCK = 1,000,000 atomic units)
 * technically infinite but practically deflationary if accounted for lost coins
 
 ## Divisibility
 
-* Monero is divisible up to 12 digits
-* The smallest unit is called piconero and equals 1e-12 XMR, or 0.000000000001 XMR
+* XCash-Labs is divisible up to 0.000001 XCK (6 decimals)
 
 ## Sender privacy
 
@@ -89,16 +84,20 @@ title: Monero Technical Specification
 * ring confidential transactions
 * assurance: strong
 
-## IP address privacy
+## Network privacy (IP layer)
 
-For the full node (`monerod`):
+###Full nodes (DPoPS nodes)
 
-* dandelion++
-* assurance: won't protect against ISP/VPN provider, won't protect against the very first remote node in Dandellion++ protocol
-* for the full protection user must manually wrap `monerod` with Tor
+* XCash Labs full nodes are DPoPS consensus nodes
+* Nodes communicate directly with other delegates / committee peers
+* The network layer is not designed to provide IP anonymity by default
+* Operators should assume delegate IP addresses are public / discoverable
+* IP-layer privacy is separate from on-chain privacy (ring signatures / stealth addresses / RingCT)
 
-For the wallet (`monero-wallet-gui` or `monero-wallet-cli`):
+###Recommended protection for node operators:
 
-* typically wallet runs on the same machine as full node so there is no risk
-* if wallet connects to remote full node, there is no IP protection by default
-    * user must manually wrap wallet with Tor or I2P
+* run nodes behind a firewall and strict allowlists
+* restrict inbound ports and enforce rate limits
+* monitor connectivity and latency (DPoPS relies on stable networking)
+
+Note: Tor-style routing is not a default assumption for DPoPS nodes because the protocol depends on reliable timing, availability, and stable peer connectivity.
