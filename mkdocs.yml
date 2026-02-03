@@ -152,8 +152,8 @@ extra:
       link: https://github.com/Xcash-Labs/xcashlabs-docs
       name: GitHub Repository
 
-repo_name: 'monero-project/monero-docs'
-repo_url: 'https://github.com/monero-project/monero-docs'
+repo_name: 'Xcash-Labs/xcashlabs-docs'
+repo_url: 'https://github.com/Xcash-Labs/xcashlabs-docs'
 # todo: change to master branch
 edit_uri: blob/master/docs/
 
