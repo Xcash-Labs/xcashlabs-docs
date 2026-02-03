@@ -136,7 +136,7 @@ theme:
   favicon: images/favicon.ico
   icon:
     logo: logo
-  logo: 'images/monero.svg'
+  logo: 'images/xcash.svg'
   static_templates:
     - 404.html
 
