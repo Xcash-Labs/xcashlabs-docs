@@ -1,14 +1,12 @@
 ---
-title: Monero Docs
+title: XCash-Labs Docs
 hide:
   - navigation
 ---
-# Monero Documentation
+# XCash-Labs Documentation
 
-Monero Docs intends to be a Knowledge Base and User Guide for interacting with Monero.
+XCash-Labs Docs intends to be a Knowledge Base and User Guide for interacting with XCash-Labs (XCK).
 
-Contributions can be made via issues and pull requests on GitHub, or communicated via the #monero-docs workgroup on Matrix or IRC (libera.chat).
+Contributions can be made via issues and pull requests on GitHub.
 
-[:simple-github: GitHub](https://github.com/monero-project/monero-docs){ .md-button }
-[:simple-matrix: Matrix](https://matrix.to/#/%23monero-docs:monero.social){ .md-button }
-[:simple-liberadotchat: IRC](https://web.libera.chat/#monero-docs){ .md-button }
+[:simple-github: GitHub](https://github.com/Xcash-Labs/xcashlabs-docs){ .md-button }
