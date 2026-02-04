@@ -1,7 +1,7 @@
 ---
-title: Verifying Monero Binaries Signature
+title: Verifying XCash-Labs Binaries Signature
 ---
-# Verify Monero Binaries
+# Verify XCash-Labs Binaries
 
 Verification must be carried on **before extracting the archive and before using Monero**.
 
