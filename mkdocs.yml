@@ -15,10 +15,10 @@ nav:
     - Tokenomics: 'technical-specs.md'
     - Networks: 'infrastructure/networks.md'
   - Download & Verify:
-    - Download: 'interacting/download-monero-binaries.md'
-    - Verify: 'interacting/verify-monero-binaries.md'
-  - Mining:
-    - 'interacting/mining/index.md'
+    - Download: 'interacting/download-xcash-binaries.md'
+    - Verify: 'interacting/verify-xcash-binaries.md'
+  - Staking:
+    - 'interacting/staking/index.md'
     - Guides:
       - Solo:
         - 'interacting/mining/guides/solo/index.md'
