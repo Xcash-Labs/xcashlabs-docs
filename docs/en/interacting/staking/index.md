@@ -6,8 +6,7 @@ description: As an XCash-Labs holder, you can stake your delegate and vote for a
 # Vote & Staking
 
 !!! warning ""
-    Currently you can vote from the CLI wallet, Android wallet, and GUI wallet.  
-    X-Bank does not have the ability to vote yet.
+    Currently you can vote from the CLI wallet, Android wallet, and GUI wallet.
 
 ## Find Your Delegate
 
@@ -23,43 +22,29 @@ All delegates are listed on the delegate explorer.
 
 ## Delegate Types
 
-You will find 3 types of delegates:
+You will find 2 types of delegates:
 
 - **Shared Delegates**
   - Public delegates you can vote for
   - Typically redistribute your share of rewards minus fees
-  - As a voter, you should usually favor shared delegates
+  - As a voter, you should only vote for shared delegates
 
 - **Solo Delegates**
-  - Usually elected by themselves
-  - Keep the rewards for themselves
-  - You may vote for them, but do not expect rewards
-
-- **Private Group**
-  - Delegates that redistribute rewards only to a select group
-  - Usually arranged privately
-  - Avoid voting unless you have confirmed membership/terms
+  - Delegates that redistribute rewards only to a select group 
 
 ## Staking Calculation
 
-You can calculate your expected ROI depending on several factors.
-
-- ROI Calculator: *(link if still valid)*
-- Delegate comparison sheets: *(optional)*
-
 !!! note ""
-    ROI calculators are estimates only. Rewards depend on network conditions,
-    delegate uptime, fees, and other factors.
+    Rewards are **not guaranteed** and are **not a fixed ROI**.
+
+    Block producer selection is based on VRF randomness, where the delegate with the **lowest VRF beta** wins the round.
+    Because of this, rewards are probabilistic and may vary significantly over time depending on network conditions,
+    total stake distribution, delegate participation, and fees.
+
 
 ## Voting Rules
 
 !!! info "Voting Rules"
     - **You can only have one vote per wallet.**
-    - Votes are taken into account at the **top of the next hour**.
     - You need a minimum of `2,000,000` coins in the wallet to vote. *(update if XCash-Labs differs)*
     - Spending from the staked wallet amount cancels the vote.
-
-You can view the staked and unstaked balance anytime:
-
-```text
-balance
