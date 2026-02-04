@@ -4,37 +4,37 @@ title: Mainnet, Stagenet, Testnet
 # Networks
 
 !!! note ""
-    Monero offers three distinct networks and blockchains:
+    XCash-Labs plans to offers multiple network environments to support both real-world usage and future development/testing:
 
     [**mainnet**](#mainnet)    
     [**stagenet**](#stagenet)    
     [**testnet**](#testnet)    
 
-     Every network has its own genesis block and is entirely separate from others.
+    Every network has its own genesis block and is entirely separate from others.
 
 ## Nodes & Explorers
 
 !!! danger "Spy Nodes and Explorers"
     Be cautious when using **_any_** remote node or block explorer.
 
-    Malicious service providers may log and associate your IP address, TXIDs, and more.
-    If you must use Untrusted Nodes, use them over Onion or I2P.
-
+    Malicious service providers may log and associate your IP address, TXIDs, addresses, and more.
+    If you must use untrusted nodes, consider using them over Tor (Onion) or I2P whenever supported.
 
 ### Nodes
 
-- Nodes - Self-Hosted
-    - Run your own [node](../interacting/download-monero-binaries.md)
+- Nodes - Self-Hosted (Recommended)
+    - Run your own XCash-Labs node
     - Use a node which is controlled by somebody you trust
 
-- Nodes - Remote (Use an Onion or I2P node)
-    - Onion and I2P nodes @ [monero.fail](https://monero.fail/)
-    - Onion nodes @ [ditatompel.com](https://xmr.ditatompel.com/remote-nodes/)
+- Nodes - Remote (Use caution)
+    - Remote nodes are convenient, but may reduce privacy
+    - Prefer nodes operated by trusted community members or infrastructure providers
+
 
 ### Block Explorers - Self-Hosted
 
-- [Onion Monero Blockchain Explorer](https://github.com/moneroexamples/onion-monero-blockchain-explorer/)
-- [MoneroBlock](https://github.com/duggavo/MoneroBlock/)
+- XCash-Labs Explorer (self-hosted) *(recommended)*
+- Community explorers *(when available)*
 
 
 ## Mainnet
@@ -42,119 +42,49 @@ title: Mainnet, Stagenet, Testnet
 !!! info ""
     Mainnet is the "production" network and blockchain.
 
-    Mainnet is the only blockchain where XMR units have value.
+    Mainnet is the only blockchain where **XCK units have value**.
 
     Mainnet is the default network.
 
-??? tip "Mainnet Block Explorers [Onion]"
-    - [P2Pool.io](http://yucmgsbw7nknw7oi3bkuwudvc657g2xcqahhbjyewazusyytapqo4xid.onion/explorer/)
-    - [xmr.mx](http://ravfxexpx76quysu77pbvao4ng5qnyo46gguklfwlafhllrujwdgqtyd.onion/)
-
-??? tip "Mainnet Block Explorers [I2P]"
-    - [xmr.mx](http://ravfxexpucy437tc4slicbf5atir2akrcqanog3tgsc3mcdfmrqq.b32.i2p/)
-
-??? danger "Mainnet Block Explorers [Clearnet]"
-    - [Localmonero.co](https://localmonero.co/blocks/)
-    - [monerowatch](https://monerowat.ch/)
-    - [P2Pool.io](https://p2pool.io/explorer/)
-    - [xmr.mx](https://explorer.xmr.mx/)
-    - [XMRChain.net](https://xmrchain.net/)
-
-??? failure "Mainnet Faucets"
-    - None. Don't fall for scams
+??? tip "Mainnet Block Explorers"
+    - XCash-Labs Explorer: *(https://explorer.xcashlabs.org/)*
 
 ??? abstract "Mainnet TCP ports"
+    - 18280 - [Default] P2P Network
+    - 18281 - [Default] Unrestricted JSON-RPC
+    - 18282 - [Default] ZMQ RPC *(if enabled)*
+    - 18283 - DPoPS / delegate network transport (XCASH_DPOPS_PORT)
+    - 18285 - Wallet RPC
+    - 18289 - Restricted JSON-RPC *(if enabled)*
 
-    - 18080 - [Default] P2P Network
-    - 18081 - [Default] Unrestricted [JSON-RPC](../rpc-library/monerod-rpc.md)
-    - 18082 - [Default] ZMQ RPC
-    - 18083 - ZMQ Pub
-    - 18084 - Tor P2P
-    - 18085 - I2P P2P
-    - 18086 - Unused
-    - 18087 - Unused
-    - 18088 - [Wallet RPC](../interacting/monero-wallet-rpc-reference.md)
-    - 18089 - Restricted [JSON-RPC](../rpc-library/monerod-rpc.md)
+??? abstract "Database - internal services"
+    - MongoDB: 127.0.0.1:27017 (DATABASE_CONNECTION)
 
 ## Stagenet
+    **Stagenet is planned for a future release.**
+    Stagenet will be available for users and developers to learn and build on XCash-Labs safely, without using mainnet coins.
 
-!!! info ""
-    Stagenet is available for users and developers to learn and build on Monero safely.
+    When launched, stagenet will be intended to remain technically equivalent to mainnet, both in terms of features and consensus rules.
 
-    Stagenet is technically equivalent to mainnet, both in terms of features and consensus rules. Similar to mainnet, you'll use the [latest official Monero release](https://getmonero.org/downloads/) to be compatible with stagenet.
-
-Some resources to get started:
-
-??? tip "Stagenet  Block Explorers [Onion]"
-    - [Monerodevs.org](http://bhqzadcvfcuwwnvf5hws5zwzjgvfuarqbah5ruhyxuxhaoklsy35wdqd.onion/)
-
-??? danger "Stagenet Block Explorers [Clearnet]"
-    - [XMRChain.net](https://stagenet.xmrchain.net/)
-
-??? abstract "Stagenet Faucets [Clearnet]"
-    - [XMR-TW.org](https://stagenet-faucet.xmr-tw.org/)
-    - [CypherFaucet.com](https://cypherfaucet.com/xmr-stagenet)
+??? tip "Stagenet resources"
 
 ??? abstract "Stagenet TCP ports"
 
-    - 38080 - [Default] P2P Network
-    - 38081 - [Default] Unrestricted [JSON-RPC](../rpc-library/monerod-rpc.md)
-    - 38082 - [Default] ZMQ RPC
-    - 38083 - ZMQ Pub
-    - 38084 - Tor P2P
-    - 38085 - I2P P2P
-    - 38086 - Unused
-    - 38087 - Unused
-    - 38088 - [Wallet RPC](../interacting/monero-wallet-rpc-reference.md)
-    - 38089 - Restricted [JSON-RPC](../rpc-library/monerod-rpc.md)
-
-Stagenet was introduced in March 2018 as part of Monero v0.12.0.0
-
 ## Testnet
+    **Testnet is planned for a future release.**
 
-!!! info ""
-    If you're a normal user or a developer building an application, you should use [Stagenet](#stagenet).
+    Testnet will be the "experimental" network and blockchain where protocol features can be tested long before mainnet.
 
-    Testnet is the "experimental" network and blockchain where things get tested long before mainnet.
+    Testnet may fork earlier and more often than mainnet.
+    Developers should keep their sources up to date and compile often.
 
-    Testnet forks earlier and more often than Mainnet. To avoid being stuck on an old fork of testnet, you should keep your sources up to date and compile often.
-
-Some resources to get started:
-
-- Build Monero from source following a guide from [Monero Examples](https://github.com/moneroexamples/monero-compilation/)
-
-??? tip "Testnet Block Explorers [Onion]"
-    - [Monerodevs.org](http://ol7qm5adjeugpwkbrcnnnshsihmkhidaaoim35duhfdmj4gihaiapkid.onion/)
-
-??? danger "Testnet Block Explorers [Clearnet]"
-    - [XMRChain.net](https://testnet.xmrchain.net/)
-
-??? abstract "Testnet Faucets [Clearnet]"
-    - [CypherFaucet.com](https://cypherfaucet.com/xmr-testnet)
+??? tip "Testnet resources"
 
 ??? abstract "Testnet TCP ports"
-
-    - 28080 - [Default] P2P Network
-    - 28081 - [Default] Unrestricted [JSON-RPC](../rpc-library/monerod-rpc.md)
-    - 28082 - [Default] ZMQ RPC
-    - 28083 - ZMQ Pub
-    - 28084 - Tor P2P
-    - 28085 - I2P P2P
-    - 28086 - Unused
-    - 28087 - Unused
-    - 28088 - [Wallet RPC](../interacting/monero-wallet-rpc-reference.md)
-    - 28089 - Restricted [JSON-RPC](../rpc-library/monerod-rpc.md)
-
-### Private Testnet
-??? info "Run a Private Testnet"
-
-    You can create a private version of the Testnet.    
-    A private testnet gives developers flexibility and control over the network.
-
-    To learn how to run a private testnet, follow the guide from [Monero Examples](https://github.com/moneroexamples/private-testnet/)
 
 ## FAQ
 
 ??? question "Why do stagenet and testnet coins have no value?"
 
-    A: This is simply the convention community embraced. Value only comes from a shared belief that mainnet coins will be accepted by other people in the future.
+    A: This is simply the convention the community embraces.
+    Value only comes from a shared belief that mainnet coins will be accepted by other people in the future.

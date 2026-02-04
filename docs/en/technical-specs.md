@@ -99,5 +99,5 @@ title: XCash-Labs Technical Specification
 * run nodes behind a firewall and strict allowlists
 * restrict inbound ports and enforce rate limits
 * monitor connectivity and latency (DPoPS relies on stable networking)
-
+ 
 Note: Tor-style routing is not a default assumption for DPoPS nodes because the protocol depends on reliable timing, availability, and stable peer connectivity.
