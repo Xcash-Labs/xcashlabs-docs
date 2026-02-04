@@ -3,18 +3,17 @@ title: Download XCash-Labs
 ---
 # Download XCash-Labs
 
-A single archive contains all you need to start using Monero (the full node and the wallet).
+A single archive contains all you need to start using XCash-Labs (the full node and the wallet).
 
-We recommend downloading Monero binaries directly from GitHub or the https://xcashlabs.org/downloads page:
-https://github.com/Xcash-Labs?tab=repositories
-* GUI + CLI: [https://github.com/Xcash-Labs/xcash-gui/releases](https://github.com/Xcash-Labs/xcash-gui)
-* CLI only: [https://github.com/Xcash-Labs/xcash-labs-core](https://github.com/Xcash-Labs/xcash-labs-core)
+We recommend downloading XCash-Labs binaries directly from GitHub or from the https://xcashlabs.org/downloads page.
+* GUI + CLI: [https://github.com/Xcash-Labs/xcash-gui/releases](https://github.com/Xcash-Labs/xcash-gui/releases)
+* CLI only: [https://github.com/Xcash-Labs/xcash-labs-core/releases](https://github.com/Xcash-Labs/xcash-labs-core/releases)
 
 GUI is a graphical desktop wallet.
 
 CLI is a commandline desktop wallet.
 
-It is critical to [verify the signature](../interacting/verify-xcash-binaries.md) of downloaded archive.
+It is critical to [verify the signature](../interacting/verify-xcash-binaries.md) of the downloaded archive.
 
 ## Which version to download?
 
