@@ -36,7 +36,7 @@ nav:
       - Home: 'interacting/monero-config-file.md'
   - Wallets:
     - monero-wallet-gui: 'interacting/monero-wallet-gui-reference.md'
-    - monero-wallet-cli: 'interacting/monero-wallet-cli-reference.md'
+    - monero-wallet-cli: 'interacting/xcash-wallet-cli-reference.md'
     - monero-wallet-rpc: 'interacting/monero-wallet-rpc-reference.md'
     - Advanced Transactions:
       - Multisignature: 'multisignature.md'

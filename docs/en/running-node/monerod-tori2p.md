@@ -51,7 +51,7 @@ To connect Monero nodes, you have to configure the wallet software:
 
         Add the flags `--proxy=127.0.0.1:9050 --daemon-address=http://yourlongv3onionaddress.onion:18089 --trusted-daemon`
 
-        [:link: _Monero CLI_](../interacting/monero-wallet-cli-reference.md)
+        [:link: _Monero CLI_](../interacting/xcash-wallet-cli-reference.md)
 
 === "I2P"
     === "Monero GUI"
@@ -65,4 +65,4 @@ To connect Monero nodes, you have to configure the wallet software:
 
         Add the flags `--proxy=127.0.0.1:4447 --daemon-address=http://yourlongb32i2paddress.b32.i2p:18089 --trusted-daemon`
 
-        [:link: _Monero CLI_](../interacting/monero-wallet-cli-reference.md)
+        [:link: _Monero CLI_](../interacting/xcash-wallet-cli-reference.md)

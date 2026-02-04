@@ -35,7 +35,7 @@ Wallet connects to a [full node](../interacting/monerod-reference.md) to scan th
 
 The full node can be either local (same computer) or remote.
 
-You can play with [CLI wallet](../interacting/monero-wallet-cli-reference.md) and [GUI wallet](../interacting/monero-wallet-gui-reference.md) first to understand the relationship between the full node, the wallet and the user.
+You can play with [CLI wallet](../interacting/xcash-wallet-cli-reference.md) and [GUI wallet](../interacting/monero-wallet-gui-reference.md) first to understand the relationship between the full node, the wallet and the user.
 
 ## Syntax
 

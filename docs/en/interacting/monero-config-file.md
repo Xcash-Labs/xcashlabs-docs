@@ -37,7 +37,7 @@ The `--config-file` option is available for:
 All configuration options are the same as command line options for the binary.
 
 - [monerod reference](../interacting/monerod-reference.md)
-- [monero-wallet-cli reference](../interacting/monero-wallet-cli-reference.md)
+- [monero-wallet-cli reference](../interacting/xcash-wallet-cli-reference.md)
 - [monero-wallet-rpc reference](../interacting/monero-wallet-rpc-reference.md)
 
 Skip the `--` from `--option-name`.
