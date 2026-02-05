@@ -39,7 +39,7 @@ nav:
   - External:
     - XCashPulse: 'infrastructure/xcash-pulse.md'
 - RPC Library:
-  - Node RPC: 'rpc-library/xcash-rpc.md'
+  - Node RPC: 'rpc-library/xcashd-rpc.md'
   - Wallet RPC: 'rpc-library/wallet-rpc.md'
 - R&D:
   - 'development/index.md'

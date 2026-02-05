@@ -83,14 +83,14 @@ Perhaps the most surprising for newcomers is that `xcashd` daemon accepts intera
 
 Also, please note that `xcashd` and `xcash-wallet-rpc` are both accessible via their respective HTTP API / JSON-RPC endpoints.
 
-- [xcash-rpc](../rpc-library/xcash-rpc.md)
+- [xcash-rpc](../rpc-library/xcashd-rpc.md)
 - [wallet-rpc](../rpc-library/wallet-rpc.md)
 
 All wallet implementations depend on a fully synchronized `xcashd` running.
 
 | Executable                                              | p2p network | commands via keyboard                          | HTTP API                           | GUI |
 | ------------------------------------------------------- | :---------: | :--------------------------------------------: | :--------------------------------: | :-: |
-| [`xcashd`](./xcashd-reference.md)                     | ✔           | [✔](./xcashd-reference.md#commands)           | [✔](../rpc-library/xcash-rpc.md) |     |
+| [`xcashd`](./xcashd-reference.md)                     | ✔           | [✔](./xcashd-reference.md#commands)           | [✔](../rpc-library/xcashd-rpc.md) |     |
 | [`xcash-wallet-cli`](./xcash-wallet-cli-reference.md) |             | [✔](./xcash-wallet-cli-reference.md#commands) |                                    |     |
 | [`xcash-wallet-rpc`](./xcash-wallet-rpc-reference.md) |             |                                                | [✔](../rpc-library/wallet-rpc.md)  |     |
 | [`xcash-wallet-gui`](./xcash-wallet-gui-reference.md) |             |                                                |                                    | ✔   |
