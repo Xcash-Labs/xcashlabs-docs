@@ -70,7 +70,7 @@ If you want to support the network without running infrastructure, you can vote 
 using your wallet.
 
 See:
--  [Vote & Staking guide](../interacting/vote-and-staking.md)
+-  [Vote & Staking guide](../vote-and-staking.md)
 
 ---
 
