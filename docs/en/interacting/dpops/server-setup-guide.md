@@ -13,9 +13,9 @@ If you get stuck, the community can help you.
 
 ---
 
-# Prerequisites
+## Prerequisites
 
-## Generate an SSH Key
+### Generate an SSH Key
 
 We strongly recommend using SSH key authentication.
 
@@ -36,7 +36,7 @@ This creates:
 
 ---
 
-# Server Requirements
+## Server Requirements
 
 | Requirement | Minimum | Recommended |
 |---|---:|---:|
@@ -48,7 +48,7 @@ This creates:
 
 ---
 
-# Choose a Server Provider
+## Choose a Server Provider
 
 Any provider works:
 
@@ -62,7 +62,7 @@ Choose what you're comfortable with.
 
 ---
 
-# Install Linux
+## Install Linux
 
 Install **Ubuntu 24.04 LTS** from your provider dashboard.
 
@@ -70,7 +70,7 @@ Once installed, note your server IP.
 
 ---
 
-# Connect to Your Server
+## Connect to Your Server
 
 ### First Login
 
