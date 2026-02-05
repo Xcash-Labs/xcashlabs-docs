@@ -90,7 +90,7 @@ All wallet implementations depend on a fully synchronized `xcashd` running.
 
 | Executable                                              | p2p network | commands via keyboard                          | HTTP API                           | GUI |
 | ------------------------------------------------------- | :---------: | :--------------------------------------------: | :--------------------------------: | :-: |
-| [`xcashd`](./xcash-reference.md)                     | ✔           | [✔](./xcash-reference.md#commands)           | [✔](../rpc-library/xcash-rpc.md) |     |
+| [`xcashd`](./xcashd-reference.md)                     | ✔           | [✔](./xcashd-reference.md#commands)           | [✔](../rpc-library/xcash-rpc.md) |     |
 | [`xcash-wallet-cli`](./xcash-wallet-cli-reference.md) |             | [✔](./xcash-wallet-cli-reference.md#commands) |                                    |     |
 | [`xcash-wallet-rpc`](./xcash-wallet-rpc-reference.md) |             |                                                | [✔](../rpc-library/wallet-rpc.md)  |     |
 | [`xcash-wallet-gui`](./xcash-wallet-gui-reference.md) |             |                                                |                                    | ✔   |
