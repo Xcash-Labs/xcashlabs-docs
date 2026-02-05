@@ -9,7 +9,7 @@ title: xcashd - Reference
 
 The XCash-Labs daemon `xcashd` keeps your computer synced up with the XCash-Labs network.
 
-It downloads and validates the blockchain from the p2p network.  In XCash-Labs xcashd can not process transactions uless the XCash-Labs DPOPS prcess is up and running.
+It downloads and validates the blockchain from the p2p network.  The xcashd process can not process transactions unless the XCash-Labs DPOPS prcess is up and running.
 
 ### Not aware of your private keys
 

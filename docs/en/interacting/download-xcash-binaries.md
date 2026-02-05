@@ -25,10 +25,3 @@ The CLI version is released earlier and is suitable for server deployments.
 The GUI version contains both CLI and GUI. It is preferable for end-users.
 
 All versions contain a wallet.
-
-## Why prefer GitHub over xcashlabs.org?
-
-Binaries appear earlier on GitHub.
-
-On top of that, if you fail to properly verify the signature, GitHub is safer, simply because you don't need to trust a separate website to not be compromised.
-Obviously, you should still carefully verify the signature for each release. Signature verification is always the primary line of defense.
