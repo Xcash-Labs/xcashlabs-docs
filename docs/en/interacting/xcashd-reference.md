@@ -34,7 +34,7 @@ Their names follow the `command_name` pattern.
 
 ## RPC interface
 
-For a list of the xcashd RPC calls, their inputs, outputs, and examples, visit the xcashd RPC [library](../rpc-library/xcashd-rpc.md).    
+For a list of the xcashd RPC calls, their inputs, outputs, and examples, visit the xcashd RPC [library](../rpc-library/xcashd-rpc.md).
 Many RPC calls use the daemon's [JSON RPC interface](../rpc-library/xcashd-rpc.md#json-rpc-example) while others use their [own interfaces](../rpc-library/xcashd-rpc.md#other-daemon-rpc-calls).
 
 ## Running
