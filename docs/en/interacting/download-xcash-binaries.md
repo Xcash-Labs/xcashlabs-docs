@@ -5,7 +5,7 @@ title: Download XCash-Labs
 
 A single archive contains all you need to start using XCash-Labs (the full node and the wallet).
 
-We recommend downloading XCash-Labs binaries directly from GitHub or from the [https://xcashlabs.org/downloads](https://xcashlabs.org/downloads).
+We recommend downloading XCash-Labs binaries directly from GitHub or from [https://xcashlabs.org/downloads](https://xcashlabs.org/downloads).
 
 GUI + CLI: [https://github.com/Xcash-Labs/xcash-gui/releases](https://github.com/Xcash-Labs/xcash-gui/releases)
 CLI only: [https://github.com/Xcash-Labs/xcash-labs-core/releases](https://github.com/Xcash-Labs/xcash-labs-core/releases)
