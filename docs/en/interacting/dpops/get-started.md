@@ -13,12 +13,12 @@ Verifiable Random Functions (VRF), while preserving user privacy.
 
 ## Introduction
 
-The XCash-Labs public network is governed by a fixed set of delegates responsible for block
-verification and production.
+The XCash-Labs public network is secured by a fixed set of elected delegates responsible for
+block verification and production.
 
-- Anyone can run an XCash-Labs node
-- Anyone may register as a delegate
-- Only elected delegates may produce blocks
+- Anyone can run an XCash-Labs node  
+- Anyone may register as a delegate  
+- Only elected delegates may produce blocks  
 
 To become an active block producer, a delegate must be voted into the active delegate set by
 network participants.
@@ -28,11 +28,11 @@ fail to meet network expectations or lose community support.
 
 This documentation helps you:
 
-- understand how DPoPS works
-- set up a delegate node
-- register as a delegate
-- vote and participate in governance
-- securely operate within the network
+- understand how DPoPS works  
+- set up a delegate node  
+- register as a delegate  
+- vote and participate in governance  
+- securely operate within the network  
 
 ---
 
@@ -52,15 +52,15 @@ blockchain.
 
 To run a delegate node:
 
-1. Prepare a server (Linux recommended)
-2. Install the delegate node software
-3. Register yourself as a delegate
-4. Get elected by voters
+1. Prepare a server (Linux recommended)  
+2. Install the delegate node software  
+3. Register yourself as a delegate  
+4. Get elected by voters  
 
 Refer to:
-- Server setup guide
-- Delegate node installation guide
-- Delegate registration guide
+- Server setup guide  
+- Delegate node installation guide  
+- Delegate registration guide  
 
 ---
 
@@ -70,7 +70,7 @@ If you want to support the network without running infrastructure, you can vote 
 using your wallet.
 
 See:
--  [Vote & Staking guide](../vote-and-staking.md)
+- [Vote & Staking guide](../vote-and-staking.md)
 
 ---
 
@@ -78,12 +78,12 @@ See:
 
 During beta phases:
 
-- Delegates must follow additional instructions
-- Voters may participate with test rules or limits
+- Delegates must follow additional instructions  
+- Voters may participate with test rules or limits  
 
 Refer to:
-- Delegate setup guide
-- Vote & Staking guide
+- Delegate setup guide  
+- Vote & Staking guide  
 
 ---
 
@@ -91,55 +91,56 @@ Refer to:
 
 ### Delegates & Consensus
 
-- A fixed number of delegates act as block verifiers
-- Consensus requires a supermajority agreement to finalize blocks
-- The system tolerates a minority of faulty or offline delegates
-- Blocks continue to be produced as long as consensus thresholds are met
+- A fixed set of delegates act as block verifiers  
+- Block producers are selected using VRF randomness (lowest beta value wins the round)  
+- A randomly selected committee of delegates verifies and confirms each block  
+- A supermajority of committee signatures is required for finalization  
+- The network tolerates a minority of faulty or offline delegates  
+- Block production continues as long as consensus thresholds are met  
 
 ---
 
 ### Block Producer Selection
 
-- Block producers are selected using **Verifiable Random Functions (VRF)**
-- The delegate with the **lowest VRF beta value** is selected for block production
-- Selection is random but fully verifiable by the network
-- No delegate can predict or influence future selection
+- Block producers are selected using **Verifiable Random Functions (VRF)**  
+- The delegate with the **lowest VRF beta value** is selected for block production  
+- Selection is random but fully verifiable by the network  
+- No delegate can predict or influence future selection  
 
 ---
 
 ## Staking Model
 
-- Voting uses **reserve-proof–based staking**
-- Staked coins always remain in your wallet
-- There is **no lockup period**
-- Funds can be spent at any time
+- Voting uses **reserve-proof–based staking**  
+- Staked coins always remain in your wallet  
+- There is **no lockup period**  
+- Funds can be spent at any time  
 
 !!! note ""
     Spending from a wallet used for voting will invalidate the reserve proof
     and cancel the vote.
 
-- Wallets do **not** need to stay online
-- Voting toward shared delegates requires no ongoing maintenance
+- Wallets do **not** need to stay online  
+- Voting toward shared delegates requires no ongoing maintenance  
 
 ---
 
 ## Voting Rules
 
-- A minimum stake is required to vote for a delegate
-- Voting is evaluated continuously by the network
-- New votes are applied automatically
-- Changing your vote cancels the previous one
-- There are no voting fees
-- Votes may be changed at any time
+- A minimum stake is required to vote for a delegate  
+- Votes are evaluated continuously by the network and applied automatically  
+- Changing your vote cancels the previous one  
+- There are no voting fees  
+- Votes may be changed at any time  
 
 ---
 
 ## Blocks & Data Storage
 
-- Blocks can be inspected using the XCash-Labs daemon
-- Voting and reserve-proof data is stored in a decentralized database layer
-- Only hashes of this data are stored on-chain
-- This design minimizes blockchain growth while preserving verifiability
+- Blocks can be inspected using the [XCash-Labs Blockchain Explorer](https://explorer.xcashlabs.org/)  
+- Committee verification data is aggregated off-chain by participating delegates  
+- A hash of the combined committee verification data is stored on-chain  
+- This approach minimizes blockchain growth while preserving verifiability and auditability  
 
 ---
 
@@ -147,11 +148,9 @@ Refer to:
 
 XCash-Labs DPoPS provides:
 
-- decentralized governance
-- privacy-preserving staking
-- verifiable randomness
-- no custodial lockups
-- no guaranteed rewards
-- fair and transparent delegate selection
-
-Continue with the relevant guides to begin participating in the network.
+- decentralized governance  
+- privacy-preserving staking  
+- verifiable randomness  
+- no custodial lockups  
+- no guaranteed rewards  
+- fair and transparent delegate selection  
