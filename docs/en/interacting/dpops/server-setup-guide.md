@@ -38,16 +38,17 @@ This creates:
 
 # Server Requirements
 
-## Server Requirements
+<div style="overflow-x:auto">
 
 | Requirement | Minimum | Recommended |
 |---|---:|---:|
-| **OS** | Ubuntu 22.04 | Ubuntu 22.04 LTS |
-| **CPU** | 4 cores | 8+ cores |
+| **OS** | Ubuntu 22.04 | Ubuntu 24.04 LTS |
+| **CPU** | 2 cores | 8+ cores |
 | **RAM** | 8 GB | 32 GB |
 | **Storage** | 100 GB | 1 TB |
 | **Bandwidth** | 100 Mbps | 500 Mbps |
 
+</div>
 
 ---
 
@@ -55,12 +56,11 @@ This creates:
 
 Any provider works:
 
-- Hetzner  
+- Hostinger  
 - OVH  
 - AWS  
 - DigitalOcean  
-- Google Cloud  
-- Self-hosted  
+- Google Cloud   
 
 Choose what you're comfortable with.
 
@@ -68,7 +68,7 @@ Choose what you're comfortable with.
 
 # Install Linux
 
-Install **Ubuntu 22.04 LTS** from your provider dashboard.
+Install **Ubuntu 24.04 LTS** from your provider dashboard.
 
 Once installed, note your server IP.
 
@@ -88,7 +88,7 @@ Enter the password provided by your host.
 
 ### Add Your SSH Key
 
-On the server:
+On the server (some providers let you add the key when creating the server):
 
 ```bash
 nano ~/.ssh/authorized_keys
