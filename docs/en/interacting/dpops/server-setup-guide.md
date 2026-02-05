@@ -47,10 +47,20 @@ It is more secure than password-only login and will be used to access your serve
 
 ### Linux / macOS
 
+This will generate:
+
+~/.ssh/id_rsa (private key)
+~/.ssh/id_rsa.pub (public key)
+
 Open a terminal and run:
 
 ```bash
 ssh-keygen -t rsa -b 4096
+
+Choose a Linux Server
+System Requirements
+
+Delegates exchange large amounts of data and must remain online reliably.
 
 |               | Minimum      | Recommended      |
 | ------------- | ------------ | ---------------- |
