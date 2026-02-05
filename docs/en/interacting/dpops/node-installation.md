@@ -56,6 +56,7 @@ Directories are selected automically.
 When setting up the delegate only Shared mode is allow by default, but this can be change later using the installer menu
 
 Types of Delegates
+
 **Shared Delegate**
 
 - Rewards automatically distributed to voters  
