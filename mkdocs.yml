@@ -18,7 +18,7 @@ nav:
     - Download: 'interacting/download-xcash-binaries.md'
     - Verify: 'interacting/verify-xcash-binaries.md'
   - xcash-dpops:
-    - 'interacting/staking/index.md'
+    - 'dpops/index.md'
   - xcashd:
     - Flags: 'interacting/xcashd-reference.md'
     - Setup Guide:
