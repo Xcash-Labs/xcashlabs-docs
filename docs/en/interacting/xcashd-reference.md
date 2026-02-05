@@ -1,31 +1,31 @@
 ---
-title: monerod - Reference
+title: xcashd - Reference
 ---
-# `monerod` - Reference
+# `xcashd` - Reference
 
 ## Overview
 
 ### Connects you to Monero network 
 
-The Monero daemon `monerod` keeps your computer synced up with the Monero network.
+The Monero daemon `xcashd` keeps your computer synced up with the Monero network.
 
 It downloads and validates the blockchain from the p2p network.
 
 ### Not aware of your private keys
 
-`monerod` is entirely decoupled from your wallet.
+`xcashd` is entirely decoupled from your wallet.
 
-`monerod` does not access your private keys - it is not aware of your transactions and balance.
+`xcashd` does not access your private keys - it is not aware of your transactions and balance.
 
-This allows you to run `monerod` on a separate computer or in the cloud.
+This allows you to run `xcashd` on a separate computer or in the cloud.
 
-In fact, you can connect to a remote `monerod` instance provided by a semi-trusted 3rd party. Such 3rd party will not be able to steal your funds. This is very handy for learning and experimentation.
+In fact, you can connect to a remote `xcashd` instance provided by a semi-trusted 3rd party. Such 3rd party will not be able to steal your funds. This is very handy for learning and experimentation.
 
 However, there are privacy and reliability implications to using a remote, untrusted node. For any real business **you should be running your own full node**.
 
 ## Syntax
 
-`./monerod [options] [command]`
+`./xcashd [options] [command]`
 
 Options define how the daemon should be working. Their names follow the `--option-name` pattern.
 
@@ -34,7 +34,7 @@ Their names follow the `command_name` pattern.
 
 ## RPC interface
 
-For a list of the monerod RPC calls, their inputs, outputs, and examples, visit the monerod RPC [library](../rpc-library/xcash-rpc.md).    
+For a list of the xcashd RPC calls, their inputs, outputs, and examples, visit the xcashd RPC [library](../rpc-library/xcash-rpc.md).    
 Many RPC calls use the daemon's [JSON RPC interface](../rpc-library/xcash-rpc.md#json-rpc-example) while others use their [own interfaces](../rpc-library/xcash-rpc.md#other-daemon-rpc-calls).
 
 ## Running
@@ -44,17 +44,17 @@ Go to directory where you unpacked Monero.
 The [stagenet](../infrastructure/networks.md#stagenet) is what you should be using for learning and experimentation.
 
 ```
-./monerod --stagenet --detach                # run as a daemon in background
+./xcashd --stagenet --detach                # run as a daemon in background
 tail -f ~/.bitmonero/stagenet/bitmonero.log  # watch the logs
-./monerod --stagenet exit                    # ask daemon to exit gracefully
+./xcashd --stagenet exit                    # ask daemon to exit gracefully
 ```
 
 The [mainnet](../infrastructure/networks.md#mainnet) is when you want to deal with the real XMR.
 
 ```
-./monerod --detach                           # run as a daemon in background
+./xcashd --detach                           # run as a daemon in background
 tail -f ~/.bitmonero/bitmonero.log           # watch the logs
-./monerod exit                               # ask daemon to exit gracefully
+./xcashd exit                               # ask daemon to exit gracefully
 ```
 
 ## Options
@@ -68,7 +68,7 @@ The following groups are only to make reference easier to follow. The daemon its
 | Option                    | Description
 |---------------------------|--------------------------------------------------------------------------------------------------------------------------------------
 | `--help`                  | Enlist available options.
-| `--version`               | Show `monerod` version to stdout. Example output: <br>`Monero 'Oxygen Orion' (v0.17.1.8-release)`
+| `--version`               | Show `xcashd` version to stdout. Example output: <br>`Monero 'Oxygen Orion' (v0.17.1.8-release)`
 | `--os-version`            | Show build timestamp and target operating system. Example output:<br>`OS: Linux #65-Ubuntu SMP Thu Dec 10 12:01:51 UTC 2020 5.4.0-59-generic`.
 | `--check-updates <arg>`   | One of: `disabled` \| `notify` \| `download`. Check for new versions of Monero and optionally download it. You should probably prefer your OS package manager to do the update, if possible. There is also unimplemented `update` option shown by the help system.<br><br>(=notify)
 
@@ -76,7 +76,7 @@ The following groups are only to make reference easier to follow. The daemon its
 
 | Option           | Description
 |------------------|------------------------------------------------------------------------------------------------
-| (missing)        | By default monerod assumes [mainnet](../infrastructure/networks.md#mainnet).
+| (missing)        | By default xcashd assumes [mainnet](../infrastructure/networks.md#mainnet).
 | `--stagenet`     | Run on [stagenet](../infrastructure/networks.md#stagenet). Remember to run your wallet with `--stagenet` as well.
 | `--testnet`      | Run on [testnet](../infrastructure/networks.md#testnet). Remember to run your wallet with `--testnet` as well.
 
@@ -84,28 +84,28 @@ The following groups are only to make reference easier to follow. The daemon its
 
 | Option                      | Description
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------
-| `--log-file <arg>`          | Full path to the log file.<br>By default `monerod` creates a `bitmonero.log` in the Monero [data directory](../interacting/overview.md#data-directory)
+| `--log-file <arg>`          | Full path to the log file.<br>By default `xcashd` creates a `bitmonero.log` in the Monero [data directory](../interacting/overview.md#data-directory)
 | `--log-level <arg>`         | `0-4` with `0` being minimal logging and `4` being full tracing. Defaults to `0`. These are general presets and do not directly map to severity levels. For example, even with minimal `0`, you may see some most important `INFO` entries. Temporarily changing to `1` allows for much better understanding of how the full node operates.<br><br>(=0)
-| `--max-log-file-size <arg>` | Soft limit in bytes for the log file. Once log file grows past that limit, `monerod` creates the next log file with a UTC timestamp postfix `-YYYY-MM-DD-HH-MM-SS`.<br><br>In production deployments, you would probably prefer to use established solutions like logrotate instead. In that case, set `--max-log-file-size=0` to prevent monerod from managing the log files.<br><br>(=104850000)
+| `--max-log-file-size <arg>` | Soft limit in bytes for the log file. Once log file grows past that limit, `xcashd` creates the next log file with a UTC timestamp postfix `-YYYY-MM-DD-HH-MM-SS`.<br><br>In production deployments, you would probably prefer to use established solutions like logrotate instead. In that case, set `--max-log-file-size=0` to prevent xcashd from managing the log files.<br><br>(=104850000)
 | `--max-log-files <arg>`     | Limit on the number of log files. The oldest log files are removed. In production deployments, you would probably prefer to use established solutions like logrotate instead.<br><br>(=10)
 
 #### Server
 
-`monerod` defaults are adjusted for running it occasionally on the same computer as your Monero wallet.
+`xcashd` defaults are adjusted for running it occasionally on the same computer as your Monero wallet.
 
 The following options will be helpful if you intend to have an always running node &mdash; most likely on a remote server or your own separate PC.
 
 | Option                        | Description
 |-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| `--config-file <arg>`         | Full path to the [configuration file](../interacting/monero-config-file.md). By default `monerod` looks for `bitmonero.conf` in the Monero [data directory](../interacting/overview.md#data-directory).
+| `--config-file <arg>`         | Full path to the [configuration file](../interacting/monero-config-file.md). By default `xcashd` looks for `bitmonero.conf` in the Monero [data directory](../interacting/overview.md#data-directory).
 | `--data-dir <arg>`            | Full path to data directory. This is where the blockchain, log files, and p2p network memory are stored. For defaults and details see [data directory](../interacting/overview.md#data-directory).
-| `--pidfile <arg>`             | Full path to the PID file. Works only with `--detach`. Example: <br>`./monerod --detach --pidfile=/run/monero/monerod.pid`
-| `--detach`                    | Go to background (decouple from the terminal). This is useful for long-running / server scenarios. Typically, you will also want to manage `monerod` daemon with systemd or similar. By default `monerod` runs in a foreground.
-| `--non-interactive`           | Do not require tty in a foreground mode. Helpful when running in a container. By default `monerod` runs in a foreground and opens stdin for reading. This breaks containerization because no tty gets assigned and `monerod` process crashes. You can make it run in a background with `--detach` but this is inconvenient in a containerized environment because the canonical usage is that the container waits on the main process to exist (forking makes things more complicated).
+| `--pidfile <arg>`             | Full path to the PID file. Works only with `--detach`. Example: <br>`./xcashd --detach --pidfile=/run/monero/xcashd.pid`
+| `--detach`                    | Go to background (decouple from the terminal). This is useful for long-running / server scenarios. Typically, you will also want to manage `xcashd` daemon with systemd or similar. By default `xcashd` runs in a foreground.
+| `--non-interactive`           | Do not require tty in a foreground mode. Helpful when running in a container. By default `xcashd` runs in a foreground and opens stdin for reading. This breaks containerization because no tty gets assigned and `xcashd` process crashes. You can make it run in a background with `--detach` but this is inconvenient in a containerized environment because the canonical usage is that the container waits on the main process to exist (forking makes things more complicated).
 | `--max-txpool-weight <arg>`   | Set maximum transactions pool size in bytes. These are transactions pending for confirmations (not included in any block).<br><br>(=648000000)
 | `--enforce-dns-checkpointing` | The emergency checkpoints set by [MoneroPulse](../infrastructure/xcash-pulse.md) operators will be enforced. It is probably a good idea to set enforcing for unattended nodes. <br><br>If encountered block hash does not match corresponding checkpoint, the local blockchain will be rolled back a few blocks, effectively blocking following what MoneroPulse operators consider invalid fork. The log entry will be produced:  `ERROR` `Local blockchain failed to pass a checkpoint, rolling back!` Eventually, the alternative ("fixed") fork will get heavier and the node will follow it, leaving the "invalid" fork behind.<br><br>By default checkpointing only notifies about discrepancy by producing the following log entry: `ERROR` `WARNING: local blockchain failed to pass a MoneroPulse checkpoint, and you could be on a fork. You should either sync up from scratch, OR download a fresh blockchain bootstrap, OR enable checkpoint enforcing with the --enforce-dns-checkpointing command-line option`.<br><br>Reference: [source code](https://github.com/monero-project/monero/blob/22a6591a70151840381e327f1b41dc27cbdb2ee6/src/cryptonote_core/blockchain.cpp#L3614).
 | `--disable-dns-checkpoints`   | The [MoneroPulse](../infrastructure/xcash-pulse.md) checkpoints set by core developers will be discarded. The checkpoints are apparently still fetched though.
-| `--ban-list <arg>`            | Specify ban list file, one IP address per line. This was introduced as an emergency measure to deal with large DDoS attacks on Monero p2p network in Dec 2020 / Jan 2021. Example: <br>`./monerod --ban-list=block.txt`. Here is the popular [block.txt](https://gui.xmr.pm/files/block.txt) file.<br><br>It is **not recommended** to statically ban any IP addresses unless you absolutely need to. Banning IPs often excludes the most vulnerable users who are forced to operate entirely behind Tor or other anonymity networks.
+| `--ban-list <arg>`            | Specify ban list file, one IP address per line. This was introduced as an emergency measure to deal with large DDoS attacks on Monero p2p network in Dec 2020 / Jan 2021. Example: <br>`./xcashd --ban-list=block.txt`. Here is the popular [block.txt](https://gui.xmr.pm/files/block.txt) file.<br><br>It is **not recommended** to statically ban any IP addresses unless you absolutely need to. Banning IPs often excludes the most vulnerable users who are forced to operate entirely behind Tor or other anonymity networks.
 | `--enable-dns-blocklist`      | Similar to `--ban-list` but instead of a static file uses dynamic IP blocklist available as DNS TXT entries. The DNS blocklist is centrally managed by Monero contributors.
 
 #### P2P network
@@ -117,20 +117,20 @@ The node and peer words are used interchangeably.
 
 | Option                       | Description
 |------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| `--p2p-bind-ip <arg>`        | IPv4 network interface to bind to for p2p network protocol. Default value `0.0.0.0` binds to all network interfaces. This is typically what you want. <br><br>You must change this if you want to constrain binding, for example to force working through Tor: <br>`./monerod --p2p-bind-ip 127.0.0.1 --proxy 127.0.0.1:9050 --no-igd  --hide-my-port`<br><br>(=0.0.0.0)
-| `--p2p-bind-port <arg>`      | TCP port to listen for p2p network connections. Defaults to `18080` for mainnet, `28080` for testnet, and `38080` for stagenet. You normally wouldn't change that. This is helpful to run several nodes on your machine to simulate private Monero p2p network (likely using private Testnet). Example: <br/>`./monerod --p2p-bind-port=48080`
-| `--p2p-external-port <arg>`  | TCP port to listen for p2p network connections on your router. Relevant if you are behind a NAT and still want to accept incoming connections. You must then set this to relevant port on your router. This is to let `monerod` know what to advertise on the network. Default is same p2p-bind-port.
+| `--p2p-bind-ip <arg>`        | IPv4 network interface to bind to for p2p network protocol. Default value `0.0.0.0` binds to all network interfaces. This is typically what you want. <br><br>You must change this if you want to constrain binding, for example to force working through Tor: <br>`./xcashd --p2p-bind-ip 127.0.0.1 --proxy 127.0.0.1:9050 --no-igd  --hide-my-port`<br><br>(=0.0.0.0)
+| `--p2p-bind-port <arg>`      | TCP port to listen for p2p network connections. Defaults to `18080` for mainnet, `28080` for testnet, and `38080` for stagenet. You normally wouldn't change that. This is helpful to run several nodes on your machine to simulate private Monero p2p network (likely using private Testnet). Example: <br/>`./xcashd --p2p-bind-port=48080`
+| `--p2p-external-port <arg>`  | TCP port to listen for p2p network connections on your router. Relevant if you are behind a NAT and still want to accept incoming connections. You must then set this to relevant port on your router. This is to let `xcashd` know what to advertise on the network. Default is same p2p-bind-port.
 | `--p2p-use-ipv6`             | Enable IPv6 for p2p (disabled by default).
 | `--p2p-bind-ipv6-address <arg>` | IPv6 network interface to bind to for p2p network protocol. Default value `::` binds to all network interfaces.<br><br>(=::)
 | `--p2p-bind-port-ipv6 <arg>` | TCP port to listen for p2p network connections. By default same as IPv4 port for given nettype.
 | `--p2p-ignore-ipv4`          | Ignore unsuccessful IPv4 bind for p2p. Useful if you only want to use IPv6.
 | `--no-igd`                   | Disable UPnP port mapping on the router ("Internet Gateway Device"). Add this option to improve security if you are **not** behind a NAT (you can bind directly to public IP or you run through Tor).
 | `--igd <arg>`                | Set UPnP port mapping on the router ("Internet Gateway Device"). One of: `disabled` \| `enabled` \| `delayed`. Relevant if you are behind NAT and want to accept incoming P2P network connections. The `delayed` value means it will wait for incoming connections in hope UPnP may not be necessary. After a while w/o incoming connections found it will attempt to map ports with UPnP. If you know you need UPnP change it to `enabled` to fast track the process.<br><br>(=delayed)
-| `--hide-my-port`             | `monerod` will still open and listen on the p2p port. However, it will not announce itself as a peer list candidate. Technically, it will return port `0` in a response to p2p handshake (`node_data.my_port = 0` in `get_local_node_data` function). In effect nodes you connect to won't spread your IP to other nodes. To sum up, it is not really hiding, it is more like "do not advertise".
-| `--seed-node <arg>`          | Connect to a node to retrieve other nodes' addresses, and disconnect. If not specified, `monerod` will use hardcoded seed nodes on the first run, and peers cached on disk on subsequent runs.
+| `--hide-my-port`             | `xcashd` will still open and listen on the p2p port. However, it will not announce itself as a peer list candidate. Technically, it will return port `0` in a response to p2p handshake (`node_data.my_port = 0` in `get_local_node_data` function). In effect nodes you connect to won't spread your IP to other nodes. To sum up, it is not really hiding, it is more like "do not advertise".
+| `--seed-node <arg>`          | Connect to a node to retrieve other nodes' addresses, and disconnect. If not specified, `xcashd` will use hardcoded seed nodes on the first run, and peers cached on disk on subsequent runs.
 | `--add-peer <arg>`           | Manually add node to local peer list, `host:port`. Syntax supports IP addresses, domain names, onion and i2p hosts.
-| `--add-priority-node <arg>`  | Specify list of nodes to connect to and then attempt to keep the connection open. <br><br>To add multiple nodes use the option several times. Example: <br>`./monerod --add-priority-node=178.128.192.138:18080 --add-priority-node=144.76.202.167:18080`
-| `--add-exclusive-node <arg>` | Specify list of nodes to connect to only. If this option is given the options `--add-priority-node` and `--seed-node` are ignored. <br><br>To add multiple nodes use the option several times. Example: <br>`./monerod --add-exclusive-node=178.128.192.138:18080 --add-exclusive-node=144.76.202.167:18080`
+| `--add-priority-node <arg>`  | Specify list of nodes to connect to and then attempt to keep the connection open. <br><br>To add multiple nodes use the option several times. Example: <br>`./xcashd --add-priority-node=178.128.192.138:18080 --add-priority-node=144.76.202.167:18080`
+| `--add-exclusive-node <arg>` | Specify list of nodes to connect to only. If this option is given the options `--add-priority-node` and `--seed-node` are ignored. <br><br>To add multiple nodes use the option several times. Example: <br>`./xcashd --add-exclusive-node=178.128.192.138:18080 --add-exclusive-node=144.76.202.167:18080`
 | `--out-peers <arg>`          | Set max number of outgoing connections to other nodes. By default 12. Value `-1` represents the code default.<br><br>(=12)
 | `--in-peers <arg>`           | Set max number of incoming connections (nodes actively connecting to you). By default unlimited. Value `-1` represents the code default.<br><br>(=-1)
 | `--limit-rate-up <arg>`      | Set upload data transfer limit [kB/s]. Value `-1` represents the code default.<br><br>(=8192)
@@ -146,14 +146,14 @@ This is experimental. It may be best to start with this [guide](https://github.c
 
 | Option                       | Description
 |------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| `--tx-proxy <arg>`           | Send out your local transactions through SOCKS5 proxy (Tor or I2P). Format:<br>`<network-type>,<socks-ip:port>[,max_connections][,disable_noise]` <br><br>Example:<br>`./monerod --tx-proxy=tor,127.0.0.1:9050,16`<br><br>This was introduced to make publishing transactions over Tor easier (no need for torsocks) while allowing clearnet for blocks at the same time (while torsocks affected everything).<br><br>Adding `,disable_noise`: If the user disables "noise" (i.e. `--tx-proxy=tor,127.0.0.1:9050,disable_noise`), then the tx is "fluffed" to outbound Onion and I2P peers, and the receiving hidden service will immediately fluff the transaction to ipv4/6 peers. This will speed up tx broadcast. [more info](https://github.com/monero-project/monero/pull/6354#pullrequestreview-399554356)<br><br>Note that forwarded transactions (those not originating from the connected wallet(s)) will still be relayed over clearnet.<br>See this [guide](https://github.com/monero-project/monero/blob/master/docs/ANONYMITY_NETWORKS.md#p2p-commands) and [commit](https://github.com/monero-project/monero/pull/6021).
-| `--anonymous-inbound <arg>`  | Allow anonymous incoming connections to your Onion or I2P hidden service's P2P interface. Format: <br>`<hidden-service-address>,<[bind-ip:]port>[,max_connections]`<br><br>Example:<br>`./monerod --anonymous-inbound yourlongv3onionaddress.onion:18084,127.0.0.1:18084,100`.<br><br>Note: You'll also need to setup a hidden service in the respective Tor or I2P config. See the setup guide [here](../running-node/monerod-tori2p.md).
+| `--tx-proxy <arg>`           | Send out your local transactions through SOCKS5 proxy (Tor or I2P). Format:<br>`<network-type>,<socks-ip:port>[,max_connections][,disable_noise]` <br><br>Example:<br>`./xcashd --tx-proxy=tor,127.0.0.1:9050,16`<br><br>This was introduced to make publishing transactions over Tor easier (no need for torsocks) while allowing clearnet for blocks at the same time (while torsocks affected everything).<br><br>Adding `,disable_noise`: If the user disables "noise" (i.e. `--tx-proxy=tor,127.0.0.1:9050,disable_noise`), then the tx is "fluffed" to outbound Onion and I2P peers, and the receiving hidden service will immediately fluff the transaction to ipv4/6 peers. This will speed up tx broadcast. [more info](https://github.com/monero-project/monero/pull/6354#pullrequestreview-399554356)<br><br>Note that forwarded transactions (those not originating from the connected wallet(s)) will still be relayed over clearnet.<br>See this [guide](https://github.com/monero-project/monero/blob/master/docs/ANONYMITY_NETWORKS.md#p2p-commands) and [commit](https://github.com/monero-project/monero/pull/6021).
+| `--anonymous-inbound <arg>`  | Allow anonymous incoming connections to your Onion or I2P hidden service's P2P interface. Format: <br>`<hidden-service-address>,<[bind-ip:]port>[,max_connections]`<br><br>Example:<br>`./xcashd --anonymous-inbound yourlongv3onionaddress.onion:18084,127.0.0.1:18084,100`.<br><br>Note: You'll also need to setup a hidden service in the respective Tor or I2P config. See the setup guide [here](../running-node/xcashd-tori2p.md).
 | `--pad-transactions`         | Pad relayed transactions to next 1024 bytes to help defend against traffic volume analysis. This only makes sense if you are behind Tor or I2P. See [commit](https://github.com/monero-project/monero/pull/4787).
 | `--proxy <arg>`              | Network communication through proxy. Works with any service that supports SOCKS4, including Tor, i2p (outproxy), and commercial VPN/proxy services. SOCKS5 support is anticipated in the future. Enabling this setting sends all traffic through this proxy. Can be used in conjunction with `--tx-proxy`, in which case transaction broadcasts originating from the connected wallet(s) will be sent through Tor or i2p as specified in `--tx-proxy`, and all other traffic will be sent through the SOCKS proxy configured with `--proxy`. Format:<br>`<socks-ip:port>`
 
 #### Node RPC API
 
-`monerod` node offers powerful API. It serves 3 purposes:
+`xcashd` node offers powerful API. It serves 3 purposes:
 
 * provides network data (stats, blocks, transactions, ...)
 * provides local node information (peer list, hash rate if mining, ...)
@@ -189,8 +189,8 @@ The following options define how the API behaves.
 | `--rpc-ssl-ca-certificates <arg>`     | Path to file containing concatenated PEM format certificate(s) to replace system CA(s).
 | `--rpc-ssl-allow-chained`             | Allow user chained certificates. This is only applicable if user has a "real" CA issued certificate.
 | `--rpc-login <arg>`                   | Specify `username[:password]` required to connect to API.
-| `--rpc-access-control-origins <arg>`  | Specify a comma separated list of origins to allow cross origin resource sharing. This is useful if you want to use `monerod` API directly from a web browser via JavaScript (say in a pure-fronted web appp scenario). With this option `monerod` will put proper HTTP CORS headers to its responses. You will also need to set `--rpc-login` if you use this option. Normally though, the API is used by backend app and this option isn't necessary.
-| `--disable-rpc-ban`                   | Do not ban hosts on RPC errors. May help to prevent monerod from banning traffic originating from the Tor daemon.
+| `--rpc-access-control-origins <arg>`  | Specify a comma separated list of origins to allow cross origin resource sharing. This is useful if you want to use `xcashd` API directly from a web browser via JavaScript (say in a pure-fronted web appp scenario). With this option `xcashd` will put proper HTTP CORS headers to its responses. You will also need to set `--rpc-login` if you use this option. Normally though, the API is used by backend app and this option isn't necessary.
+| `--disable-rpc-ban`                   | Do not ban hosts on RPC errors. May help to prevent xcashd from banning traffic originating from the Tor daemon.
 | `--rpc-payment-address <arg>`         | Restrict RPC to clients sending micropayment to this address.
 | `--rpc-payment-difficulty <arg>`      | Restrict RPC to clients sending micropayment at this difficulty in thousands.
 | `--rpc-payment-credits <arg>`         | Restrict RPC to clients sending micropayment, yields that many credits per payment in hundreds.
@@ -203,34 +203,34 @@ The following options define how the API behaves.
 
 #### Accepting Monero
 
-These are network notifications offered by `monerod`. There are also wallet notifications like `--tx-notify` offered by `xcash-wallet-rpc` [here](https://github.com/monero-project/monero/pull/4333).
+These are network notifications offered by `xcashd`. There are also wallet notifications like `--tx-notify` offered by `xcash-wallet-rpc` [here](https://github.com/monero-project/monero/pull/4333).
 
 | Option                       | Description
 |------------------------------|------------------------------------------------------------------------------------------------
-| `--block-notify <arg>`       | Run a program for each new block. The `<arg>` must be a **full path**. If the `<arg>` contains `%s` it will be replaced by the block hash. Example: <br>`./monerod --block-notify="/usr/bin/echo %s"`<br><br>Block notifications are good for immediate reaction. However, you should always assume you will miss some block notifications and you should independently poll the API to cover this up. <br><br>Mind blockchain reorganizations. Block notifications can revert to same and past heights. Small reorganizations are natural and happen every day.
+| `--block-notify <arg>`       | Run a program for each new block. The `<arg>` must be a **full path**. If the `<arg>` contains `%s` it will be replaced by the block hash. Example: <br>`./xcashd --block-notify="/usr/bin/echo %s"`<br><br>Block notifications are good for immediate reaction. However, you should always assume you will miss some block notifications and you should independently poll the API to cover this up. <br><br>Mind blockchain reorganizations. Block notifications can revert to same and past heights. Small reorganizations are natural and happen every day.
 | `--block-rate-notify <arg>`  | Run a program when the number of blocks received in the recent past deviates significantly from the expectation. The `<arg>` must be a **full path**. The `<arg`> can contain any of `%t`, `%b`, `%e` symbols to interpolate: <br><br>`%t`: the number of minutes in the observation window<br><br>`%b`: the number of blocks observed in that window<br><br>`%e`: the ideal number of blocks expected in that window<br><br> The option will let you know if the network hash rate drops by a lot. This may be indicative of a large section of the network miners moving off to mine a private chain, to be later released to the network. Note that if this event triggers, it is not incontrovertible proof that this is happening. It might just be chance. The longer the window (the %t parameter), and the larger the distance between actual and expected number of blocks, the more indicative it is of a possible chain reorg double-spend attack being prepared.<br><br>**Recommendation:** unless you run economically significant Monero exchange or operation, do **not** act on this data. It is hard to calibrate and easy to misinterpret. If this is a real attack, it will target high-liquidity entities and not small merchants.
 | `--reorg-notify <arg>`       | Run a program when reorganization happens (ie, at least one block is removed from the top of the blockchain). The `<arg>` must be a **full path**. The `<arg`> can contain any of `%s`, `%h`, `%n` symbols to interpolate: <br><br>`%s`: the height at which the split occurs <br><br>`%h`: the height of the new blockchain<br><br>`%d`: the number of blocks discarded from the old chain <br><br>`%n`: the number of blocks being added <br><br> The option will let you know when a block is removed from the chain to be replaced by other blocks. This happens when a 51% attack occurs, but small reorgs also happen in the normal course of things. The `%d` parameter will be set to the number of blocks discarded from the old chain (so if this is higher than the number of confirmations you wait to act upon an incoming payment, that payment might have been cancelled). The `%n` parameter wil be set to the number of blocks in the new chain (so if this is higher than the number of confirmations you wait to act upon an incoming payment, any incoming payment in the first block will be automatically acted upon by your platform). <br><br>**Recommendation**: unless you run economically significant Monero exchange or operation, you do **not** need to bother with this option. Simply account for reorganizations by requiring at least 10 confirmations before shipping valuable goods.
 
 #### Performance
 
-These are advanced options that allow you to optimize performance of your `monerod` node, sometimes at the expense of reliability.
+These are advanced options that allow you to optimize performance of your `xcashd` node, sometimes at the expense of reliability.
 
 | Option                          | Description
 |---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
 | `--prune-blockchain`            | Pruning saves 2/3 of disk space w/o degrading functionality. For maximum effect this should be used already **on the first sync**. If you add this option later the past data will only be pruned logically w/o shrinking the file size and the gain will be delayed. <br><br>If you already have unpruned blockchain, see the `monero-blockchain-prune` tool. <br><br>The drawback is that you will contribute less to Monero P2P network in terms of helping new nodes to sync up (up to 1/8 of normal contribution). You will still be useful regarding relaying new transactions and blocks though.
 | `--sync-pruned-blocks`          | Accept pruned blocks instead of pruning yourself. It should save network transfer when used with `--prune-blockchain`. See the [commit](https://github.com/monero-project/monero/commit/8330e772f1ed680a54833d25c4d17d09a99ab8d6) and [comments](https://web.getmonero.org/2019/09/08/logs-for-the-dev-meeting-held-on-2019-09-08.html).
-| `--db-sync-mode <arg>`          | Specify sync option, using format:<br>`[safe|fast|fastest]:[sync|async]:[<nblocks_per_sync>[blocks]|<nbytes_per_sync>[bytes]]`<br><br>In the event of a system crash or power failure, `fast:async:*` mode can result in a corrupted blockchain. It should not corrupt if `monerod` crashes.<br>If this flag not set, monerod will automatically switch to `safe:sync` when near the chain tip.<br><br>(=fast:async:250000000bytes and auto-switch to `safe:sync` when near the chain tip.)
+| `--db-sync-mode <arg>`          | Specify sync option, using format:<br>`[safe|fast|fastest]:[sync|async]:[<nblocks_per_sync>[blocks]|<nbytes_per_sync>[bytes]]`<br><br>In the event of a system crash or power failure, `fast:async:*` mode can result in a corrupted blockchain. It should not corrupt if `xcashd` crashes.<br>If this flag not set, xcashd will automatically switch to `safe:sync` when near the chain tip.<br><br>(=fast:async:250000000bytes and auto-switch to `safe:sync` when near the chain tip.)
 | `--max-concurrency <arg>`       | Max number of threads to use for parallel jobs. The default value `0` uses the number of CPU threads.<br><br>(=0)
-| `--prep-blocks-threads <arg>`   | Max number of threads to use when computing block hashes (PoW) in groups. Defaults to 4. Decrease this if you don't want `monerod` hog your computer when syncing.<br><br>(=4)
-| `--fast-block-sync <arg>`       | Sync up most of the way by using embedded, "known" block hashes. Pass `1` to turn on and `0` to turn off. This is on (`1`) by default. Normally, for every block the full node must calculate the block hash to verify miner's proof of work. Because the RandomX PoW used in Monero is very expensive (even for verification), `monerod` offers skipping these calculations for old blocks. In other words, it's a mechanism to trust `monerod` binary regarding old blocks' PoW validity, to sync up faster.<br><br>(=1)
-| `--block-sync-size <arg>`       | How many blocks are processed in a single batch during chain synchronization. By default this is 20 blocks for newer history and 100 blocks for older history ("pre v4"). Default behavior is represented by value `0`. Example:<br>`./monerod --block-sync-size=50`
-| `--bootstrap-daemon-address <arg>` | The host:port of a "bootstrap" remote open node that the connected wallets can use while this node is still not fully synced. Example:<br/>`./monerod --bootstrap-daemon-address=opennode.xmr-tw.org:18089`. The node will forward selected RPC calls to the bootstrap node. The wallet will handle this automatically and transparently. Obviously, such bootstrapping phase has privacy implications similar to directly using a remote node.
+| `--prep-blocks-threads <arg>`   | Max number of threads to use when computing block hashes (PoW) in groups. Defaults to 4. Decrease this if you don't want `xcashd` hog your computer when syncing.<br><br>(=4)
+| `--fast-block-sync <arg>`       | Sync up most of the way by using embedded, "known" block hashes. Pass `1` to turn on and `0` to turn off. This is on (`1`) by default. Normally, for every block the full node must calculate the block hash to verify miner's proof of work. Because the RandomX PoW used in Monero is very expensive (even for verification), `xcashd` offers skipping these calculations for old blocks. In other words, it's a mechanism to trust `xcashd` binary regarding old blocks' PoW validity, to sync up faster.<br><br>(=1)
+| `--block-sync-size <arg>`       | How many blocks are processed in a single batch during chain synchronization. By default this is 20 blocks for newer history and 100 blocks for older history ("pre v4"). Default behavior is represented by value `0`. Example:<br>`./xcashd --block-sync-size=50`
+| `--bootstrap-daemon-address <arg>` | The host:port of a "bootstrap" remote open node that the connected wallets can use while this node is still not fully synced. Example:<br/>`./xcashd --bootstrap-daemon-address=opennode.xmr-tw.org:18089`. The node will forward selected RPC calls to the bootstrap node. The wallet will handle this automatically and transparently. Obviously, such bootstrapping phase has privacy implications similar to directly using a remote node.
 | `--bootstrap-daemon-login <arg>`   | Specify username:password for the bootstrap daemon login (if required). This considers the RPC interface used by the wallet. Normally, open nodes do not require any credentials.
 | `--no-sync`                     | Do not sync up. Continue using bootstrap daemon instead (if set). See [commit](https://github.com/monero-project/monero/pull/5195).
 
 #### Mining
 
-The following options configure **solo mining** using **CPU** with the standard software stack `monerod`. This is mostly useful for:
+The following options configure **solo mining** using **CPU** with the standard software stack `xcashd`. This is mostly useful for:
 
 * generating your [stagenet](../infrastructure/networks.md#stagenet) or [testnet](../infrastructure/networks.md#testnet) coins
 * experimentation and learning
@@ -266,7 +266,7 @@ These options are useful for Monero project developers and testers. Normal users
 
 #### Legacy
 
-These options should no longer be necessary. They are still present in `monerod` for backwards compatibility.
+These options should no longer be necessary. They are still present in `xcashd` for backwards compatibility.
 
 | Option                | Description
 |-----------------------|--------------------------------------------------------------------------------------------------------------------------------------
@@ -276,12 +276,12 @@ These options should no longer be necessary. They are still present in `monerod`
 
 ## Environment Variables
 
-These environment variables can be set to change functions within monerod.
+These environment variables can be set to change functions within xcashd.
 
 | Option                    | Description                                                                                               |
 |---------------------------|-----------------------------------------------------------------------------------------------------------|
-| `DNS_PUBLIC`              | string; Monerod will use this specified DNS resolver.<br>Example: `DNS_PUBLIC=tcp://1.1.1.1 ./monerod`    |
-| `MONERO_RANDOMX_FULL_MEM` | Bool; if true, instruct monerod to allocate the full dataset.<br>(=false)                                 |
+| `DNS_PUBLIC`              | string; xcashd will use this specified DNS resolver.<br>Example: `DNS_PUBLIC=tcp://1.1.1.1 ./xcashd`    |
+| `MONERO_RANDOMX_FULL_MEM` | Bool; if true, instruct xcashd to allocate the full dataset.<br>(=false)                                 |
 | `NO_COLOR`                | string; disable color output. note: any non-empty value, including 0, will set to true.<br>(=unset)       |
 
 ## Commands
@@ -294,7 +294,7 @@ The following groups are only to make reference easier to follow.
 The daemon itself does not group commands in any way.
 
 See [running](#running) for example usage.
-You can also type commands directly in the console of the running `monerod` (if not detached).
+You can also type commands directly in the console of the running `xcashd` (if not detached).
 
 #### Help, version, status
 
@@ -309,9 +309,9 @@ You can also type commands directly in the console of the running `monerod` (if 
 | Option                             | Description
 |------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
 | `print_pl [white | gray | pruned | publicrpc] [<limit>]` | Show the full peer list.
-| `print_pl_stats`                   | Show the full peer list statistics (white vs gray peers). White peers are online and reachable. Grey peers are offline but your `monerod` remembers them from past sessions.
+| `print_pl_stats`                   | Show the full peer list statistics (white vs gray peers). White peers are online and reachable. Grey peers are offline but your `xcashd` remembers them from past sessions.
 | `print_cn`                         | Show connected peers with connection initiative (incoming/outgoing) and other stats.
-| `ban <IP> [<seconds>]`             | Ban a given `<IP>` for a given amount of `<seconds>`. By default the ban is for 24h. Example:<br>`./monerod ban 187.63.135.161`.
+| `ban <IP> [<seconds>]`             | Ban a given `<IP>` for a given amount of `<seconds>`. By default the ban is for 24h. Example:<br>`./xcashd ban 187.63.135.161`.
 | `unban <IP>`                       | Unban a given `<IP>`.
 | `bans`                             | Show the currently banned IPs. Example output:<br>`187.63.135.161 banned for 86397 seconds`.
 | `in_peers <max_number>`            | Set the <max_number> of incoming connections from other peers.
@@ -333,7 +333,7 @@ You can also type commands directly in the console of the running `monerod` (if 
 
 | Option                                                     | Description
 |------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| `print_coinbase_tx_sum <start_height> [<block_count>]`     | Show a sum of all emitted coins and paid fees within specified range. Example:<br>`./monerod print_coinbase_tx_sum 0 1000000000000`
+| `print_coinbase_tx_sum <start_height> [<block_count>]`     | Show a sum of all emitted coins and paid fees within specified range. Example:<br>`./xcashd print_coinbase_tx_sum 0 1000000000000`
 | `print_tx <transaction_hash> [+hex] [+json]`               | Show specified transaction as JSON and/or HEX.
 | `relay_tx <txid>`                                          | Force relaying the transaction. Useful if you want to rebroadcast the transaction for any reason or if transaction was previously created with "do_not_relay":true.
 
@@ -361,10 +361,10 @@ You can also type commands directly in the console of the running `monerod` (if 
 
 | Option                                                     | Description
 |------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| `show_hr`                                                  | Ask `monerod` daemon to print current hash rate. Relevant only if `monerod` is mining.
-| `hide_hr`                                                  | Ask `monerod` daemon to stop printing current hash rate. Relevant only if `monerod` is mining.
-| `start_mining <addr> [<threads>] [do_background_mining] [ignore_battery]`   | Ask `monerod`daemon to start mining. Block reward will go to `<addr>`.
-| `stop_mining`                                              | Ask `monerod` daemon to stop mining.
+| `show_hr`                                                  | Ask `xcashd` daemon to print current hash rate. Relevant only if `xcashd` is mining.
+| `hide_hr`                                                  | Ask `xcashd` daemon to stop printing current hash rate. Relevant only if `xcashd` is mining.
+| `start_mining <addr> [<threads>] [do_background_mining] [ignore_battery]`   | Ask `xcashd`daemon to start mining. Block reward will go to `<addr>`.
+| `stop_mining`                                              | Ask `xcashd` daemon to stop mining.
 
 #### Testing Monero itself
 
@@ -377,6 +377,6 @@ You can also type commands directly in the console of the running `monerod` (if 
 
 | Option                                                     | Description
 |------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| `save`                                                     | Flush blockchain data to disk. This is normally no longer necessary as `monerod` saves the blockchain automatically on exit.
-| `output_histogram [@<amount>] <min_count> [<max_count>]`   | Show number of outputs for each amount denomination. This was only relevant in the pre-RingCT era. The old wallet used this to determine which outputs can be used for the requested mixin. With RingCT denominations are irrelevant as amounts are hidden. More info in [these SA answers](https://monero.stackexchange.com/search?q=%22output_histogram%22).
+| `save`                                                     | Flush blockchain data to disk. This is normally no longer necessary as `xcashd` saves the blockchain automatically on exit.
+| `output_histogram [@<amount>] <min_count> [<max_count>]`   | Show number of outputs for each amount denomination. This was only relevant in the pre-RingCT era. The old wallet used this to determine which outputs can be used for the requested mixin. With RingCT denominations are irrelevant as amounts are hidden.
 

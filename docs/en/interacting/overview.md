@@ -102,7 +102,7 @@ This is where the blockchain, log files, and p2p network memory are stored.
 By default data directory is at:
 
 * `$HOME/.XCASH-LABS/` on Linux and macOS
-* `C:\ProgramData\XCASH-LABS\` on Windows
+* `C:\ProgramData\X-CASH\` on Windows
 
 Please mind:
 
