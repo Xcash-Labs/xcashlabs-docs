@@ -30,7 +30,8 @@ You will find 2 types of delegates:
   - As a voter, you should only vote for shared delegates
 
 - **Solo Delegates**
-  - Delegates that redistribute rewards only to a select group 
+  - Delegates who do not redistribute rewards to voters
+  - Typically operated for the delegate’s own staking/voting 
 
 ## Staking Calculation
 
@@ -42,9 +43,12 @@ You will find 2 types of delegates:
     total stake distribution, delegate participation, and fees.
 
 
-## Voting Rules
+## Voting & Staking
 
 !!! info "Voting Rules"
     - **You can only have one vote per wallet.**
-    - You need a minimum of `2,000,000` coins in the wallet to vote. *(update if XCash-Labs differs)*
-    - Spending from the staked wallet amount cancels the vote.
+    - You need a minimum of `1,000` coins in the wallet to vote.
+    - Spending from the staked wallet balance will invalidate the vote.
+
+## Casting Your Vote
+
