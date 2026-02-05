@@ -71,7 +71,9 @@ Types of Delegates
 - Self-voted delegate  
 - If no XCA voting addresses are configured, all rewards are paid to the delegate wallet  
 - Manual reward distribution is required when no voting addresses are configured  
-- You can optionally restrict voting by specifying which XCA wallet addresses are allowed to vote for this delegate
+- You can optionally restrict voting by specifying which XCA wallet addresses are allowed to vote for this delegate 
+
+The minimum payment amount will default to 1000 and and the delegate fee will default to 5%. Bot of these amounts can be changed later.
 
 ---
 
@@ -121,7 +123,7 @@ The installer will:
 - Create and synchronize the delegate wallet  
 
 !!! info
-    Initial synchronization may take several hours depending on system performance and network speed.
+    Initial synchronization may take a while depending on system performance and network speed.
 
 Once complete, your delegate wallet details will be displayed.
 
