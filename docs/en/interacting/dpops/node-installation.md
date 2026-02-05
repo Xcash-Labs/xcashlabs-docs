@@ -41,12 +41,7 @@ To start the installation process, run the latest version of the installer scrip
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Xcash-Labs/xcash-labs-dpops/master/scripts/autoinstaller/autoinstaller.sh)"
 ```
-
-
-![alt text](image.png)
-
-
-
+![instalation script](instalation-script.png)
 
 !!! info
     It is strongly recommended to run the installer inside a terminal multiplexer such as **byobu** or **tmux** to prevent interruptions caused by SSH disconnects.
