@@ -14,11 +14,13 @@ nav:
     - Overview: 'interacting/overview.md'
     - Tokenomics: 'technical-specs.md'
     - Networks: 'infrastructure/networks.md'
+  - Running A DPOPS Delegate:
+    - 'dpops/index.md'
+  - Voting and Staking:
+    - 'interacting/staking/index.md'
   - Download & Verify:
     - Download: 'interacting/download-xcash-binaries.md'
     - Verify: 'interacting/verify-xcash-binaries.md'
-  - xcash-dpops:
-    - 'dpops/index.md'
   - xcashd:
     - Flags: 'interacting/xcashd-reference.md'
     - Setup Guide:
@@ -28,7 +30,7 @@ nav:
       - Home: 'interacting/xcash-config-file.md'
   - Wallets:
     - xcash-wallet-gui: 'interacting/xcash-wallet-gui-reference.md'
-    - xcash-wallet-clii: 'interacting/xcash-wallet-cli-reference.md'
+    - xcash-wallet-cli: 'interacting/xcash-wallet-cli-reference.md'
     - xcash-wallet-rpc: 'interacting/xcash-wallet-rpc-reference.md'
     - Advanced Transactions:
       - Multisignature: 'multisignature.md'
@@ -36,8 +38,6 @@ nav:
   - Blockchain Tools:
     - xcash-blockchain-export: 'interacting/xcash-blockchain-export-reference.md'
     - xcash-blockchain-import: 'interacting/xcash-blockchain-import-reference.md'
-  - Voting and Staking:
-    - 'interacting/staking/index.md'
   - External:
     - XCashPulse: 'infrastructure/xcash-pulse.md'
 - RPC Library:
