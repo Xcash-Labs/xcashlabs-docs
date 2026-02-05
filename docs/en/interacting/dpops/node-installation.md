@@ -27,29 +27,23 @@ The `xcash-dpops` program manages block validation, delegate communication, bloc
 
 ## Installation
 
-```markdown
-The installer script is designed to interact with the `xcash-dpops` program and provide guided steps for installation, updates, and service management.
-It can also be used to restart services if you are not comfortable managing them manually from the command line.
+The installer script is designed to interact with the `xcash-dpops` program and provide guided steps for installation, updates, and service management. It can also be used to restart services if you are not comfortable managing them manually from the command line.
 
 !!! info
     Before starting, it is strongly recommended to run the installer inside a terminal multiplexer such as **byobu** or **tmux**.
     This prevents installation corruption if your SSH session disconnects.
 
-Once your Linux instance is prepared (see the Server Setup Guide), run the installer script to install, build, and configure the delegate node.
-The installer will also download and synchronize the blockchain.
+Once your Linux instance is prepared (see the Server Setup Guide), run the installer script to install, build, and configure the delegate node. The installer will also download and synchronize the blockchain.
 
-The `xcash-dpops` program is responsible for:
-
-- Communicating with other delegates
-- Coordinating consensus
-- Relaying blocks
-- Forging new blocks
 
 To start the installation process, run the latest version of the installer script:
 
 ```bash
-bash -c "$(curl -sSL https://raw.githubusercontent.com/X-CASH-official/xcash-dpops/master/scripts/autoinstaller/autoinstaller.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Xcash-Labs/xcash-labs-dpops/master/scripts/autoinstaller/autoinstaller.sh)"
+```
 
+
+![alt text](image.png)
 
 
 
