@@ -1,7 +1,7 @@
 ---
-title: monero-blockchain-import - Reference
+title: xcash-blockchain-import - Reference
 ---
-# `monero-blockchain-import` - Reference
+# `xcash-blockchain-import` - Reference
 
 !!! note
     Nowadays, there is little usage for raw blockchain export / import. In the past the p2p blockchain download was much slower. Back than blockchain.raw file was used to speed up download process of bootstrapping a node. 
@@ -11,7 +11,7 @@ title: monero-blockchain-import - Reference
 The tool imports bootstrap file `blockchain.raw` to your full node.
 
 This could be useful if you want to decouple download from verification for any reason (like testing performance in isolation).
-Ideally, you should use your own trusted `blockchain.raw` file that you [exported](../interacting/monero-blockchain-export-reference.md) earlier.
+Ideally, you should use your own trusted `blockchain.raw` file that you [exported](../interacting/xcash-blockchain-export-reference.md) earlier.
 
 Please note that importing `blockchain.raw` will **not** speed up the process over syncing up from p2p network.
 This is because usual bottlenecks are disk IO and verification, not the download.  
@@ -20,17 +20,17 @@ The tool works on your local files. It does not require `monerod` running.
 
 ## Syntax
 
-`./monero-blockchain-import [options]`
+`./xcash-blockchain-import [options]`
 
 Example:
 
-`./monero-blockchain-import --help`
+`./xcash-blockchain-import --help`
 
 ## Running
 
 Go to directory where you unpacked Monero.
 
-`./monero-blockchain-import --stagenet --input-file=/tmp/blockchain.raw`
+`./xcash-blockchain-import --stagenet --input-file=/tmp/blockchain.raw`
 
 
 ## Options
@@ -45,7 +45,7 @@ Go to directory where you unpacked Monero.
 
 | Option              | Description
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| (missing)           | By default `monero-blockchain-import` assumes the [mainnet](../infrastructure/networks.md#mainnet) blockchain.
+| (missing)           | By default `xcash-blockchain-import` assumes the [mainnet](../infrastructure/networks.md#mainnet) blockchain.
 | `--stagenet`        | Import [stagenet](../infrastructure/networks.md#stagenet) blockchain.
 | `--testnet`         | Import [testnet](../infrastructure/networks.md#testnet) blockchain.
 
@@ -55,7 +55,7 @@ Specifying the log file path is not supported.
 
 | Option              | Description
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| `--log-level`       | `0-4` with `0` being minimal logging and `4` being full tracing. Defaults to `0`. These are general presets and do not directly map to severity levels. For example, even with minimal `0`, you may see some most important `INFO` entries. Example: <br />`./monero-blockchain-import --log-level=1`
+| `--log-level`       | `0-4` with `0` being minimal logging and `4` being full tracing. Defaults to `0`. These are general presets and do not directly map to severity levels. For example, even with minimal `0`, you may see some most important `INFO` entries. Example: <br />`./xcash-blockchain-import --log-level=1`
 
 ### Input
 

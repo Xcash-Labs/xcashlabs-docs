@@ -42,7 +42,7 @@ To begin you will need to create a new wallet. Multisig cannot be applied to a w
 First you create a new wallet. The below the code assumes you're using a remote node, but using a local node is ideal:
 
 ```
-./monero-wallet-cli --stagenet --daemon-address address-URL  # Create your wallet
+./xcash-wallet-clii --stagenet --daemon-address address-URL  # Create your wallet
 ```
 
 In the above, replace address-URL with the actual URL that you want to connect to. At the time of writing, a list of remote nodes can be found at: [monero.fail](https://monero.fail). The default view shows mainnet servers, so make sure to filter by stagenet servers first.

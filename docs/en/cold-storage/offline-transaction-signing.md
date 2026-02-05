@@ -27,7 +27,7 @@ Offline transaction signing involves:
 Constructing a new offline wallet is done by executing:
 
 ```
-monero-wallet-cli --generate-new-wallet /path/to/wallet-file
+xcash-wallet-clii --generate-new-wallet /path/to/wallet-file
 ```
 
 on an offline machine. Record the seed on paper by executing `seed` on the offline wallet.
@@ -48,7 +48,7 @@ generate seed offset passphrase, record seed offset passphrase on paper, and
 execute
 
 ```
-monero-wallet-cli --generate-new-wallet /path/to/wallet-file \
+xcash-wallet-clii --generate-new-wallet /path/to/wallet-file \
 ---restore-deterministic-wallet
 ```
 
@@ -75,7 +75,7 @@ drive.
 To create a view-only wallet on an online machine, execute
 
 ```
-monero-wallet-cli --generate-from-view-key /path/to/wallet-file \
+xcash-wallet-clii --generate-from-view-key /path/to/wallet-file \
 --daemon-address remote-node-address:port
 ```
 
@@ -87,7 +87,7 @@ transactions, refer to `Restoring view-only wallet`.
 Execute
 
 ```
-monero-wallet-cli --wallet-file /path/to/wallet-file
+xcash-wallet-clii --wallet-file /path/to/wallet-file
 ```
 
 ## Launching a view-only wallet
@@ -95,7 +95,7 @@ monero-wallet-cli --wallet-file /path/to/wallet-file
 Execute
 
 ```
-monero-wallet-cli --wallet-file /path/to/wallet-file \
+xcash-wallet-clii --wallet-file /path/to/wallet-file \
 --daemon-address remote-node-address:port
 ```
 
@@ -103,7 +103,7 @@ It's safe to sync your wallet over clearnet. If you want to broadcast a
 transaction without revealing your IP address, execute
 
 ```
-monero-wallet-cli --wallet-file /path/to/wallet-file \
+xcash-wallet-clii --wallet-file /path/to/wallet-file \
 --daemon-address tor-or-i2p-remote-node-address:port \
 --proxy 127.0.0.1:tor-or-i2p-port
 ```
@@ -191,7 +191,7 @@ and reinstalling everything, you have to restore offline wallet.
 Restore an offline wallet from seed (and seed offset passphrase) by executing
 
 ```
-monero-wallet-cli --generate-new-wallet wallet-file --restore-deterministic-wallet
+xcash-wallet-clii --generate-new-wallet wallet-file --restore-deterministic-wallet
 ```
 
 The new offline wallet can't sign new transactions because it doesn't have

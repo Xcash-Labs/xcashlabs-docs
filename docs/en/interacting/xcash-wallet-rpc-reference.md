@@ -1,28 +1,28 @@
 ---
-title: monero-wallet-rpc - Reference
+title: xcash-wallet-rpc - Reference
 ---
 
-# `monero-wallet-rpc` - Reference
+# `xcash-wallet-rpc` - Reference
 
 !!! note
-    This is only relevant for programmers. Everyday users won't need `monero-wallet-rpc`.
+    This is only relevant for programmers. Everyday users won't need `xcash-wallet-rpc`.
 
 !!! note
-    Use [stagenet](../infrastructure/networks.md) for learning and development on top of `monero-wallet-rpc`.
+    Use [stagenet](../infrastructure/networks.md) for learning and development on top of `xcash-wallet-rpc`.
 
 ## JSON-RPC interface
 
-For a list of `monero-wallet-rpc` calls, their inputs, outputs, and examples, visit the wallet-rpc [library](../rpc-library/wallet-rpc.md)
+For a list of `xcash-wallet-rpc` calls, their inputs, outputs, and examples, visit the wallet-rpc [library](../rpc-library/wallet-rpc.md)
 
 ## Overview
 
 ### Provides wallet API over HTTP
 
-Programmers can build thin user interfaces (UIs) on top of `monero-wallet-rpc`.
+Programmers can build thin user interfaces (UIs) on top of `xcash-wallet-rpc`.
 
-Programmers can also use `monero-wallet-rpc` to build arbitrary wallet automation driven by HTTP calls.
+Programmers can also use `xcash-wallet-rpc` to build arbitrary wallet automation driven by HTTP calls.
 
-Think of `monero-wallet-rpc` as complete wallet logic exposed via JSON-RPC over HTTP.
+Think of `xcash-wallet-rpc` as complete wallet logic exposed via JSON-RPC over HTTP.
 
 Wallet uses your private keys to understand your total balance,
 transactions history, and to facilitate creating transactions.
@@ -31,19 +31,19 @@ However, wallet does not store the blockchain and does not directly participate 
 
 ### Depends on the full node
 
-Wallet connects to a [full node](../interacting/monerod-reference.md) to scan the blockchain for your transaction outputs and to send your transactions out to the network.
+Wallet connects to a [full node](../interacting/xcash-reference.md) to scan the blockchain for your transaction outputs and to send your transactions out to the network.
 
 The full node can be either local (same computer) or remote.
 
-You can play with [CLI wallet](../interacting/xcash-wallet-cli-reference.md) and [GUI wallet](../interacting/monero-wallet-gui-reference.md) first to understand the relationship between the full node, the wallet and the user.
+You can play with [CLI wallet](../interacting/xcash-wallet-cli-reference.md) and [GUI wallet](../interacting/xcash-wallet-gui-reference.md) first to understand the relationship between the full node, the wallet and the user.
 
 ## Syntax
 
-`./monero-wallet-rpc --rpc-bind-port <port> (--wallet-file <file>|--generate-from-json <file>|--wallet-dir <directory>) [options]`
+`./xcash-wallet-rpc --rpc-bind-port <port> (--wallet-file <file>|--generate-from-json <file>|--wallet-dir <directory>) [options]`
 
 Or with a config file:
 
-`./monero-wallet-rpc --config-file <arg>`
+`./xcash-wallet-rpc --config-file <arg>`
 
 ## Running
 
@@ -51,23 +51,23 @@ Make sure you are running a locally synced `monerod` or point to a remote daemon
 
 #### Linux (Production Example)
 
-`./monero-wallet-rpc --rpc-bind-port 28088 --wallet-file wallets/main/main --password walletPassword --rpc-login monero:rpcPassword --log-file logs/monero-wallet-rpc.log --max-log-files 2 --trusted-daemon`
+`./xcash-wallet-rpc --rpc-bind-port 28088 --wallet-file wallets/main/main --password walletPassword --rpc-login monero:rpcPassword --log-file logs/xcash-wallet-rpc.log --max-log-files 2 --trusted-daemon`
 
 - If the RPC is used to retrieve information not dependent on any spending, consider using a view-only to prevent abuse.
 - `--rpc-login` should be used in production to protect against unauthorized access.
 
 #### Windows (Development Example)
 
-`monero-wallet-rpc --rpc-bind-port 28088 --wallet-file wallets\main\main --password walletPassword --daemon-address http://node.supportxmr.com:18081 --untrusted-daemon --disable-rpc-login`
+`xcash-wallet-rpc --rpc-bind-port 28088 --wallet-file wallets\main\main --password walletPassword --daemon-address http://node.supportxmr.com:18081 --untrusted-daemon --disable-rpc-login`
 
 - Specifying `--untrusted-daemon` is not necessary but tells yourself that the daemon is untrusted and that commands requiring a trusted daemon will be disabled
 - Default installation on Windows is `"C:\Program Files\Monero GUI Wallet"`
 
 ### Trouble Shooting
 
-If the expected RPC URL, say [http://127.0.0.1:28088/json_rpc](http://127.0.0.1:28088/json_rpc), is unavailabe, or there is no terminal output saying that the server has been started, `monero-wallet-rpc` might be trying to synchronize the wallet. In that case, you should use the GUI or CLI to sync that wallet file because using the GUI/CLI results in faster and measurable syncing.
+If the expected RPC URL, say [http://127.0.0.1:28088/json_rpc](http://127.0.0.1:28088/json_rpc), is unavailabe, or there is no terminal output saying that the server has been started, `xcash-wallet-rpc` might be trying to synchronize the wallet. In that case, you should use the GUI or CLI to sync that wallet file because using the GUI/CLI results in faster and measurable syncing.
 
-The suggested way is to have two wallet files for the same keys. One that is used manually (synced often), and one that is used by `monero-wallet-rpc`. Whenever you decide to use `monero-wallet-rpc` and encounter the unresponsive issue, simply copy the files of the GUI/CLI wallet and replace the ones that were being used by `monero-wallet-rpc`. This problem should only occur on the development system where `monerod` or `monero-wallet-rpc` might not have been running for weeks. In production, `monerod` and `monero-wallet-rpc` should have minimal downtimes, ensuring that the wallet is always synchronized.
+The suggested way is to have two wallet files for the same keys. One that is used manually (synced often), and one that is used by `xcash-wallet-rpc`. Whenever you decide to use `xcash-wallet-rpc` and encounter the unresponsive issue, simply copy the files of the GUI/CLI wallet and replace the ones that were being used by `xcash-wallet-rpc`. This problem should only occur on the development system where `monerod` or `xcash-wallet-rpc` might not have been running for weeks. In production, `monerod` and `xcash-wallet-rpc` should have minimal downtimes, ensuring that the wallet is always synchronized.
 
 ## Options
 
@@ -189,6 +189,6 @@ The suggested way is to have two wallet files for the same keys. One that is use
 | `--shared-ringdb-dir <arg>`                         | Set shared ring database path<br>Windows: C:\ProgramData\.shared-ringdb<br>Linux: $HOME/.shared-ringdb
 | `--no-dns`                                          | Do not use DNS
 | `--offline`                                         | Do not connect to a daemon, nor use DNS
-| `--non-interactive`                                 | monero-wallet-rpc is not interactive, this doesnt _do_ anything. [ref](https://github.com/monero-project/monero/pull/8772#issuecomment-1463097268)
+| `--non-interactive`                                 | xcash-wallet-rpc is not interactive, this doesnt _do_ anything. [ref](https://github.com/monero-project/monero/pull/8772#issuecomment-1463097268)
 | `--bitmessage-address <arg=http://localhost:8442/>` | Use PyBitmessage instance at URL `<arg>`
 | `--bitmessage-login <arg>`                          | Specify `<arg>` as `username:password` for PyBitmessage API

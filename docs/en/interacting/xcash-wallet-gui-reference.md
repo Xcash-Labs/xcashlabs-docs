@@ -1,7 +1,7 @@
 ---
-title: monero-wallet-gui - Reference
+title: xcash-wallet-gui - Reference
 ---
-# `monero-wallet-gui` - Reference
+# `xcash-wallet-gui` - Reference
 
 ## Overview
 
@@ -16,7 +16,7 @@ However, wallet does not store the blockchain and does not directly participate 
 
 ### Depends on the full node 
 
-Wallet connects to a [full node](../interacting/monerod-reference.md) to scan the blockchain for your transaction outputs and to send your transactions out to the network.   
+Wallet connects to a [full node](../interacting/xcash-reference.md) to scan the blockchain for your transaction outputs and to send your transactions out to the network.   
 
 The full node can be either local (same computer) or remote.
 
@@ -38,11 +38,11 @@ The online living version is also available:<br />
 
 ## Syntax
 
-`./monero-wallet-gui [options]`
+`./xcash-wallet-gui [options]`
 
 Example:
 
-`./monero-wallet-gui --log-file=/dev/null`
+`./xcash-wallet-gui --log-file=/dev/null`
 
 ## Running
 
@@ -54,7 +54,7 @@ Run the full node and wait until it syncs up with the network (may take up to a 
 
 In a separate terminal window, run the wallet:
 
-`./monero-wallet-gui`
+`./xcash-wallet-gui`
 
 ## Options
 
@@ -71,5 +71,5 @@ The wallet is created in `$HOME/Monero/wallets/`.
 You may want to change it to `$HOME/.bitmonero/wallets/` to have all Monero related files in one place.
 This is possible on wallet creation wizard in the GUI. 
 
-The log file is created directly in the home directory `$HOME/monero-wallet-gui.log`.
-You may want to change with `--log-file=$HOME/.bitmonero/monero-wallet-gui.log` option. 
+The log file is created directly in the home directory `$HOME/xcash-wallet-gui.log`.
+You may want to change with `--log-file=$HOME/.bitmonero/xcash-wallet-gui.log` option. 

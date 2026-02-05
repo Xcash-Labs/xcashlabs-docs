@@ -52,7 +52,7 @@ extras/xcash-blockchain-depth
 
 | Executable                 | Description
 | -------------------------- |:-----------------------------------------------------------------------------------------------------------------------------------
-| `monerod`                  | The full node daemon. Does not require a wallet. <br />[Documentation](../interacting/monerod-reference.md).
+| `monerod`                  | The full node daemon. Does not require a wallet. <br />[Documentation](../interacting/xcash-reference.md).
 | `xcash-wallet-gui`        | Wallet logic and __graphical__ user interface. <br />Requires `monerod` running.
 | `xcash-wallet-cli`        | Wallet logic and __commandline__ user interface. <br />Requires `monerod` running.
 | `xcash-wallet-rpc`        | Wallet logic and __HTTP API__ (JSON-RPC protocol). <br />Requires `monerod` running.
@@ -83,14 +83,14 @@ Perhaps the most surprising for newcomers is that `monerod` daemon accepts inter
 
 Also, please note that `monerod` and `xcash-wallet-rpc` are both accessible via their respective HTTP API / JSON-RPC endpoints.
 
-- [monerod-rpc](../rpc-library/monerod-rpc.md)
+- [xcash-rpc](../rpc-library/xcash-rpc.md)
 - [wallet-rpc](../rpc-library/wallet-rpc.md)
 
 All wallet implementations depend on a fully synchronized `monerod` running.
 
 | Executable                                              | p2p network | commands via keyboard                          | HTTP API                           | GUI |
 | ------------------------------------------------------- | :---------: | :--------------------------------------------: | :--------------------------------: | :-: |
-| [`monerod`](./monerod-reference.md)                     | ✔           | [✔](./monerod-reference.md#commands)           | [✔](../rpc-library/monerod-rpc.md) |     |
+| [`monerod`](./xcash-reference.md)                     | ✔           | [✔](./xcash-reference.md#commands)           | [✔](../rpc-library/xcash-rpc.md) |     |
 | [`xcash-wallet-cli`](./xcash-wallet-cli-reference.md) |             | [✔](./xcash-wallet-cli-reference.md#commands) |                                    |     |
 | [`xcash-wallet-rpc`](./xcash-wallet-rpc-reference.md) |             |                                                | [✔](../rpc-library/wallet-rpc.md)  |     |
 | [`xcash-wallet-gui`](./xcash-wallet-gui-reference.md) |             |                                                |                                    | ✔   |

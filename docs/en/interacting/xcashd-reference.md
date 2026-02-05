@@ -34,8 +34,8 @@ Their names follow the `command_name` pattern.
 
 ## RPC interface
 
-For a list of the monerod RPC calls, their inputs, outputs, and examples, visit the monerod RPC [library](../rpc-library/monerod-rpc.md).    
-Many RPC calls use the daemon's [JSON RPC interface](../rpc-library/monerod-rpc.md#json-rpc-example) while others use their [own interfaces](../rpc-library/monerod-rpc.md#other-daemon-rpc-calls).
+For a list of the monerod RPC calls, their inputs, outputs, and examples, visit the monerod RPC [library](../rpc-library/xcash-rpc.md).    
+Many RPC calls use the daemon's [JSON RPC interface](../rpc-library/xcash-rpc.md#json-rpc-example) while others use their [own interfaces](../rpc-library/xcash-rpc.md#other-daemon-rpc-calls).
 
 ## Running
 
@@ -103,8 +103,8 @@ The following options will be helpful if you intend to have an always running no
 | `--detach`                    | Go to background (decouple from the terminal). This is useful for long-running / server scenarios. Typically, you will also want to manage `monerod` daemon with systemd or similar. By default `monerod` runs in a foreground.
 | `--non-interactive`           | Do not require tty in a foreground mode. Helpful when running in a container. By default `monerod` runs in a foreground and opens stdin for reading. This breaks containerization because no tty gets assigned and `monerod` process crashes. You can make it run in a background with `--detach` but this is inconvenient in a containerized environment because the canonical usage is that the container waits on the main process to exist (forking makes things more complicated).
 | `--max-txpool-weight <arg>`   | Set maximum transactions pool size in bytes. These are transactions pending for confirmations (not included in any block).<br><br>(=648000000)
-| `--enforce-dns-checkpointing` | The emergency checkpoints set by [MoneroPulse](../infrastructure/monero-pulse.md) operators will be enforced. It is probably a good idea to set enforcing for unattended nodes. <br><br>If encountered block hash does not match corresponding checkpoint, the local blockchain will be rolled back a few blocks, effectively blocking following what MoneroPulse operators consider invalid fork. The log entry will be produced:  `ERROR` `Local blockchain failed to pass a checkpoint, rolling back!` Eventually, the alternative ("fixed") fork will get heavier and the node will follow it, leaving the "invalid" fork behind.<br><br>By default checkpointing only notifies about discrepancy by producing the following log entry: `ERROR` `WARNING: local blockchain failed to pass a MoneroPulse checkpoint, and you could be on a fork. You should either sync up from scratch, OR download a fresh blockchain bootstrap, OR enable checkpoint enforcing with the --enforce-dns-checkpointing command-line option`.<br><br>Reference: [source code](https://github.com/monero-project/monero/blob/22a6591a70151840381e327f1b41dc27cbdb2ee6/src/cryptonote_core/blockchain.cpp#L3614).
-| `--disable-dns-checkpoints`   | The [MoneroPulse](../infrastructure/monero-pulse.md) checkpoints set by core developers will be discarded. The checkpoints are apparently still fetched though.
+| `--enforce-dns-checkpointing` | The emergency checkpoints set by [MoneroPulse](../infrastructure/xcash-pulse.md) operators will be enforced. It is probably a good idea to set enforcing for unattended nodes. <br><br>If encountered block hash does not match corresponding checkpoint, the local blockchain will be rolled back a few blocks, effectively blocking following what MoneroPulse operators consider invalid fork. The log entry will be produced:  `ERROR` `Local blockchain failed to pass a checkpoint, rolling back!` Eventually, the alternative ("fixed") fork will get heavier and the node will follow it, leaving the "invalid" fork behind.<br><br>By default checkpointing only notifies about discrepancy by producing the following log entry: `ERROR` `WARNING: local blockchain failed to pass a MoneroPulse checkpoint, and you could be on a fork. You should either sync up from scratch, OR download a fresh blockchain bootstrap, OR enable checkpoint enforcing with the --enforce-dns-checkpointing command-line option`.<br><br>Reference: [source code](https://github.com/monero-project/monero/blob/22a6591a70151840381e327f1b41dc27cbdb2ee6/src/cryptonote_core/blockchain.cpp#L3614).
+| `--disable-dns-checkpoints`   | The [MoneroPulse](../infrastructure/xcash-pulse.md) checkpoints set by core developers will be discarded. The checkpoints are apparently still fetched though.
 | `--ban-list <arg>`            | Specify ban list file, one IP address per line. This was introduced as an emergency measure to deal with large DDoS attacks on Monero p2p network in Dec 2020 / Jan 2021. Example: <br>`./monerod --ban-list=block.txt`. Here is the popular [block.txt](https://gui.xmr.pm/files/block.txt) file.<br><br>It is **not recommended** to statically ban any IP addresses unless you absolutely need to. Banning IPs often excludes the most vulnerable users who are forced to operate entirely behind Tor or other anonymity networks.
 | `--enable-dns-blocklist`      | Similar to `--ban-list` but instead of a static file uses dynamic IP blocklist available as DNS TXT entries. The DNS blocklist is centrally managed by Monero contributors.
 
@@ -203,7 +203,7 @@ The following options define how the API behaves.
 
 #### Accepting Monero
 
-These are network notifications offered by `monerod`. There are also wallet notifications like `--tx-notify` offered by `monero-wallet-rpc` [here](https://github.com/monero-project/monero/pull/4333).
+These are network notifications offered by `monerod`. There are also wallet notifications like `--tx-notify` offered by `xcash-wallet-rpc` [here](https://github.com/monero-project/monero/pull/4333).
 
 | Option                       | Description
 |------------------------------|------------------------------------------------------------------------------------------------

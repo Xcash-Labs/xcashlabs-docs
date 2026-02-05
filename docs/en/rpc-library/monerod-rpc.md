@@ -4,7 +4,7 @@ title: "Daemon RPC documentation"
 
 # Daemon RPC
 
-**`monerod`** [Overview](../interacting/monerod-reference.md)
+**`monerod`** [Overview](../interacting/xcash-reference.md)
 
 ## Introduction
 

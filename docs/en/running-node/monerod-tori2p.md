@@ -45,7 +45,7 @@ To connect Monero nodes, you have to configure the wallet software:
         1. Navigate to: `Settings -> Interface -> Socks5 proxy` and set the values to `IP Address = 127.0.0.1` and `Port = 9050`
         2. Navigate to: `Settings -> Node -> Add remote node` and set the values to `Address = http://yourlongv3onionaddress.onion` and `Port = 18089`
 
-        [:link: _Monero GUI_](../interacting/monero-wallet-gui-reference.md)
+        [:link: _Monero GUI_](../interacting/xcash-wallet-gui-reference.md)
 
     === "Monero CLI"
 
@@ -59,7 +59,7 @@ To connect Monero nodes, you have to configure the wallet software:
         1. Navigate to: `Settings -> Interface -> Socks5 proxy` and set the values to `IP Address = 127.0.0.1` and `Port = 4447`
         2. Navigate to: `Settings -> Node -> Add remote node` and set the values to `Address = http://yourlongb32i2paddress.b32.i2p` and `Port = 18089`
 
-        [:link: _Monero GUI_](../interacting/monero-wallet-gui-reference.md)
+        [:link: _Monero GUI_](../interacting/xcash-wallet-gui-reference.md)
 
     === "Monero CLI"
 

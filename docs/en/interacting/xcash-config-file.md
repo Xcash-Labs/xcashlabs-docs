@@ -21,8 +21,8 @@ To use a specific config file add `--config-file` option:
 The `--config-file` option is available for: 
 
 - `monerod`
-- `monero-wallet-cli`
-- `monero-wallet-rpc`
+- `xcash-wallet-clii`
+- `xcash-wallet-rpc`
 - `monero-gen-trusted-multisig`
 
 ## Syntax
@@ -36,9 +36,9 @@ The `--config-file` option is available for:
 
 All configuration options are the same as command line options for the binary.
 
-- [monerod reference](../interacting/monerod-reference.md)
-- [monero-wallet-cli reference](../interacting/xcash-wallet-cli-reference.md)
-- [monero-wallet-rpc reference](../interacting/monero-wallet-rpc-reference.md)
+- [monerod reference](../interacting/xcash-reference.md)
+- [xcash-wallet-clii reference](../interacting/xcash-wallet-cli-reference.md)
+- [xcash-wallet-rpc reference](../interacting/xcash-wallet-rpc-reference.md)
 
 Skip the `--` from `--option-name`.
 
@@ -59,12 +59,12 @@ stagenet=1     # use value "1" to enable the value-less options like --stagenet
 This config is tailored for desktop usage on [mainnet :link:](../infrastructure/networks.md#mainnet)
 {% include 'monerod_template' %}
 
-### `monero-wallet-cli.conf`
+### `xcash-wallet-clii.conf`
 
 This config is tailored for desktop usage on [stagenet :link:](../infrastructure/networks.md#stagenet).
 
 ```ini
-# ~/.bitmonero/stagenet/monero-wallet-cli.conf
+# ~/.bitmonero/stagenet/xcash-wallet-clii.conf
 
 # Pick network
 stagenet=1
@@ -74,7 +74,7 @@ daemon-address=YOUR.NODE.IP:38081
 #trusted-daemon=1
 
 # Log file
-log-file=/tmp/monero-wallet-cli.log
+log-file=/tmp/xcash-wallet-clii.log
 
 # wallet-file=~/.bitmonero/stagenet/wallets/MoneroExampleStagenetWallet
 ```

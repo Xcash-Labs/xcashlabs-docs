@@ -4,18 +4,18 @@ title: "Wallet RPC documentation"
 
 # Wallet RPC
 
-**`monero-wallet-rpc`** [Overview](../interacting/monero-wallet-rpc-reference.md)
+**`xcash-wallet-rpc`** [Overview](../interacting/xcash-wallet-rpc-reference.md)
 
 ## Introduction
 
-This is a list of the monero-wallet-rpc calls, their inputs and outputs, and examples of each. The program monero-wallet-rpc replaced the rpc interface that was in simplewallet and then monero-wallet-cli.    
+This is a list of the xcash-wallet-rpc calls, their inputs and outputs, and examples of each. The program xcash-wallet-rpc replaced the rpc interface that was in simplewallet and then xcash-wallet-clii.    
 
 ## JSON-RPC Example
 The API is based on [JSON-RPC standard](https://en.wikipedia.org/wiki/JSON-RPC) version 2.0.
 
-All `monero-wallet-rpc` calls use the same JSON-RPC interface.
+All `xcash-wallet-rpc` calls use the same JSON-RPC interface.
 
-Assuming your `monero-wallet-rpc` is running on 127.0.0.1:18088, you would call it like this:
+Assuming your `xcash-wallet-rpc` is running on 127.0.0.1:18088, you would call it like this:
 
 ```json
 IP=127.0.0.1
@@ -28,7 +28,7 @@ curl \
     -H 'Content-Type: application/json'
 ```
 
-If `monero-wallet-rpc` was executed with the `--rpc-login` argument as `username:password`, then follow this example:
+If `xcash-wallet-rpc` was executed with the `--rpc-login` argument as `username:password`, then follow this example:
 
 ```json
 IP=127.0.0.1
@@ -519,7 +519,7 @@ $ curl -X POST http://127.0.0.1:18088/json_rpc -d '{"jsonrpc":"2.0","id":"0","me
 
 ### **create_wallet**
 
-Create a new wallet. You need to have set the argument "--wallet-dir" when launching monero-wallet-rpc to make this work.
+Create a new wallet. You need to have set the argument "--wallet-dir" when launching xcash-wallet-rpc to make this work.
 
 Alias:  _None_.
 
@@ -1198,7 +1198,7 @@ Inputs:
 
 Outputs:
 
--   _balance_  - unsigned int; The total balance of the current monero-wallet-rpc in session.
+-   _balance_  - unsigned int; The total balance of the current xcash-wallet-rpc in session.
 -   _unlocked_balance_  - unsigned int; Unlocked funds are those funds that are sufficiently deep enough in the Monero blockchain to be considered safe to spend.
 -   _multisig_import_needed_  - boolean; True if importing multisig data is needed for returning a correct balance.
 -   _time_to_unlock_  - unsigned int; Time (in seconds) before balance is safe to spend.
@@ -1341,7 +1341,7 @@ Inputs:  _None_.
 
 Outputs:
 
--   _height_  - unsigned int; The current monero-wallet-rpc's blockchain height. If the wallet has been offline for a long time, it may need to catch up with the daemon.
+-   _height_  - unsigned int; The current xcash-wallet-rpc's blockchain height. If the wallet has been offline for a long time, it may need to catch up with the daemon.
 
 Example:
 
@@ -2362,7 +2362,7 @@ $ curl -X POST http://127.0.0.1:18088/json_rpc -d '{"jsonrpc":"2.0","id":"0","me
 
 ### **open_wallet**
 
-Open a wallet. You need to have set the argument "--wallet-dir" when launching monero-wallet-rpc to make this work.
+Open a wallet. You need to have set the argument "--wallet-dir" when launching xcash-wallet-rpc to make this work.
 
 Alias:  _None_.
 
@@ -3027,7 +3027,7 @@ $ curl -X POST http://127.0.0.1:18088/json_rpc -d '{"jsonrpc":"2.0","id":"0","me
 
 ### **stop_wallet**
 
-Store the current state of any open wallet and exit the monero-wallet-rpc process.
+Store the current state of any open wallet and exit the xcash-wallet-rpc process.
 
 Alias:  _None_.
 

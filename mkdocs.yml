@@ -25,26 +25,26 @@ nav:
 
 
   - Monerod:
-    - Flags: 'interacting/monerod-reference.md'
+    - Flags: 'interacting/xcash-reference.md'
     - Setup Guide:
       - Systemd: 'running-node/monerod-systemd.md'
       - Tor & I2P: 'running-node/monerod-tori2p.md'
     - Sample Configs:
       - Home: 'interacting/monero-config-file.md'
   - Wallets:
-    - monero-wallet-gui: 'interacting/monero-wallet-gui-reference.md'
-    - monero-wallet-cli: 'interacting/xcash-wallet-cli-reference.md'
-    - monero-wallet-rpc: 'interacting/monero-wallet-rpc-reference.md'
+    - xcash-wallet-gui: 'interacting/xcash-wallet-gui-reference.md'
+    - xcash-wallet-clii: 'interacting/xcash-wallet-cli-reference.md'
+    - xcash-wallet-rpc: 'interacting/xcash-wallet-rpc-reference.md'
     - Advanced Transactions:
       - Multisignature: 'multisignature.md'
       - Offline Transaction Signing: 'cold-storage/offline-transaction-signing.md'
   - Blockchain Tools:
-    - monero-blockchain-export: 'interacting/monero-blockchain-export-reference.md'
-    - monero-blockchain-import: 'interacting/monero-blockchain-import-reference.md'
+    - xcash-blockchain-export: 'interacting/xcash-blockchain-export-reference.md'
+    - xcash-blockchain-import: 'interacting/xcash-blockchain-import-reference.md'
   - External:
-    - MoneroPulse: 'infrastructure/monero-pulse.md'
+    - MoneroPulse: 'infrastructure/xcash-pulse.md'
 - RPC Library:
-  - Node RPC: 'rpc-library/monerod-rpc.md'
+  - Node RPC: 'rpc-library/xcash-rpc.md'
   - Wallet RPC: 'rpc-library/wallet-rpc.md'
 - R&D:
   - 'development/index.md'

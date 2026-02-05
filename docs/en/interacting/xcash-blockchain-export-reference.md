@@ -1,7 +1,7 @@
 ---
-title: monero-blockchain-export - Reference
+title: xcash-blockchain-export - Reference
 ---
-# `monero-blockchain-export` - Reference
+# `xcash-blockchain-export` - Reference
 
 !!! note
     Nowadays, there is little usage for raw blockchain export / import. In the past the p2p blockchain download was much slower. Back than blockchain.raw file was used to speed up the process of bootstrapping a node. 
@@ -17,17 +17,17 @@ The tool works on your local copy of the blockchain. It does not require `monero
 
 ## Syntax
 
-`./monero-blockchain-export [options]`
+`./xcash-blockchain-export [options]`
 
 Example:
 
-`./monero-blockchain-export --help`
+`./xcash-blockchain-export --help`
 
 ## Running
 
 Go to directory where you unpacked Monero.
 
-`./monero-blockchain-export --stagenet --output-file=/tmp/blockchain.raw`
+`./xcash-blockchain-export --stagenet --output-file=/tmp/blockchain.raw`
 
 
 ## Options
@@ -42,7 +42,7 @@ Go to directory where you unpacked Monero.
 
 | Option              | Description
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| (missing)           | By default `monero-blockchain-export` assumes [mainnet](../infrastructure/networks.md#mainnet).
+| (missing)           | By default `xcash-blockchain-export` assumes [mainnet](../infrastructure/networks.md#mainnet).
 | `--stagenet`        | Export [stagenet](../infrastructure/networks.md#stagenet) blockchain.
 | `--testnet`         | Export [testnet](../infrastructure/networks.md#testnet) blockchain.
 
@@ -52,7 +52,7 @@ Specifying the log file path is not supported.
 
 | Option              | Description
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| `--log-level`       | `0-4` with `0` being minimal logging and `4` being full tracing. Defaults to `0`. These are general presets and do not directly map to severity levels. For example, even with minimal `0`, you may see some most important `INFO` entries. Example: <br />`./monero-blockchain-export --log-level=1`
+| `--log-level`       | `0-4` with `0` being minimal logging and `4` being full tracing. Defaults to `0`. These are general presets and do not directly map to severity levels. For example, even with minimal `0`, you may see some most important `INFO` entries. Example: <br />`./xcash-blockchain-export --log-level=1`
 
 ### Input
 
@@ -65,7 +65,7 @@ Specifying the log file path is not supported.
 
 | Option              | Description
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| `--output-file`     | Specify output file path. The default is `$DATA_DIR/export/blockchain.raw`. Example: <br />`./monero-blockchain-export --output-file=/tmp/blockchain.raw`
+| `--output-file`     | Specify output file path. The default is `$DATA_DIR/export/blockchain.raw`. Example: <br />`./xcash-blockchain-export --output-file=/tmp/blockchain.raw`
 | `--blocksdat`       | Output in blocks.dat format.
 | `--block-stop`      | Only export up to this block number. By default do the full export (value `0`).
 
