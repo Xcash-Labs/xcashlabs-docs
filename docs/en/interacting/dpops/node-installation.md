@@ -73,7 +73,7 @@ Types of Delegates
 - Manual reward distribution is required when no voting addresses are configured  
 - You can optionally restrict voting by specifying which XCA wallet addresses are allowed to vote for this delegate 
 
-The minimum payment amount will default to 1000 and and the delegate fee will default to 5%. Bot of these amounts can be changed later.
+The minimum payment amount will default to 1000 and and the delegate fee will default to 5%. Both of these amounts can be changed later.
 
 ---
 
@@ -132,3 +132,5 @@ Once complete, your delegate wallet details will be displayed.
 
 By default, the wallet is stored in:
 
+!!! info
+    By default, the wallet is named delegate-wallet and is stored in ~/xcash-labs/xcash-wallets/
