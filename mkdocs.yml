@@ -14,8 +14,8 @@ nav:
     - Overview: 'interacting/overview.md'
     - Tokenomics: 'technical-specs.md'
     - Networks: 'infrastructure/networks.md'
-  - Running A DPOPS Delegate:
-    - 'dpops/index.md'
+  - DPOPS Delegate Node:
+    - 'interacting/dpops/get-started.md'
   - Voting and Staking:
     - 'interacting/staking/index.md'
   - Download & Verify:
