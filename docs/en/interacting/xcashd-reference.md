@@ -5,11 +5,11 @@ title: xcashd - Reference
 
 ## Overview
 
-### Connects you to Monero network 
+### Connects you to XCash-Labs network 
 
-The Monero daemon `xcashd` keeps your computer synced up with the Monero network.
+The XCash-Labs daemon `xcashd` keeps your computer synced up with the XCash-Labs network.
 
-It downloads and validates the blockchain from the p2p network.
+It downloads and validates the blockchain from the p2p network.  In XCash-Labs xcashd can not process transactions uless the XCash-Labs DPOPS prcess is up and running.
 
 ### Not aware of your private keys
 
@@ -39,13 +39,13 @@ Many RPC calls use the daemon's [JSON RPC interface](../rpc-library/xcashd-rpc.m
 
 ## Running
 
-Go to directory where you unpacked Monero.
+Go to directory where you unpacked XCash-Labs.
 
 The [stagenet](../infrastructure/networks.md#stagenet) is what you should be using for learning and experimentation.
 
 ```
 ./xcashd --stagenet --detach                # run as a daemon in background
-tail -f ~/.bitmonero/stagenet/bitmonero.log  # watch the logs
+tail -f ~/xcash-labs/logs/xcash-daemon-log.txt  # watch the logs
 ./xcashd --stagenet exit                    # ask daemon to exit gracefully
 ```
 
@@ -53,7 +53,7 @@ The [mainnet](../infrastructure/networks.md#mainnet) is when you want to deal wi
 
 ```
 ./xcashd --detach                           # run as a daemon in background
-tail -f ~/.bitmonero/bitmonero.log           # watch the logs
+tail -f ~/xcash-labs/logs/xcash-daemon-log.txt.log           # watch the logs
 ./xcashd exit                               # ask daemon to exit gracefully
 ```
 
@@ -68,11 +68,11 @@ The following groups are only to make reference easier to follow. The daemon its
 | Option                    | Description
 |---------------------------|--------------------------------------------------------------------------------------------------------------------------------------
 | `--help`                  | Enlist available options.
-| `--version`               | Show `xcashd` version to stdout. Example output: <br>`Monero 'Oxygen Orion' (v0.17.1.8-release)`
+| `--version`               | Show `xcashd` version to stdout.
 | `--os-version`            | Show build timestamp and target operating system. Example output:<br>`OS: Linux #65-Ubuntu SMP Thu Dec 10 12:01:51 UTC 2020 5.4.0-59-generic`.
-| `--check-updates <arg>`   | One of: `disabled` \| `notify` \| `download`. Check for new versions of Monero and optionally download it. You should probably prefer your OS package manager to do the update, if possible. There is also unimplemented `update` option shown by the help system.<br><br>(=notify)
+| `--check-updates <arg>`   | One of: `disabled` \| `notify` \| `download`. Check for new versions of XCash-Labs and optionally download it. You should probably prefer your OS package manager to do the update, if possible. There is also unimplemented `update` option shown by the help system.<br><br>(=notify)
 
-#### Pick Monero network (blockchain)
+#### Pick XCash-Labs network (blockchain)
 
 | Option           | Description
 |------------------|------------------------------------------------------------------------------------------------
@@ -84,33 +84,33 @@ The following groups are only to make reference easier to follow. The daemon its
 
 | Option                      | Description
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------
-| `--log-file <arg>`          | Full path to the log file.<br>By default `xcashd` creates a `bitmonero.log` in the Monero [data directory](../interacting/overview.md#data-directory)
+| `--log-file <arg>`          | Full path to the log file.<br>By default `xcashd` creates a `xcash-daemon-log.txt` in the ~/xcash-labs/logs/ data directory.
 | `--log-level <arg>`         | `0-4` with `0` being minimal logging and `4` being full tracing. Defaults to `0`. These are general presets and do not directly map to severity levels. For example, even with minimal `0`, you may see some most important `INFO` entries. Temporarily changing to `1` allows for much better understanding of how the full node operates.<br><br>(=0)
 | `--max-log-file-size <arg>` | Soft limit in bytes for the log file. Once log file grows past that limit, `xcashd` creates the next log file with a UTC timestamp postfix `-YYYY-MM-DD-HH-MM-SS`.<br><br>In production deployments, you would probably prefer to use established solutions like logrotate instead. In that case, set `--max-log-file-size=0` to prevent xcashd from managing the log files.<br><br>(=104850000)
 | `--max-log-files <arg>`     | Limit on the number of log files. The oldest log files are removed. In production deployments, you would probably prefer to use established solutions like logrotate instead.<br><br>(=10)
 
 #### Server
 
-`xcashd` defaults are adjusted for running it occasionally on the same computer as your Monero wallet.
+`xcashd` defaults are adjusted for running it occasionally on the same computer as your XCash-Labs wallet.
 
 The following options will be helpful if you intend to have an always running node &mdash; most likely on a remote server or your own separate PC.
 
 | Option                        | Description
 |-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| `--config-file <arg>`         | Full path to the [configuration file](../interacting/monero-config-file.md). By default `xcashd` looks for `bitmonero.conf` in the Monero [data directory](../interacting/overview.md#data-directory).
+| `--config-file <arg>`         | Full path to the configuration file
 | `--data-dir <arg>`            | Full path to data directory. This is where the blockchain, log files, and p2p network memory are stored. For defaults and details see [data directory](../interacting/overview.md#data-directory).
-| `--pidfile <arg>`             | Full path to the PID file. Works only with `--detach`. Example: <br>`./xcashd --detach --pidfile=/run/monero/xcashd.pid`
+| `--pidfile <arg>`             | Full path to the PID file. Works only with `--detach`.
 | `--detach`                    | Go to background (decouple from the terminal). This is useful for long-running / server scenarios. Typically, you will also want to manage `xcashd` daemon with systemd or similar. By default `xcashd` runs in a foreground.
 | `--non-interactive`           | Do not require tty in a foreground mode. Helpful when running in a container. By default `xcashd` runs in a foreground and opens stdin for reading. This breaks containerization because no tty gets assigned and `xcashd` process crashes. You can make it run in a background with `--detach` but this is inconvenient in a containerized environment because the canonical usage is that the container waits on the main process to exist (forking makes things more complicated).
 | `--max-txpool-weight <arg>`   | Set maximum transactions pool size in bytes. These are transactions pending for confirmations (not included in any block).<br><br>(=648000000)
-| `--enforce-dns-checkpointing` | The emergency checkpoints set by [MoneroPulse](../infrastructure/xcash-pulse.md) operators will be enforced. It is probably a good idea to set enforcing for unattended nodes. <br><br>If encountered block hash does not match corresponding checkpoint, the local blockchain will be rolled back a few blocks, effectively blocking following what MoneroPulse operators consider invalid fork. The log entry will be produced:  `ERROR` `Local blockchain failed to pass a checkpoint, rolling back!` Eventually, the alternative ("fixed") fork will get heavier and the node will follow it, leaving the "invalid" fork behind.<br><br>By default checkpointing only notifies about discrepancy by producing the following log entry: `ERROR` `WARNING: local blockchain failed to pass a MoneroPulse checkpoint, and you could be on a fork. You should either sync up from scratch, OR download a fresh blockchain bootstrap, OR enable checkpoint enforcing with the --enforce-dns-checkpointing command-line option`.<br><br>Reference: [source code](https://github.com/monero-project/monero/blob/22a6591a70151840381e327f1b41dc27cbdb2ee6/src/cryptonote_core/blockchain.cpp#L3614).
-| `--disable-dns-checkpoints`   | The [MoneroPulse](../infrastructure/xcash-pulse.md) checkpoints set by core developers will be discarded. The checkpoints are apparently still fetched though.
-| `--ban-list <arg>`            | Specify ban list file, one IP address per line. This was introduced as an emergency measure to deal with large DDoS attacks on Monero p2p network in Dec 2020 / Jan 2021. Example: <br>`./xcashd --ban-list=block.txt`. Here is the popular [block.txt](https://gui.xmr.pm/files/block.txt) file.<br><br>It is **not recommended** to statically ban any IP addresses unless you absolutely need to. Banning IPs often excludes the most vulnerable users who are forced to operate entirely behind Tor or other anonymity networks.
-| `--enable-dns-blocklist`      | Similar to `--ban-list` but instead of a static file uses dynamic IP blocklist available as DNS TXT entries. The DNS blocklist is centrally managed by Monero contributors.
+| `--enforce-dns-checkpointing` | The emergency checkpoints set by [XCashPulse](../infrastructure/xcash-pulse.md) operators will be enforced. It is probably a good idea to set enforcing for unattended nodes. <br><br>If encountered block hash does not match corresponding checkpoint, the local blockchain will be rolled back a few blocks, effectively blocking following what XCashPulse operators consider invalid fork. The log entry will be produced:  `ERROR` `Local blockchain failed to pass a checkpoint, rolling back!` Eventually, the alternative ("fixed") fork will get heavier and the node will follow it, leaving the "invalid" fork behind.<br><br>By default checkpointing only notifies about discrepancy by producing the following log entry: `ERROR` `WARNING: local blockchain failed to pass a XCashPulse checkpoint, and you could be on a fork. You should either sync up from scratch, OR download a fresh blockchain bootstrap, OR enable checkpoint enforcing with the --enforce-dns-checkpointing command-line option`.<br><br>Reference:
+| `--disable-dns-checkpoints`   | The [XCashPulse](../infrastructure/xcash-pulse.md) checkpoints set by core developers will be discarded. The checkpoints are apparently still fetched though.
+| `--ban-list <arg>`            | Specify ban list file, one IP address per line. This was introduced as an emergency measure to deal with large DDoS attacks on XCash-Labs p2p network in Dec 2020 / Jan 2021. Example: <br>`./xcashd --ban-list=block.txt`. Here is the popular [block.txt](https://gui.xmr.pm/files/block.txt) file.<br><br>It is **not recommended** to statically ban any IP addresses unless you absolutely need to. Banning IPs often excludes the most vulnerable users who are forced to operate entirely behind Tor or other anonymity networks.
+| `--enable-dns-blocklist`      | Similar to `--ban-list` but instead of a static file uses dynamic IP blocklist available as DNS TXT entries. The DNS blocklist is centrally managed by XCash contributors.
 
 #### P2P network
 
-The following options define how your node participates in Monero peer-to-peer network.
+The following options define how your node participates in XCash-Labs peer-to-peer network.
 This is for node-to-node communication. The following options do **not** affect [wallet-to-node](#node-rpc-api) interface.
 
 The node and peer words are used interchangeably.
@@ -118,7 +118,7 @@ The node and peer words are used interchangeably.
 | Option                       | Description
 |------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
 | `--p2p-bind-ip <arg>`        | IPv4 network interface to bind to for p2p network protocol. Default value `0.0.0.0` binds to all network interfaces. This is typically what you want. <br><br>You must change this if you want to constrain binding, for example to force working through Tor: <br>`./xcashd --p2p-bind-ip 127.0.0.1 --proxy 127.0.0.1:9050 --no-igd  --hide-my-port`<br><br>(=0.0.0.0)
-| `--p2p-bind-port <arg>`      | TCP port to listen for p2p network connections. Defaults to `18080` for mainnet, `28080` for testnet, and `38080` for stagenet. You normally wouldn't change that. This is helpful to run several nodes on your machine to simulate private Monero p2p network (likely using private Testnet). Example: <br/>`./xcashd --p2p-bind-port=48080`
+| `--p2p-bind-port <arg>`      | TCP port to listen for p2p network connections. Defaults to `18080` for mainnet, `28080` for testnet, and `38080` for stagenet. You normally wouldn't change that. This is helpful to run several nodes on your machine to simulate private XCash-Labs p2p network (likely using private Testnet). Example: <br/>`./xcashd --p2p-bind-port=48080`
 | `--p2p-external-port <arg>`  | TCP port to listen for p2p network connections on your router. Relevant if you are behind a NAT and still want to accept incoming connections. You must then set this to relevant port on your router. This is to let `xcashd` know what to advertise on the network. Default is same p2p-bind-port.
 | `--p2p-use-ipv6`             | Enable IPv6 for p2p (disabled by default).
 | `--p2p-bind-ipv6-address <arg>` | IPv6 network interface to bind to for p2p network protocol. Default value `::` binds to all network interfaces.<br><br>(=::)
@@ -142,13 +142,13 @@ The node and peer words are used interchangeably.
 
 #### Tor/I2P and proxies
 
-This is experimental. It may be best to start with this [guide](https://github.com/monero-project/monero/blob/master/docs/ANONYMITY_NETWORKS.md#p2p-commands).
+This is experimental.
 
 | Option                       | Description
 |------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| `--tx-proxy <arg>`           | Send out your local transactions through SOCKS5 proxy (Tor or I2P). Format:<br>`<network-type>,<socks-ip:port>[,max_connections][,disable_noise]` <br><br>Example:<br>`./xcashd --tx-proxy=tor,127.0.0.1:9050,16`<br><br>This was introduced to make publishing transactions over Tor easier (no need for torsocks) while allowing clearnet for blocks at the same time (while torsocks affected everything).<br><br>Adding `,disable_noise`: If the user disables "noise" (i.e. `--tx-proxy=tor,127.0.0.1:9050,disable_noise`), then the tx is "fluffed" to outbound Onion and I2P peers, and the receiving hidden service will immediately fluff the transaction to ipv4/6 peers. This will speed up tx broadcast. [more info](https://github.com/monero-project/monero/pull/6354#pullrequestreview-399554356)<br><br>Note that forwarded transactions (those not originating from the connected wallet(s)) will still be relayed over clearnet.<br>See this [guide](https://github.com/monero-project/monero/blob/master/docs/ANONYMITY_NETWORKS.md#p2p-commands) and [commit](https://github.com/monero-project/monero/pull/6021).
+| `--tx-proxy <arg>`           | Send out your local transactions through SOCKS5 proxy (Tor or I2P). Format:<br>`<network-type>,<socks-ip:port>[,max_connections][,disable_noise]` <br><br>Example:<br>`./xcashd --tx-proxy=tor,127.0.0.1:9050,16`<br><br>This was introduced to make publishing transactions over Tor easier (no need for torsocks) while allowing clearnet for blocks at the same time (while torsocks affected everything).<br><br>Adding `,disable_noise`: If the user disables "noise" (i.e. `--tx-proxy=tor,127.0.0.1:9050,disable_noise`), then the tx is "fluffed" to outbound Onion and I2P peers, and the receiving hidden service will immediately fluff the transaction to ipv4/6 peers. This will speed up tx broadcast.
 | `--anonymous-inbound <arg>`  | Allow anonymous incoming connections to your Onion or I2P hidden service's P2P interface. Format: <br>`<hidden-service-address>,<[bind-ip:]port>[,max_connections]`<br><br>Example:<br>`./xcashd --anonymous-inbound yourlongv3onionaddress.onion:18084,127.0.0.1:18084,100`.<br><br>Note: You'll also need to setup a hidden service in the respective Tor or I2P config. See the setup guide [here](../running-node/xcashd-tori2p.md).
-| `--pad-transactions`         | Pad relayed transactions to next 1024 bytes to help defend against traffic volume analysis. This only makes sense if you are behind Tor or I2P. See [commit](https://github.com/monero-project/monero/pull/4787).
+| `--pad-transactions`         | Pad relayed transactions to next 1024 bytes to help defend against traffic volume analysis. This only makes sense if you are behind Tor or I2P.
 | `--proxy <arg>`              | Network communication through proxy. Works with any service that supports SOCKS4, including Tor, i2p (outproxy), and commercial VPN/proxy services. SOCKS5 support is anticipated in the future. Enabling this setting sends all traffic through this proxy. Can be used in conjunction with `--tx-proxy`, in which case transaction broadcasts originating from the connected wallet(s) will be sent through Tor or i2p as specified in `--tx-proxy`, and all other traffic will be sent through the SOCKS proxy configured with `--proxy`. Format:<br>`<socks-ip:port>`
 
 #### Node RPC API
@@ -182,8 +182,8 @@ The following options define how the API behaves.
 | `--rpc-max-connections-per-private-ip <arg>` | Maximum number of RPC connections from the same private IP address.<br><br>(=25)
 | `--rpc-response-soft-limit <arg>`     | Maximum response bytes that can be queued, enforced at next response attempt.<br><br>(=26214400)
 | `--rpc-ssl <arg>`                     | Enable TLS on RPC connections. One of: `enabled` \| `disabled` \| `autodetect`. You **should** enable this if you connect a remote wallet.<br><br>(=autodetect)
-| `--rpc-ssl-private-key <arg>`         | Path to server's private key in PEM format. Generate it with `monero-gen-ssl-cert` tool. This is to facilitate server authentication to client.
-| `--rpc-ssl-certificate <arg>`         | Path to server's certificate in PEM format. Generate it with `monero-gen-ssl-cert` tool. This is to facilitate server authentication to client.
+| `--rpc-ssl-private-key <arg>`         | Path to server's private key in PEM format. Generate it with `xcash-gen-ssl-cert` tool. This is to facilitate server authentication to client.
+| `--rpc-ssl-certificate <arg>`         | Path to server's certificate in PEM format. Generate it with `xcash-gen-ssl-cert` tool. This is to facilitate server authentication to client.
 | `--rpc-ssl-allowed-fingerprints <arg>`| List of certificate fingerprints to accept. This is a way to authenticate clients.
 | `--rpc-ssl-allow-any-cert`            | Allow any certificate of connecting client.
 | `--rpc-ssl-ca-certificates <arg>`     | Path to file containing concatenated PEM format certificate(s) to replace system CA(s).
@@ -201,15 +201,15 @@ The following options define how the API behaves.
 | `--no-zmq`                            | Disable ZMQ RPC server. You **should** use this option to limit attack surface and number of unnecessarily open ports (the ZMQ server is unfinished thing and you are unlikely to ever use it).
 
 
-#### Accepting Monero
+#### Accepting XCash-Labs (XCK)
 
-These are network notifications offered by `xcashd`. There are also wallet notifications like `--tx-notify` offered by `xcash-wallet-rpc` [here](https://github.com/monero-project/monero/pull/4333).
+These are network notifications offered by `xcashd`. There are also wallet notifications like `--tx-notify` offered by `xcash-wallet-rpc`
 
 | Option                       | Description
 |------------------------------|------------------------------------------------------------------------------------------------
 | `--block-notify <arg>`       | Run a program for each new block. The `<arg>` must be a **full path**. If the `<arg>` contains `%s` it will be replaced by the block hash. Example: <br>`./xcashd --block-notify="/usr/bin/echo %s"`<br><br>Block notifications are good for immediate reaction. However, you should always assume you will miss some block notifications and you should independently poll the API to cover this up. <br><br>Mind blockchain reorganizations. Block notifications can revert to same and past heights. Small reorganizations are natural and happen every day.
-| `--block-rate-notify <arg>`  | Run a program when the number of blocks received in the recent past deviates significantly from the expectation. The `<arg>` must be a **full path**. The `<arg`> can contain any of `%t`, `%b`, `%e` symbols to interpolate: <br><br>`%t`: the number of minutes in the observation window<br><br>`%b`: the number of blocks observed in that window<br><br>`%e`: the ideal number of blocks expected in that window<br><br> The option will let you know if the network hash rate drops by a lot. This may be indicative of a large section of the network miners moving off to mine a private chain, to be later released to the network. Note that if this event triggers, it is not incontrovertible proof that this is happening. It might just be chance. The longer the window (the %t parameter), and the larger the distance between actual and expected number of blocks, the more indicative it is of a possible chain reorg double-spend attack being prepared.<br><br>**Recommendation:** unless you run economically significant Monero exchange or operation, do **not** act on this data. It is hard to calibrate and easy to misinterpret. If this is a real attack, it will target high-liquidity entities and not small merchants.
-| `--reorg-notify <arg>`       | Run a program when reorganization happens (ie, at least one block is removed from the top of the blockchain). The `<arg>` must be a **full path**. The `<arg`> can contain any of `%s`, `%h`, `%n` symbols to interpolate: <br><br>`%s`: the height at which the split occurs <br><br>`%h`: the height of the new blockchain<br><br>`%d`: the number of blocks discarded from the old chain <br><br>`%n`: the number of blocks being added <br><br> The option will let you know when a block is removed from the chain to be replaced by other blocks. This happens when a 51% attack occurs, but small reorgs also happen in the normal course of things. The `%d` parameter will be set to the number of blocks discarded from the old chain (so if this is higher than the number of confirmations you wait to act upon an incoming payment, that payment might have been cancelled). The `%n` parameter wil be set to the number of blocks in the new chain (so if this is higher than the number of confirmations you wait to act upon an incoming payment, any incoming payment in the first block will be automatically acted upon by your platform). <br><br>**Recommendation**: unless you run economically significant Monero exchange or operation, you do **not** need to bother with this option. Simply account for reorganizations by requiring at least 10 confirmations before shipping valuable goods.
+| `--block-rate-notify <arg>`  | Run a program when the number of blocks received in the recent past deviates significantly from the expectation. The `<arg>` must be a **full path**. The `<arg`> can contain any of `%t`, `%b`, `%e` symbols to interpolate: <br><br>`%t`: the number of minutes in the observation window<br><br>`%b`: the number of blocks observed in that window<br><br>`%e`: the ideal number of blocks expected in that window<br><br> The option will let you know if the network hash rate drops by a lot. This may be indicative of a large section of the network miners moving off to mine a private chain, to be later released to the network. Note that if this event triggers, it is not incontrovertible proof that this is happening. It might just be chance. The longer the window (the %t parameter), and the larger the distance between actual and expected number of blocks, the more indicative it is of a possible chain reorg double-spend attack being prepared.<br><br>**Recommendation:** unless you run economically significant XCash-Labs exchange or operation, do **not** act on this data. It is hard to calibrate and easy to misinterpret. If this is a real attack, it will target high-liquidity entities and not small merchants.
+| `--reorg-notify <arg>`       | Run a program when reorganization happens (ie, at least one block is removed from the top of the blockchain). The `<arg>` must be a **full path**. The `<arg`> can contain any of `%s`, `%h`, `%n` symbols to interpolate: <br><br>`%s`: the height at which the split occurs <br><br>`%h`: the height of the new blockchain<br><br>`%d`: the number of blocks discarded from the old chain <br><br>`%n`: the number of blocks being added <br><br> The option will let you know when a block is removed from the chain to be replaced by other blocks. This happens when a 51% attack occurs, but small reorgs also happen in the normal course of things. The `%d` parameter will be set to the number of blocks discarded from the old chain (so if this is higher than the number of confirmations you wait to act upon an incoming payment, that payment might have been cancelled). The `%n` parameter wil be set to the number of blocks in the new chain (so if this is higher than the number of confirmations you wait to act upon an incoming payment, any incoming payment in the first block will be automatically acted upon by your platform). <br><br>**Recommendation**: unless you run economically significant XCash-Labs exchange or operation, you do **not** need to bother with this option. Simply account for reorganizations by requiring at least 10 confirmations before shipping valuable goods.
 
 #### Performance
 
@@ -217,52 +217,16 @@ These are advanced options that allow you to optimize performance of your `xcash
 
 | Option                          | Description
 |---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| `--prune-blockchain`            | Pruning saves 2/3 of disk space w/o degrading functionality. For maximum effect this should be used already **on the first sync**. If you add this option later the past data will only be pruned logically w/o shrinking the file size and the gain will be delayed. <br><br>If you already have unpruned blockchain, see the `monero-blockchain-prune` tool. <br><br>The drawback is that you will contribute less to Monero P2P network in terms of helping new nodes to sync up (up to 1/8 of normal contribution). You will still be useful regarding relaying new transactions and blocks though.
-| `--sync-pruned-blocks`          | Accept pruned blocks instead of pruning yourself. It should save network transfer when used with `--prune-blockchain`. See the [commit](https://github.com/monero-project/monero/commit/8330e772f1ed680a54833d25c4d17d09a99ab8d6) and [comments](https://web.getmonero.org/2019/09/08/logs-for-the-dev-meeting-held-on-2019-09-08.html).
+| `--prune-blockchain`            | Pruning saves 2/3 of disk space w/o degrading functionality. For maximum effect this should be used already **on the first sync**. If you add this option later the past data will only be pruned logically w/o shrinking the file size and the gain will be delayed. <br><br>If you already have unpruned blockchain, see the `xcash-blockchain-prune` tool. <br><br>The drawback is that you will contribute less to XCash-Labs P2P network in terms of helping new nodes to sync up (up to 1/8 of normal contribution). You will still be useful regarding relaying new transactions and blocks though.
+| `--sync-pruned-blocks`          | Accept pruned blocks instead of pruning yourself. It should save network transfer when used with `--prune-blockchain`.
 | `--db-sync-mode <arg>`          | Specify sync option, using format:<br>`[safe|fast|fastest]:[sync|async]:[<nblocks_per_sync>[blocks]|<nbytes_per_sync>[bytes]]`<br><br>In the event of a system crash or power failure, `fast:async:*` mode can result in a corrupted blockchain. It should not corrupt if `xcashd` crashes.<br>If this flag not set, xcashd will automatically switch to `safe:sync` when near the chain tip.<br><br>(=fast:async:250000000bytes and auto-switch to `safe:sync` when near the chain tip.)
 | `--max-concurrency <arg>`       | Max number of threads to use for parallel jobs. The default value `0` uses the number of CPU threads.<br><br>(=0)
 | `--prep-blocks-threads <arg>`   | Max number of threads to use when computing block hashes (PoW) in groups. Defaults to 4. Decrease this if you don't want `xcashd` hog your computer when syncing.<br><br>(=4)
-| `--fast-block-sync <arg>`       | Sync up most of the way by using embedded, "known" block hashes. Pass `1` to turn on and `0` to turn off. This is on (`1`) by default. Normally, for every block the full node must calculate the block hash to verify miner's proof of work. Because the RandomX PoW used in Monero is very expensive (even for verification), `xcashd` offers skipping these calculations for old blocks. In other words, it's a mechanism to trust `xcashd` binary regarding old blocks' PoW validity, to sync up faster.<br><br>(=1)
+| `--fast-block-sync <arg>`       | Sync up most of the way by using embedded, "known" block hashes. Pass `1` to turn on and `0` to turn off. This is on (`1`) by default. Normally, for every block the full node must calculate the block hash to verify miner's proof of work.
 | `--block-sync-size <arg>`       | How many blocks are processed in a single batch during chain synchronization. By default this is 20 blocks for newer history and 100 blocks for older history ("pre v4"). Default behavior is represented by value `0`. Example:<br>`./xcashd --block-sync-size=50`
 | `--bootstrap-daemon-address <arg>` | The host:port of a "bootstrap" remote open node that the connected wallets can use while this node is still not fully synced. Example:<br/>`./xcashd --bootstrap-daemon-address=opennode.xmr-tw.org:18089`. The node will forward selected RPC calls to the bootstrap node. The wallet will handle this automatically and transparently. Obviously, such bootstrapping phase has privacy implications similar to directly using a remote node.
 | `--bootstrap-daemon-login <arg>`   | Specify username:password for the bootstrap daemon login (if required). This considers the RPC interface used by the wallet. Normally, open nodes do not require any credentials.
-| `--no-sync`                     | Do not sync up. Continue using bootstrap daemon instead (if set). See [commit](https://github.com/monero-project/monero/pull/5195).
-
-#### Mining
-
-The following options configure **solo mining** using **CPU** with the standard software stack `xcashd`. This is mostly useful for:
-
-* generating your [stagenet](../infrastructure/networks.md#stagenet) or [testnet](../infrastructure/networks.md#testnet) coins
-* experimentation and learning
-* if you have access to vast CPU resources
-
-Be advised though that real mining happens **in pools** like p2pool, and with dedicated miner software like xmrig.
-
-| Option                             | Description
-|------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| `--start-mining <arg>`             | Specify wallet address to mining for. **This must be a [primary address](../public-address/standard-address.md)!** It can be neither a subaddress nor integrated address.
-| `--mining-threads <arg>`           | Specify mining threads count. By default ony one thread will be used. For best results, set it to number of your physical cores.
-| `--extra-messages-file <arg>`      | Specify file for extra messages to include into coinbase transactions.
-| `--bg-mining-enable`               | Enable unobtrusive mining. In this mode mining will use a small percentage of your system resources to never noticeably slow down your computer. This is intended to encourage people to mine to improve decentralization. That being said chances of finding a block are diminishingly small with solo CPU mining, and even lesser with its unobtrusive version. You can tweak the unobtrusivness / power trade-offs with the further `--bg-*` options below.
-| `--bg-mining-ignore-battery`       | If true, assumes plugged in when unable to query system power status.
-| `--bg-mining-min-idle-interval <arg>` | Specify min lookback interval in seconds for determining idle state.
-| `--bg-mining-idle-threshold <arg>` | Specify minimum avg idle percentage over lookback interval.
-| `--bg-mining-miner-target <arg>`   | Specify maximum percentage cpu use by miner(s).
-
-#### Testing Monero itself
-
-These options are useful for Monero project developers and testers. Normal users shouldn't be concerned with these.
-
-| Option                             | Description
-|------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| `--keep-alt-blocks`                | Keep alternative blocks on restart. May help with researching reorgs etc. [Commit](https://github.com/monero-project/monero/pull/5524). Research project by [noncesense research lab](https://noncesense-research-lab.github.io/).
-| `--test-drop-download`             | For net tests: in download, discard ALL blocks instead checking/saving them (very fast).
-| `--test-drop-download-height <arg>`| Like test-drop-download but discards only after around certain height. By default `0`.
-| `--regtest`                        | Run in a regression testing mode.
-| `--keep-fakechain`                 | Don't delete any existing database when in fakechain mode.
-| `--fixed-difficulty <arg>`         | Fixed difficulty used for testing. By default `0`.
-| `--test-dbg-lock-sleep <arg>`      | Sleep time in ms, defaults to 0 (off), used to debug before/after locking mutex. Values 100 to 1000 are good for tests.
-| `--save-graph`                     | Save data for dr Monero.
+| `--no-sync`                     | Do not sync up. Continue using bootstrap daemon instead (if set).
 
 #### Legacy
 
@@ -301,7 +265,7 @@ You can also type commands directly in the console of the running `xcashd` (if n
 | Option                             | Description
 |------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
 | `help [<command>]`                 | Show help for `<command>`.
-| `version`                          | Show version information. Example output:<br>`Monero 'Boron Butterfly' (v0.14.0.0-release)`
+| `version`                          | Show version information. Example output:
 | `status`                           | Show status. Example output:<br>`Height: 186754/186754 (100.0%) on stagenet, not mining, net hash 317 H/s, v9, up to date, 8(out)+0(in) connections, uptime 0d 3h 48m 47s`
 
 #### P2P network
@@ -355,23 +319,14 @@ You can also type commands directly in the console of the running `xcashd` (if n
 | `exit`, `stop_daemon`                                      | Ask daemon to exit gracefully. The `exit` and `stop_daemon` are identical (one is alias of the other).
 | `set_log <level>|<{+,-,}categories>`                       | Set the current log level/categories where `<level>` is a number 0-4.
 | `print_status`                                             | Show if daemon is running.
-| `update (check|download)`                                  | Check if update is available and optionally download it. The hash is SHA-256. On linux use `sha256sum` to verify. Example output:<br>`Update available: v0.13.0.4: https://downloads.getmonero.org/cli/monero-linux-x64-v0.13.0.4.tar.bz2, hash 693e1a0210201f65138ace679d1ab1928aca06bb6e679c20d8b4d2d8717e50d6`<br/>`Update downloaded to: /opt/monero-v0.13.0.2/monero-linux-x64-v0.13.0.4.tar.bz2`
+| `update (check|download)`                                  | Check if update is available and optionally download it. The hash is SHA-256. On linux use `sha256sum` to verify.
 
-#### Mining
-
-| Option                                                     | Description
-|------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| `show_hr`                                                  | Ask `xcashd` daemon to print current hash rate. Relevant only if `xcashd` is mining.
-| `hide_hr`                                                  | Ask `xcashd` daemon to stop printing current hash rate. Relevant only if `xcashd` is mining.
-| `start_mining <addr> [<threads>] [do_background_mining] [ignore_battery]`   | Ask `xcashd`daemon to start mining. Block reward will go to `<addr>`.
-| `stop_mining`                                              | Ask `xcashd` daemon to stop mining.
-
-#### Testing Monero itself
+#### Testing XCash-Labs itself
 
 | Option                                                     | Description
 |------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
-| `start_save_graph`                                         | Start saving data for dr Monero.
-| `stop_save_graph`                                          | Stop saving data for dr Monero.
+| `start_save_graph`                                         | Start saving data for dr XCash-Labs.
+| `stop_save_graph`                                          | Stop saving data for dr XCash-Labs.
 
 #### Legacy
 
