@@ -17,7 +17,7 @@ nav:
   - Download & Verify:
     - Download: 'interacting/download-xcash-binaries.md'
     - Verify: 'interacting/verify-xcash-binaries.md'
-  - Monerod:
+  - xcashd:
     - Flags: 'interacting/xcash-reference.md'
     - Setup Guide:
       - Systemd: 'running-node/monerod-systemd.md'
@@ -37,7 +37,7 @@ nav:
   - Voting and Staking:
     - 'interacting/staking/index.md'
   - External:
-    - MoneroPulse: 'infrastructure/xcash-pulse.md'
+    - XCashPulse: 'infrastructure/xcash-pulse.md'
 - RPC Library:
   - Node RPC: 'rpc-library/xcash-rpc.md'
   - Wallet RPC: 'rpc-library/wallet-rpc.md'
