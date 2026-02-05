@@ -21,9 +21,6 @@ nav:
     - 'interacting/staking/index.md'
     - Guides:
       - dpops: 'installation-process/configure-delegate.md'
-
-
-
   - Monerod:
     - Flags: 'interacting/xcash-reference.md'
     - Setup Guide:
@@ -69,14 +66,11 @@ nav:
     - Legacy: 'mnemonics/legacy.md'
     - MyMonero: 'mnemonics/mymonero.md'
     - Polyseed: 'mnemonics/polyseed.md'
-  - Proof of Work: # This section needs improvement
+  - Delegated Proof of Private Stake:
     - 'proof-of-work/index.md'
     - PoW in Cryptocurrencies: 'proof-of-work/pow-in-cryptocurrencies.md'
     - CryptoNight: 'proof-of-work/cryptonight.md'
     - RandomX: 'proof-of-work/random-x.md'
-#- Accepting Monero:
-#    - Overview: 'accepting-monero/overview.md'
-
 
 theme:
   name: material
