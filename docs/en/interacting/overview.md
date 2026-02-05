@@ -52,7 +52,7 @@ extras/xcash-blockchain-depth
 
 | Executable                 | Description
 | -------------------------- |:-----------------------------------------------------------------------------------------------------------------------------------
-| `xcashd`                  | The full node daemon. Does not require a wallet. <br />[Documentation](../interacting/xcash-reference.md).
+| `xcashd`                  | The full node daemon. Does not require a wallet. <br />[Documentation](../interacting/xcashd-reference.md).
 | `xcash-wallet-gui`        | Wallet logic and __graphical__ user interface.
 | `xcash-wallet-cli`        | Wallet logic and __commandline__ user interface.
 | `xcash-wallet-rpc`        | Wallet logic and __HTTP API__ (JSON-RPC protocol). <br />Requires `xcashd` running.
@@ -86,7 +86,7 @@ Also, please note that `xcashd` and `xcash-wallet-rpc` are both accessible via t
 - [xcash-rpc](../rpc-library/xcash-rpc.md)
 - [wallet-rpc](../rpc-library/wallet-rpc.md)
 
-All wallet implementations depend on a fully synchronized `xcashdx` running.
+All wallet implementations depend on a fully synchronized `xcashd` running.
 
 | Executable                                              | p2p network | commands via keyboard                          | HTTP API                           | GUI |
 | ------------------------------------------------------- | :---------: | :--------------------------------------------: | :--------------------------------: | :-: |
