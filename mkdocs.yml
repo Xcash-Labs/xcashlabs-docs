@@ -16,6 +16,7 @@ nav:
     - Networks: 'infrastructure/networks.md'
   - DPOPS Delegate Node:
     - 'interacting/dpops/get-started.md'
+    - 'interacting/dpops/server-setup-guide.md'
   - Download & Verify:
     - Download: 'interacting/download-xcash-binaries.md'
     - Verify: 'interacting/verify-xcash-binaries.md'

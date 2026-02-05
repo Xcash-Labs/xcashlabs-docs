@@ -51,15 +51,10 @@ blockchain.
 
 To run a delegate node:
 
-1. Prepare a server (Linux recommended)  
+1. Prepare a server (Linux)  
 2. Install the delegate node software  
 3. Register yourself as a delegate  
-4. Get elected by voters  
-
-Refer to:
-- Server setup guide  
-- Delegate node installation guide  
-- Delegate registration guide  
+4. Get elected by voters   
 
 ---
 
