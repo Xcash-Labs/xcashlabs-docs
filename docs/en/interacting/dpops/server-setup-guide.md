@@ -38,8 +38,6 @@ This creates:
 
 # Server Requirements
 
-<div style="overflow-x:auto">
-
 | Requirement | Minimum | Recommended |
 |---|---:|---:|
 | **OS** | Ubuntu 22.04 | Ubuntu 24.04 LTS |
@@ -47,8 +45,6 @@ This creates:
 | **RAM** | 8 GB | 32 GB |
 | **Storage** | 100 GB | 1 TB |
 | **Bandwidth** | 100 Mbps | 500 Mbps |
-
-</div>
 
 ---
 
@@ -152,29 +148,6 @@ sudo timedatectl set-ntp true
 sudo systemctl restart systemd-timesyncd
 ```
 
----
-
-# Firewall Setup
-
-```bash
-sudo apt install ufw -y
-sudo ufw allow OpenSSH
-sudo ufw enable
-sudo ufw status
-```
-
----
-
-# Install Fail2Ban
-
-```bash
-sudo apt install fail2ban -y
-sudo systemctl enable fail2ban
-sudo systemctl start fail2ban
-```
-
----
-
 # Optional: Disable Root Login
 
 Once SSH keys work:
@@ -214,14 +187,5 @@ Recommended for public delegates.
 
 - SSH key login works  
 - Logged in as `xcash`  
-- System updated  
-- Firewall enabled  
-- Time synced  
-
----
-
-# Next Step
-
-Your server is ready.
-
-➡ Continue to **Delegate Node Installation Guide**
+- System updated   
+- Time synced
