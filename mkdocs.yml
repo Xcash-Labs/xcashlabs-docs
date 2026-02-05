@@ -16,12 +16,10 @@ nav:
     - Networks: 'infrastructure/networks.md'
   - DPOPS Delegate Node:
     - 'interacting/dpops/get-started.md'
-  - Voting and Staking:
-    - 'interacting/staking/index.md'
   - Download & Verify:
     - Download: 'interacting/download-xcash-binaries.md'
     - Verify: 'interacting/verify-xcash-binaries.md'
-  - xcashd:
+  - XCashd:
     - Flags: 'interacting/xcashd-reference.md'
     - Setup Guide:
       - Systemd: 'running-node/monerod-systemd.md'
@@ -35,6 +33,8 @@ nav:
     - Advanced Transactions:
       - Multisignature: 'multisignature.md'
       - Offline Transaction Signing: 'cold-storage/offline-transaction-signing.md'
+  - Voting and Staking:
+    - 'interacting/staking/index.md'
   - Blockchain Tools:
     - xcash-blockchain-export: 'interacting/xcash-blockchain-export-reference.md'
     - xcash-blockchain-import: 'interacting/xcash-blockchain-import-reference.md'
