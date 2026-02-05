@@ -17,10 +17,6 @@ nav:
   - Download & Verify:
     - Download: 'interacting/download-xcash-binaries.md'
     - Verify: 'interacting/verify-xcash-binaries.md'
-  - Staking:
-    - 'interacting/staking/index.md'
-    - Guides:
-      - dpops: 'installation-process/configure-delegate.md'
   - Monerod:
     - Flags: 'interacting/xcash-reference.md'
     - Setup Guide:
@@ -38,6 +34,8 @@ nav:
   - Blockchain Tools:
     - xcash-blockchain-export: 'interacting/xcash-blockchain-export-reference.md'
     - xcash-blockchain-import: 'interacting/xcash-blockchain-import-reference.md'
+  - Voting and Staking:
+    - 'interacting/staking/index.md'
   - External:
     - MoneroPulse: 'infrastructure/xcash-pulse.md'
 - RPC Library:
