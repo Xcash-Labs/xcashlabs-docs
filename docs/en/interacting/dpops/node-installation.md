@@ -39,7 +39,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Xcash-Labs/xcash-labs-dp
 ![instalation script](instalation-script.png)
 
 !!! info
-    It is strongly recommended to run the installer inside a terminal multiplexer such as **byobu** or **tmux** to prevent interruptions caused by SSH disconnects.
+    You can opt to run the installer inside a terminal multiplexer such as **byobu** or **tmux** if you get interruptions caused by SSH disconnects.
 
 Choose **Install** from the installer menu to begin.
 
@@ -47,26 +47,20 @@ Choose **Install** from the installer menu to begin.
 
 ### 1. Installation Directories
 
-You will be prompted to select directories for:
-
-- The `xcash-dpops` program  
-- Blockchain data  
-- Delegate database  
-
-!!! warning
-    Use the default paths unless you have a specific reason. Several tools depend on these locations.
+Directories are selected automically.
 
 ---
 
 ### 2. Delegate Mode
 
-You will choose between **shared** and **solo** delegate modes.
+When setting up the delegate only Shared mode is allow by default, but this can be change later using the installer menu
 
+###STypes of Delegates
 **Shared Delegate**
 
 - Rewards automatically distributed to voters  
 - Suitable for community-operated delegates  
-- Requires prefunding the delegate wallet  
+- Requires prefunding the delegate wallet
 
 !!! info
     Shared delegates must prefund their wallet to ensure early reward payouts.
@@ -74,13 +68,9 @@ You will choose between **shared** and **solo** delegate modes.
 **Solo Delegate**
 
 - Self-voted delegate  
-- Rewards paid only to delegate wallet  
-- Manual reward management  
-
-!!! info
-    This setting can be changed later using the installer menu.
-
-Press **Enter** for shared delegate, or type `No` for solo delegate.
+- If no XCA voting addresses are configured, all rewards are paid to the delegate wallet  
+- Manual reward distribution is required when no voting addresses are configured  
+- You can optionally restrict voting by specifying which XCA wallet addresses are allowed to vote for this delegate
 
 ---
 
