@@ -11,9 +11,9 @@ title: xcash-blockchain-export - Reference
 The tool dumps local blockchain to raw format, known as the `blockchain.raw` file.
 
 This could be useful if you want to process blockchain efficiently with your custom tools,
-as the raw format is probably easier to work with than Monero's custom lmdb database.
+as the raw format is probably easier to work with than XCash-Labs's custom lmdb database.
 
-The tool works on your local copy of the blockchain. It does not require `monerod` running.
+The tool works on your local copy of the blockchain. It does not require `xcashd` running.
 
 ## Syntax
 
@@ -25,7 +25,7 @@ Example:
 
 ## Running
 
-Go to directory where you unpacked Monero.
+Go to directory where you unpacked XCash-Labs.
 
 `./xcash-blockchain-export --stagenet --output-file=/tmp/blockchain.raw`
 
@@ -68,7 +68,3 @@ Specifying the log file path is not supported.
 | `--output-file`     | Specify output file path. The default is `$DATA_DIR/export/blockchain.raw`. Example: <br />`./xcash-blockchain-export --output-file=/tmp/blockchain.raw`
 | `--blocksdat`       | Output in blocks.dat format.
 | `--block-stop`      | Only export up to this block number. By default do the full export (value `0`).
-
-## Reference
-
-* [https://github.com/monero-project/monero/tree/master/src/blockchain_utilities](https://github.com/monero-project/monero/tree/master/src/blockchain_utilities)

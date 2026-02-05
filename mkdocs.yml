@@ -17,13 +17,15 @@ nav:
   - Download & Verify:
     - Download: 'interacting/download-xcash-binaries.md'
     - Verify: 'interacting/verify-xcash-binaries.md'
+  - xcash-dpops:
+  
   - xcashd:
-    - Flags: 'interacting/xcash-reference.md'
+    - Flags: 'interacting/xcashd-reference.md'
     - Setup Guide:
       - Systemd: 'running-node/monerod-systemd.md'
       - Tor & I2P: 'running-node/monerod-tori2p.md'
     - Sample Configs:
-      - Home: 'interacting/monero-config-file.md'
+      - Home: 'interacting/xcash-config-file.md'
   - Wallets:
     - xcash-wallet-gui: 'interacting/xcash-wallet-gui-reference.md'
     - xcash-wallet-clii: 'interacting/xcash-wallet-cli-reference.md'

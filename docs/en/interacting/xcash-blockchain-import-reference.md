@@ -16,7 +16,7 @@ Ideally, you should use your own trusted `blockchain.raw` file that you [exporte
 Please note that importing `blockchain.raw` will **not** speed up the process over syncing up from p2p network.
 This is because usual bottlenecks are disk IO and verification, not the download.  
 
-The tool works on your local files. It does not require `monerod` running.
+The tool works on your local files. It does not require `xcashd` running.
 
 ## Syntax
 
@@ -28,7 +28,7 @@ Example:
 
 ## Running
 
-Go to directory where you unpacked Monero.
+Go to directory where you unpacked XCash-Labs.
 
 `./xcash-blockchain-import --stagenet --input-file=/tmp/blockchain.raw`
 
@@ -82,7 +82,3 @@ Specifying the log file path is not supported.
 | `--batch`                         | Whether to save to disk on an ongoing basis (the default, value `1`) or maybe do everything in RAM and save everything in the end (value `0`). No batching is only effective in combination with no verification (`--dangerous-unverified-import`). See also `--batch-size`.   
 | `--batch-size`                    | How often to save to disk expressed in number of blocks. By default save every `5000` blocks (when verifying) or every `20000` blocks (when not verifying). Big batches are faster but require more RAM.
 | `--resume`                        | Resume from current height if output database already exists (the default, value `1`). Changing to `--resume=0` doesn't change much &mdash; existing blocks are skipped pretty quickly and the process is resumed anyway. 
-
-## Reference
-
-* [https://github.com/monero-project/monero/tree/master/src/blockchain_utilities](https://github.com/monero-project/monero/tree/master/src/blockchain_utilities)
