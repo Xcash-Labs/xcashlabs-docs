@@ -5,8 +5,7 @@ description: Overview of XCash-Labs DPoPS consensus, voting, staking, and how to
 
 # Get Started
 
-**DPoPS (Delegated Proof of Private Stake)** is a custom consensus mechanism used by XCash-Labs.  
-It combines elements of Delegated Proof of Stake (DPoS), Byzantine Fault Tolerance (BFT), and
+**DPoPS (Delegated Proof of Private Stake)** is a custom consensus mechanism used by XCash-Labs. It combines elements of Delegated Proof of Stake (DPoS), Byzantine Fault Tolerance (BFT), and
 Verifiable Random Functions (VRF), while preserving user privacy.
 
 ---
