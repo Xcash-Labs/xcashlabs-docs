@@ -57,7 +57,7 @@ When setting up the delegate only Shared mode is allow by default, but this can 
 
 Types of Delegates
  
-- **Shared Delegate**
+**Shared Delegate**
 
 - Rewards automatically distributed to voters  
 - Suitable for community-operated delegates  
@@ -66,7 +66,7 @@ Types of Delegates
 !!! info
     Shared delegates must prefund their wallet to ensure early reward payouts.
 
-- **Solo Delegate**
+**Solo Delegate**
 
 - Self-voted delegate  
 - If no XCA voting addresses are configured, all rewards are paid to the delegate wallet  
