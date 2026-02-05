@@ -38,13 +38,17 @@ This creates:
 
 # Server Requirements
 
-| | Minimum | Recommended |
+<div style="max-width:700px">
+
+|  | Minimum | Recommended |
 |---|---|---|
-| OS | Ubuntu 22.04 | Ubuntu 22.04 LTS |
-| CPU | 4 cores | 8+ cores |
-| RAM | 8 GB | 32 GB |
-| Storage | 100 GB | 1 TB |
-| Bandwidth | 100 Mbps | 500 Mbps |
+| **OS** | Ubuntu 22.04 | Ubuntu 22.04 LTS |
+| **CPU** | 4 cores | 8+ cores |
+| **RAM** | 8 GB | 32 GB |
+| **Storage** | 100 GB | 1 TB |
+| **Bandwidth** | 100 Mbps | 500 Mbps |
+
+</div>
 
 ---
 
