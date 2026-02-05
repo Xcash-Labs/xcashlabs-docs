@@ -71,7 +71,7 @@ Some commands assume Ubuntu but you will easily translate them to your distribut
 
     Feel free to adjust above to your preferred conventions, just remember to adjust the paths in the `systemd` and `monerod` config files accordingly.
 
-3. [Download](../interacting/download-monero-binaries.md) and [verify](../interacting/verify-monero-binaries.md) the archive.
+3. [Download](../interacting/verify-xcash-binaries.md) and [verify](../interacting/verify-xcash-binaries.md) the archive.
 
 4. Extract the binaries (adjust filename if necessary):
 
