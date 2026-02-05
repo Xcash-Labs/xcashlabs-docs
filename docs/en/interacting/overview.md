@@ -23,7 +23,7 @@ xcash-gui-wallet-guide.pdf
 
 # ---- main executable files -----------
 
-monerod
+xcashd
 xcash-wallet-gui
 
 # ---- extra executable files -----------
@@ -52,12 +52,12 @@ extras/xcash-blockchain-depth
 
 | Executable                 | Description
 | -------------------------- |:-----------------------------------------------------------------------------------------------------------------------------------
-| `monerod`                  | The full node daemon. Does not require a wallet. <br />[Documentation](../interacting/xcash-reference.md).
+| `xcashd`                  | The full node daemon. Does not require a wallet. <br />[Documentation](../interacting/xcash-reference.md).
 | `xcash-wallet-gui`        | Wallet logic and __graphical__ user interface.
 | `xcash-wallet-cli`        | Wallet logic and __commandline__ user interface.
-| `xcash-wallet-rpc`        | Wallet logic and __HTTP API__ (JSON-RPC protocol). <br />Requires `monerod` running.
-| `xcash-blockchain-prune`  | Prune existing local blockchain. This saves 2/3 of disk space (down to {{ lmdb_size_pruned }} GiB  as of {{ lmdb_size_updated }}). This is preferable over `monerod --prune-blockchain` which only logically releases space inside the file while the file remains large. The `xcash-blockchain-prune` creates a shrunken copy of the blockchain file.
-| `xcash-gen-ssl-cert`      | Generate 4096 bit RSA private key and self signed TLS certificate for use with `monerod` RPC interface. Note, XCash-Labs daemon automatically generates TLS certificate on each restart. Manual generation with this tool is only useful if you want to pin TLS certificate fingerprint in your XCash-Labs wallet.
+| `xcash-wallet-rpc`        | Wallet logic and __HTTP API__ (JSON-RPC protocol). <br />Requires `xcashd` running.
+| `xcash-blockchain-prune`  | Prune existing local blockchain. This saves 2/3 of disk space (down to {{ lmdb_size_pruned }} GiB  as of {{ lmdb_size_updated }}). This is preferable over `xcashd --prune-blockchain` which only logically releases space inside the file while the file remains large. The `xcash-blockchain-prune` creates a shrunken copy of the blockchain file.
+| `xcash-gen-ssl-cert`      | Generate 4096 bit RSA private key and self signed TLS certificate for use with `xcashd` RPC interface. Note, XCash-Labs daemon automatically generates TLS certificate on each restart. Manual generation with this tool is only useful if you want to pin TLS certificate fingerprint in your XCash-Labs wallet.
 | `xcash-gen-trusted-multisig`          | Tool to generate a set of multisig wallets. <br />See chapter on [multisignatures](../multisignature.md).
 | `xcash-blockchain-export` | Tool to export blockchain to `blockchain.raw` file.
 | `xcash-blockchain-import` | Tool to import a raw blockchain, ideally your own trusted copy.
@@ -69,9 +69,9 @@ You most likely should not bother with these legacy or very specialized tools.
 | Executable                 | Description
 | -------------------------- |:-----------------------------------------------------------------------------------------------------------------------------------
 | `xcash-blockchain-stats`              | Generate stats like tx/day, blocks/day, bytes/day based on your local blockchain.
-| `xcash-blockchain-mark-spent-outputs` | Advanced tool to mitigate potential privacy issues related to Monero forks. You normally shouldn't be concerned with that.
+| `xcash-blockchain-mark-spent-outputs` | Advanced tool to mitigate potential privacy issues related to forks. You normally shouldn't be concerned with that.
 | `xcash-blockchain-prune-known-spent-data`  | Previous limited pruning tool to prune select "known spent" transaction outputs (from the before RCT era). Nowadays prefer `xcash-blockchain-prune`. This only saves ~200 MB.
-| `xcash-blockchain-usage`              | Advanced tool to mitigate potential privacy issues related to Monero forks. You normally shouldn't be concerned with that.
+| `xcash-blockchain-usage`              | Advanced tool to mitigate potential privacy issues related to forks. You normally shouldn't be concerned with that.
 | `xcash-blockchain-ancestry`           | Advanced research tool to learn ancestors of a transaction, block or chain. Irrelevant for normal users.
 | `xcash-blockchain-depth`              | Advanced research tool to learn depth of a transaction, block or chain. Irrelevant for normal users.
 
@@ -79,18 +79,18 @@ You most likely should not bother with these legacy or very specialized tools.
 ## Interacting
 
 There are quite a few ways you can interact with XCash-Labs software.
-Perhaps the most surprising for newcomers is that `monerod` daemon accepts interactive keyboard commands while it is running.
+Perhaps the most surprising for newcomers is that `xcashd` daemon accepts interactive keyboard commands while it is running.
 
-Also, please note that `monerod` and `xcash-wallet-rpc` are both accessible via their respective HTTP API / JSON-RPC endpoints.
+Also, please note that `xcashd` and `xcash-wallet-rpc` are both accessible via their respective HTTP API / JSON-RPC endpoints.
 
 - [xcash-rpc](../rpc-library/xcash-rpc.md)
 - [wallet-rpc](../rpc-library/wallet-rpc.md)
 
-All wallet implementations depend on a fully synchronized `monerod` running.
+All wallet implementations depend on a fully synchronized `xcashd` running.
 
 | Executable                                              | p2p network | commands via keyboard                          | HTTP API                           | GUI |
 | ------------------------------------------------------- | :---------: | :--------------------------------------------: | :--------------------------------: | :-: |
-| [`monerod`](./xcash-reference.md)                     | ✔           | [✔](./xcash-reference.md#commands)           | [✔](../rpc-library/xcash-rpc.md) |     |
+| [`xcashd`](./xcash-reference.md)                     | ✔           | [✔](./xcash-reference.md#commands)           | [✔](../rpc-library/xcash-rpc.md) |     |
 | [`xcash-wallet-cli`](./xcash-wallet-cli-reference.md) |             | [✔](./xcash-wallet-cli-reference.md#commands) |                                    |     |
 | [`xcash-wallet-rpc`](./xcash-wallet-rpc-reference.md) |             |                                                | [✔](../rpc-library/wallet-rpc.md)  |     |
 | [`xcash-wallet-gui`](./xcash-wallet-gui-reference.md) |             |                                                |                                    | ✔   |
