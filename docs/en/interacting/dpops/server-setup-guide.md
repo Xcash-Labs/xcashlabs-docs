@@ -48,6 +48,12 @@ This creates:
 
 ---
 
+!!! info
+    Estimated blockchain and decentralized database growth is approximately **9 GB per year**.
+
+!!! warning
+    Minimum requirements are sufficient only at launch. Additional features may require future hardware upgrades.
+
 ## Choose a Server Provider
 
 Any provider works:
