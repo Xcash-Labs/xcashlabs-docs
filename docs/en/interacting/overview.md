@@ -86,7 +86,7 @@ Also, please note that `xcashd` and `xcash-wallet-rpc` are both accessible via t
 - [xcash-rpc](../rpc-library/xcash-rpc.md)
 - [wallet-rpc](../rpc-library/wallet-rpc.md)
 
-All wallet implementations depend on a fully synchronized `xcashd` running.
+All wallet implementations depend on a fully synchronized `xcashdx` running.
 
 | Executable                                              | p2p network | commands via keyboard                          | HTTP API                           | GUI |
 | ------------------------------------------------------- | :---------: | :--------------------------------------------: | :--------------------------------: | :-: |
