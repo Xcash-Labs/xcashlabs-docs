@@ -18,6 +18,7 @@ nav:
     - 'interacting/dpops/get-started.md'
     - 'interacting/dpops/server-setup-guide.md'
     - 'interacting/dpops/node-installation.md'
+    - 'interacting/dpops/register-delegate.md'
   - Download & Verify:
     - Download: 'interacting/download-xcash-binaries.md'
     - Verify: 'interacting/verify-xcash-binaries.md'
