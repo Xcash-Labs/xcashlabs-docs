@@ -54,9 +54,9 @@ In systemd, a unit represents any resource the system can manage, such as a serv
 The different services needed for the XCash-Labs consensus running on the server are listed below:
 
 !!! info
-    All the **`unit`** files are located in **`/lib/systemd/system/`**</br>
-    /lib/systemd/system/xcash-daemon.service
-    /lib/systemd/system/xcash-dpops.service
+    All the **`unit`** files are located in **`/lib/systemd/system/`**
+    - /lib/systemd/system/xcash-daemon.service
+    - /lib/systemd/system/xcash-dpops.service
     /lib/systemd/system/xcash-rpc-wallet.service
     /lib/systemd/system/firewall.service
     /lib/systemd/system/mongodb.service
