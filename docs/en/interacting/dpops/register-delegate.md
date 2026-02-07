@@ -61,18 +61,18 @@ You will be prompted to wait for the next valid data interval. Once accepted, yo
 
 `The delegate has been registered successfully`
 
-Verify your node appears in the delegates explorer:
-- https://delegates.xcash.foundation/
+!!! info
+    Note: it will take 10 mins for your delegate to become active
 
-Exit the wallet, then restart the wallet service:
+Exit the wallet, then use the "Restart Programs" option from the auto installer script to restart all programs 
 
 ```bash
-systemctl restart xcash-rpc-wallet
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Xcash-Labs/xcash-labs-dpops/master/scripts/autoinstaller/autoinstaller.sh)"
 ```
 
 ## 2. Update public information
 
-Each registered delegate is displayed in the delegates explorer along with statistics and public information. At registration, the minimum displayed information is your **delegate name** and **IP address**. You can add additional details to help others identify you and decide to vote for you.
+Minimal delegate information is stored at the time of registration. Currently, there is no public interface to view this data, but it may be displayed in future tools or explorer features as they are developed. At a minimum, your delegate name and IP address are recorded. You may also include additional details now so they can be shown later when public viewing tools become available.
 
 Stop the wallet service:
 
@@ -92,18 +92,22 @@ Open and synchronize the wallet you used to register:
 Once synchronized, use:
 
 ```bash
-delegate_update <item> <value>
+delegate_update "<item>" "<value>"
 ```
 
 Available items:
 
+
+, , , , delegate_type, solo_addresses, delegate_fee, server_specs, minimum_payout
+
+
 | Item | Type | Description |
 |---|---|---|
-| `about` | **String** *(1024 char max)* | Short description about you and your motivations as a delegate. Example: `delegate_update about Even the smallest delegate can change the course of the future.` |
+| `about` | **String** *(512 char max)* | Short description about you and your motivations as a delegate. Example: `delegate_update about Even the smallest delegate can change the course of the future.` |
 | `IP_address` | **String** *(255 char max)* | Update the IP address or domain name of your delegate node. (Must be IPv4 format per the original docs.) Example: `delegate_update IP_address mydomain.com` |
 | `website` | **String** *(255 char max)* | Link to your landing page or website related to your delegate. Example: `delegate_update website my-delegate-website.com` |
 | `team` | **String** *(255 char max)* | Team name, names, or profiles (if managed by multiple people). Example: `delegate_update team Manager: @tic | Treasury: @tac` |
-| `shared_delegate_status` | **String** *(255 char max)* | One of: `solo`, `shared`, `group`. `shared` delegates set a fee and redistribute reward share. `group` is for private groups (see below). Example: `delegate_update shared_delegate_status group` |
+| `delegate_type` | **String** *(255 char max)* | One of: `solo`or `shared`. `shared` delegates set a fee and redistribute reward share. |
 | `delegate_fee` | **Number** | Percent fee `[0 - 100]` with up to 6 decimals. Example: `delegate_update delegate_fee 12.354321` |
 | `server_specs` | **String** *(255 char max)* | Description of server hardware/specs. Example: `delegate_update server_specs Operating System = Ubuntu 20.04 - CPU = 6 threads (Intel E5-2630 v4 - 2.20GHz) - RAM = 16GB DDR4 - Hard drive = 400GB SSD - Bandwidth Transfer = Unlimited` |
 
