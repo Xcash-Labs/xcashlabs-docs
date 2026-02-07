@@ -54,6 +54,7 @@ Parameter details:
 Example:
 
 ```bash
+set inactivity-lock-timeout 120
 delegate_register my_delegate my_delegate.domain.com cf8718d638ce0a831f3538ea60d1e27c3a258c7004a1ad7c547cc5331de7d9d7
 ```
 
@@ -62,7 +63,7 @@ You will be prompted to wait for the next valid data interval. Once accepted, yo
 `The delegate has been registered successfully`
 
 !!! info
-    Note: it will take 10 mins for your delegate to become active
+    Note: it will take 10 mins for your delegate to become active and you do not have to keep the wallet open.
 
 Exit the wallet, then use the "Restart Programs" option from the auto installer script to restart all programs .
 
@@ -94,6 +95,7 @@ Once synchronized, use:
 ```bash
 delegate_update "<item>"="<value>","<item>"="<value>"
 ```
+You can include one or more <item>=<value> pairs in a single command by separating them with commas. This allows you to update multiple settings at once.
 
 Available items:
 
