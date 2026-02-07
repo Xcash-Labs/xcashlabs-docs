@@ -10,70 +10,48 @@ description: This section is designed to gather steps for managing the different
 You can manage your program installation with the installer script:
 
 ```bash
-bash -c "$(curl -sSL https://raw.githubusercontent.com/X-CASH-official/xcash-dpops/master/scripts/autoinstaller/autoinstaller.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Xcash-Labs/xcash-labs-dpops/master/scripts/autoinstaller/autoinstaller.sh)"
 ```
 
 The installation script enables you to install and manage your `xcash-dpops` program easily.
 
 ### Restart Program
 
-If you have an issue with your program running, or need to do some changes in the settings and need to restart the different program, it is recommended to restart the service using the installer script.
+If you encounter issues with your programs or need to apply configuration changes, it is recommended to restart the services using the installer script. This ensures all components are restarted in the correct order and with the proper settings.
 
-Run the installer script and choose **option 12**.
+Run the installer script and choose **Restart Programs**.
 
 ```bash
-bash -c "$(curl -sSL https://raw.githubusercontent.com/X-CASH-official/xcash-dpops/master/scripts/autoinstaller/autoinstaller.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Xcash-Labs/xcash-labs-dpops/master/scripts/autoinstaller/autoinstaller.sh)"
 ```
 
 ### Update program
 
-When a new update of the program is pushed, you will need to a update your program.
+When a new version of the software is released, you will need to update your node to stay in sync with the network and ensure everything continues running smoothly. The easiest way to perform updates is by using the auto-installer script, which can download the latest version and restart the services for you.
 
-Run the installer script and choose **option 2**.
-
-```bash
-bash -c "$(curl -sSL https://raw.githubusercontent.com/X-CASH-official/xcash-dpops/master/scripts/autoinstaller/autoinstaller.sh)"
-```
-
-### Change delegate mode
-
-To change your settings from a solo to a shared delegate (and vice versa), you can run the installer script and choose **option 9,** or change the settings (fees and minimum payout) with **option 10.**
+Run the installer script and choose **Restart Programs**.
 
 ```bash
-bash -c "$(curl -sSL https://raw.githubusercontent.com/X-CASH-official/xcash-dpops/master/scripts/autoinstaller/autoinstaller.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Xcash-Labs/xcash-labs-dpops/master/scripts/autoinstaller/autoinstaller.sh)"
 ```
-
-You will be asked to input a delegate fee and a minimum payout amount to your voters. The script will automatically change the program settings to match your changes.
-
-!!! warning
-Don't forget to update your delegate fee by [updating the public information](register-delegate.md#2-update-public-information) as well.
-
 
 ### Back up your local database
 
-As a shared delegated, you will have the responsability to distribute the payout to your voters. The voters information and shares are stored locally into your delegate node database. Before attempting to update your node, or do maintenance on your server, it is highly recommended to backup this information.
+As a shared delegate, you are responsible for distributing payouts to your voters. Voter information and reward share data are stored locally in your delegate node database. Before performing updates, maintenance, or any changes to your server, it is strongly recommended to back up this data to prevent accidental loss.
 
-To backup your shared delegate database, chose **option 19**:
+To backup your shared delegate database, chose **Backup**:
 
 ```bash
-bash -c "$(curl -sSL https://raw.githubusercontent.com/X-CASH-official/xcash-dpops/master/scripts/autoinstaller/autoinstaller.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Xcash-Labs/xcash-labs-dpops/master/scripts/autoinstaller/autoinstaller.sh)"
 ```
-
-## Recover mode
-
-To be added.
-
-allows you to change your public\_address or VRF key must be using a domain name with delegate add txt record, value @ data is xcash-dpops:MYNEWPUBLICKEY or xcash-dpops:MYNEWVRFKEY you can do 1 or both at the same time does not matter then open ANY wallet (does not need to be the delegate wallet in case you lost it) and type delegate\_recover mydomain, and it will do everything for you.
 
 ## systemd services
 
-`systemd` is generally used to manage low-level programs in Linux-based systems. It's a reliable way to automatically run programs on startup, and manage and monitor the different services.
+`systemd` is commonly used on Linux systems to manage background services and core programs. It provides a reliable way to start programs automatically on boot, as well as to monitor, stop, and restart services when needed.
 
-In `systemd`, a `unit` refers to any resource that the system knows how to operate on and manage. This is the primary object that the `systemd` tools know how to deal with. These resources are defined using configuration files called **unit files**. Whether you installed with the [autoinstaller script](node-installation.md#quick-installation) or [manually](node-installation.md#manual-installation), the programs needed to run the X-Cash consensus are managed in `systemd` with `unit` files.
+In systemd, a unit represents any resource the system can manage, such as a service or process. These resources are defined through configuration files called unit files, which tell systemd how and when to run each program.
 
-The different services needed for the X-Cash consensus running on the server are listed below:
-
-
+The different services needed for the XCash-Labs consensus running on the server are listed below:
 
 ```bash
 [Unit]
