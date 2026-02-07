@@ -3,7 +3,7 @@ title: Management & Monitoring
 description: This section is designed to gather steps for managing the different services around the xcash-dpops program, getting logs and monitoring the activity.
 ---
 
-# Node Program Installation
+# Management & Monitoring
 
 ## Managing Installation
 
