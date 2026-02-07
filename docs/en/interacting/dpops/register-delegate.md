@@ -20,10 +20,7 @@ You should have noted your block verifier keys during the [node program installa
 
     If you want to change the name, you will need to generate a new block verifier key pair and register again — but you will lose your previous delegate stats.
 
-!!! info
-    Shared delegates should pre-fund their wallet to ensure early reward payouts. It is recommended to keep approximately **500k–1M XCASH** in the delegate wallet before rewards begin.
-
-First, stop the wallet service (if it is currently running in the background):
+First, stop the wallet service (The XCash-Labs programs should be up and running in the background):
 
 ```bash
 systemctl stop xcash-rpc-wallet
@@ -131,15 +128,18 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Xcash-Labs/xcash-labs-dp
 
 ## 3. Private group
 
-A shared delegate can choose to run a private group, where the delegate decides which voters receive a share of the block reward. This is useful for a closed group that wants shared rewards but with a controlled distribution list.
+A solo delegate may choose to run a private group, where the delegate controls which voters are eligible to receive a share of the block reward. This is useful for closed groups that want to share rewards while maintaining a controlled distribution list.
 
-To set this up, just use the delegate_update and the sole_addresses option to set the public wallet addresses that can vote for this solo delegate. The voting address must then vote for the delegate just as they would for any other delegate.
+To configure this, use delegate_update with the solo_addresses option to define the public wallet addresses that are allowed to vote for the delegate. Only these addresses will be eligible to receive shared rewards.
+
+Each allowed address must still vote for the delegate normally in order to participate.
 
 
 ## 4. Prepare shared delegate payments
 
-As a shared delegate (normal or private group), you will distribute a share of the block reward to your voters.
+As a shared delegate (public or private group), you will distribute a portion of each block reward to your voters.
 
-On the first payment threshold, the program will automatically distribute the voters' share from the delegate wallet. However, the delegate wallet may be empty at first and you may be missing unspents to pay voters smoothly.
+When the first payout threshold is reached, the software will automatically send voter rewards from the delegate wallet. Because a newly registered delegate wallet may not yet contain enough unlocked outputs, payouts can be delayed or fail if the wallet has no available funds.
 
-
+!!! info
+Shared delegates should pre-fund their wallet to ensure smooth early reward payouts. It is recommended to keep approximately 500k–1M XCASH in the delegate wallet before rewards begin.
