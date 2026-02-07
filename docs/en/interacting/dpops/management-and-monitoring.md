@@ -148,7 +148,7 @@ WantedBy=multi-user.target
 
 
 !!! info
-All the **`unit`** files are located in **`/lib/systemd/system/`**
+    All the **`unit`** files are located in **`/lib/systemd/system/`**
 
 
 ### **Services Management**
@@ -226,11 +226,9 @@ systemctl status mongodb
 
 ### **Monitoring & Logging**
 
-While the services are running in the background, you might want to check the outputs of the different programs.
+To check the status and live logs of the XCash-Labs services, run the commands that correspond to the process you want to inspect. These commands show the most recent log entries and continue streaming new output in real time.
 
-To monitor the services, we are using **`journalctl`** which fetch the journal of the **`systemd`** services. Using **`journalctl`** without paramaters will show the full contents of the journal, starting with the oldest entry collected.
-
-For a live logging with better readability, we will limit the output by using the following parameters:
+For clearer, easier-to-read live logs, the examples below use parameters that limit the output to recent entries while following new activity as it happens.
 
 ```text
 journalctl --unit=SERVICE --follow -n 100 --output cat
@@ -271,7 +269,7 @@ journalctl --unit=firewall --follow -n 100 --output cat
 
 
 !!! info
-The **`xcash-daemon`** service export its logs in a different place. To display the latest log, use the following command:
+    The **`xcash-daemon`** service export its logs in a different place. To display the latest log, use the following command:
 
 ```text
 tail -n 100 ~/xcash-official/logs/xcash-daemon-log.txt
@@ -391,7 +389,7 @@ echo
 ```
 
 !!! info
-If you have custom service names you need to adjust the service variable names at the beginning of the script
+    If you have custom service names you need to adjust the service variable names at the beginning of the script
 
 
 Then, we need to make it executable
