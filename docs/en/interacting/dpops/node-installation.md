@@ -64,7 +64,7 @@ Types of Delegates
 - Requires prefunding the delegate wallet
 
 !!! info
-    Shared delegates must prefund their wallet to ensure early reward payouts.
+    Shared delegates should pre-fund their wallet to ensure early reward payouts. It is recommended to keep approximately **500k–1M XCASH** in the delegate wallet before rewards begin.
 
 **Solo Delegate**
 
@@ -74,7 +74,8 @@ Types of Delegates
 - You can optionally restrict voting by specifying which XCA wallet addresses are allowed to vote for this delegate
 - when the system is fully operational a sole node with no voters will probably not make it into the top 50 delegates
 
-The minimum payment amount will default to 1000 and and the delegate fee will default to 5%. Both of these amounts can be changed later.
+!!!info
+    The minimum payment amount will default to 1000 and and the delegate fee will default to 5%. Both of these amounts can be changed later.
 
 ---
 

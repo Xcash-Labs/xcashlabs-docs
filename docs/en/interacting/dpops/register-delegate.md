@@ -20,6 +20,9 @@ You should have noted your block verifier keys during the [node program installa
 
     If you want to change the name, you will need to generate a new block verifier key pair and register again — but you will lose your previous delegate stats.
 
+!!! info
+    Shared delegates should pre-fund their wallet to ensure early reward payouts. It is recommended to keep approximately **500k–1M XCASH** in the delegate wallet before rewards begin.
+
 First, stop the wallet service (if it is currently running in the background):
 
 ```bash
@@ -46,7 +49,6 @@ set inactivity-lock-timeout 300
 Once your wallet is fully synchronized, run:
 
 ```bash
-00
 delegate_register <delegate_name> <IP_address|domain_name> <block_verifier_public_key>
 ```
 
@@ -131,75 +133,8 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Xcash-Labs/xcash-labs-dp
 
 A shared delegate can choose to run a private group, where the delegate decides which voters receive a share of the block reward. This is useful for a closed group that wants shared rewards but with a controlled distribution list.
 
-To set this up, you will:
+To set this up, just use the delegate_update and the sole_addresses option to set the public wallet addresses that can vote for this solo delegate. The voting address must then vote for the delegate just as they would for any other delegate.
 
-1. Create a configuration file listing voter/payment addresses.
-2. Update `xcash-dpops.service` to use `--private-group <path-to-configuration-file>`.
-
-Create the configuration file:
-
-```bash
-nano ~/xcash-official/xcash-dpops-configuration.txt
-```
-
-Add entries in this format:
-
-```text
-# Comment
-wallet1|voting-address|payment-address
-wallet2|voting-address|payment-address
-```
-
-Where:
-
-- `voting-address` is the wallet address used to vote for the delegate
-- `payment-address` is the wallet address that will receive the reward share
-
-!!! info
-    `voting-address` and `payment-address` can be the same.
-
-!!! info
-    The maximum number of `payment-address` entries allowed is **100**.
-
-Once the config file is ready, update the systemd service:
-
-1) Stop programs via the installer script:
-
-```bash
-bash -c "$(curl -sSL https://raw.githubusercontent.com/X-CASH-official/xcash-dpops/master/scripts/autoinstaller/autoinstaller.sh)"
-```
-
-Choose **option 13** to stop the programs.
-
-2) Edit the service file and add `--private-group ...` to the `ExecStart` line:
-
-```bash
-nano /lib/systemd/system/xcash-dpops.service
-```
-
-Example `xcash-dpops.service`:
-
-```ini
-[Unit]
-Description=X-Cash DPOPS Daemon background process
-
-[Service]
-Type=simple
-LimitNOFILE=infinity
-User=root
-WorkingDirectory=~/xcash-official/xcash-dpops/build
-ExecStart=~/xcash-official/xcash-dpops/build/xcash-dpops --private-group ~/xcash-official/xcash-dpops-configuration.txt --block-verifiers-secret-key BLOCK_VERIFIER_SECRET_KEY
-Restart=always
-
-[Install]
-WantedBy=multi-user.target
-```
-
-3) Restart programs by running **option 12** of the auto-installer script:
-
-```bash
-bash -c "$(curl -sSL https://raw.githubusercontent.com/X-CASH-official/xcash-dpops/master/scripts/autoinstaller/autoinstaller.sh)"
-```
 
 ## 4. Prepare shared delegate payments
 
@@ -207,6 +142,4 @@ As a shared delegate (normal or private group), you will distribute a share of t
 
 On the first payment threshold, the program will automatically distribute the voters' share from the delegate wallet. However, the delegate wallet may be empty at first and you may be missing unspents to pay voters smoothly.
 
-It is recommended to pre-fund your delegate wallet when first setting it up.
 
-**Recommendation:** pre-fund between **500k to 1M XCASH** into the delegate wallet.
