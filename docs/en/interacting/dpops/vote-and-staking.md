@@ -6,7 +6,7 @@ description: Learn how to stake your coins and vote for a delegate as an XCash-L
 # Vote & Staking
 
 !!! warning ""
-    Currently you can vote from the CLI wallet, Android wallet, and GUI wallet.
+    Currently you can vote from the CLI wallet or GUI wallet.
 
 ## Find Your Delegate
 
