@@ -13,7 +13,7 @@ You will need to have all the services already running to generate the necessary
 
 ## 1. Register yourself as a delegate
 
-You should have noted your block verifier keys during the [program installation](node-installation.md). You will need to prepare a **delegate name**, your **server IP address** or **domain name**, and the **block verifier public key**. You will register from the wallet that will be used to collect the reward.
+You should have noted your block verifier keys during the [node program installation](node-installation.md). You will need to prepare a **delegate name**, your **server IP address** or **domain name**, and the **block verifier public key**. You will register from the wallet that will be used to collect the reward.
 
 !!! warning
     Choose your delegate name wisely, as you won't be able to change it later.
@@ -26,7 +26,7 @@ First, stop the wallet service (if it is currently running in the background):
 systemctl stop xcash-rpc-wallet
 ```
 
-Open and let your wallet synchronize (the wallet you generated during node installation with the [Auto Installer Scrip](node-installation.md##auto-installer)):
+Open and let your wallet synchronize (the wallet you generated during node installation with the [Auto Installer Script](node-installation.md#auto-installer)): 
 
 ```bash
 ~/xcash-official/xcash-core/build/release/bin/xcash-wallet-cli --wallet-file ~/xcash-official/xcash-wallets/<WALLET_NAME>
