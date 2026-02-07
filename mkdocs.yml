@@ -20,7 +20,7 @@ nav:
     - 'interacting/dpops/node-installation.md'
     - 'interacting/dpops/register-delegate.md'
     - 'interacting/dpops/management-and-monitoring.md'
-    - 'interacting/dpops/staking/index.md'
+    - 'interacting/dpops/voting-and-staking/index.md'
   - Download & Verify:
     - Download: 'interacting/download-xcash-binaries.md'
     - Verify: 'interacting/verify-xcash-binaries.md'
