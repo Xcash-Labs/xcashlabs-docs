@@ -64,7 +64,7 @@ You will be prompted to wait for the next valid data interval. Once accepted, yo
 !!! info
     Note: it will take 10 mins for your delegate to become active
 
-Exit the wallet, then use the "Restart Programs" option from the auto installer script to restart all programs 
+Exit the wallet, then use the "Restart Programs" option from the auto installer script to restart all programs .
 
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Xcash-Labs/xcash-labs-dpops/master/scripts/autoinstaller/autoinstaller.sh)"
@@ -92,35 +92,31 @@ Open and synchronize the wallet you used to register:
 Once synchronized, use:
 
 ```bash
-delegate_update "<item>" "<value>"
+delegate_update "<item>"="<value>","<item>"="<value>"
 ```
 
 Available items:
 
-
-, , , , , solo_addresses, delegate_fee, server_specs, minimum_payout
-
-
 | Item | Type | Description |
 |---|---|---|
-| `about` | **String** *(512 char max)* | Short description about you and your motivations as a delegate. Example: `delegate_update about Even the smallest delegate can change the course of the future.` |
-| `IP_address` | **String** *(255 char max)* | Update the IP address or domain name of your delegate node. (Must be IPv4 format per the original docs.) Example: `delegate_update IP_address mydomain.com` |
-| `website` | **String** *(255 char max)* | Link to your landing page or website related to your delegate. Example: `delegate_update website my-delegate-website.com` |
-| `team` | **String** *(255 char max)* | Team name, names, or profiles (if managed by multiple people). Example: `delegate_update team Manager: @tic | Treasury: @tac` |
-| `delegate_type` | **String** *(255 char max)* | One of: `solo`or `shared`. `shared` delegates set a fee and redistribute reward share. |
-| `delegate_fee` | **Number** | Percent fee `[0 - 100]` with up to 6 decimals. Example: `delegate_update delegate_fee 12.354321` |
-| `server_specs` | **String** *(255 char max)* | Description of server hardware/specs. Example: `delegate_update server_specs Operating System = Ubuntu 20.04 - CPU = 6 threads (Intel E5-2630 v4 - 2.20GHz) - RAM = 16GB DDR4 - Hard drive = 400GB SSD - Bandwidth Transfer = Unlimited` |
-| `minimum_payout` | **Number** | Minimum payout to stakers `[1 - 10000]`. Example: `delegate_update "minimum" "100"` |
-| `solo_addresses` | **String** | Percent fee `[0 - 100]` with up to 6 decimals. Example: `delegate_update delegate_fee 12.354321` |
+| `about` | **String** *(512 char max)* | Short description about you and your motivations as a delegate. Example: `delegate_update "about"="Even the smallest delegate can change the course of the future."` |
+| `IP_address` | **String** *(255 char max)* | Update the IP address or domain name of your delegate node. (Must be IPv4 format per the original docs.) Example: `delegate_update "IP_address" "mydomain.com"` |
+| `website` | **String** *(255 char max)* | Link to your landing page or website related to your delegate. Example: `delegate_update "website"="my-delegate-website.com"` |
+| `team` | **String** *(255 char max)* | Team name, names, or profiles (if managed by multiple people). Example: `delegate_update "team" "Manager: @tic | Treasury: @tac`" |
+| `delegate_type` | **String** *(255 char max)* | One of: `solo`or `shared`. `shared` delegates set a fee and redistribute reward share and solo delegates will probably want to set solo_addresses. |
+| `delegate_fee` | **Number** | Fee percentage `[0–100]`, max 2 decimal places. Default is 5%. Example: `delegate_update "delegate_fee"="5.50"` | |
+| `server_specs` | **String** *(255 char max)* | Description of server hardware/specs. Example: `delegate_update "server_specs"="Operating System = Ubuntu 20.04 - CPU = 6 threads (Intel E5-2630 v4 - 2.20GHz) - RAM = 16GB DDR4 - Hard drive = 400GB SSD - Bandwidth Transfer = Unlimited"` |
+| `minimum_payout` | **Number** | Minimum payout to stakers `[1 - 10000]`. Larger payout will reduce the number of transactions. Default is 5000. Example: `delegate_update "minimum"="100"` |
+| `solo_addresses` | **String** | For solo delegates, you can specificy a list of up to 10 public wallet addresses that may vote for this solo delegate. This just limites who can vote for the delegate. `delegate_update "solo_addresses"="[address1, address2]"` |
 
 You will be prompted to wait for the next valid data interval. Once accepted, you should see:
 
 `The delegate info has been updated successfully`
 
-Exit the wallet and restart the wallet service:
+Exit the wallet, then use the "Restart Programs" option from the auto installer script to restart all programs. 
 
 ```bash
-systemctl start xcash-rpc-wallet
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Xcash-Labs/xcash-labs-dpops/master/scripts/autoinstaller/autoinstaller.sh)"
 ```
 
 ## 3. Private group
