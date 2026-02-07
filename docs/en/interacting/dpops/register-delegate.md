@@ -7,7 +7,7 @@ description: Once your server is set up and the necessary programs installed, yo
 
 ## Introduction
 
-Once you have correctly [set up your instance](server-setup.md) and installed the different programs, you can now register as a delegate of the X-Cash Public Network.
+Once you have correctly [set up your instance](node-installation.md) and installed the different programs, you can now register as a delegate of the X-Cash Public Network.
 
 You will need to have all the services already running to generate the necessary parameters to register yourself as a delegate.
 
@@ -26,7 +26,7 @@ First, stop the wallet service (if it is currently running in the background):
 systemctl stop xcash-rpc-wallet
 ```
 
-Open and let your wallet synchronize (the wallet you generated during node installation, either with the [auto-installer](node-installation.md#quick-installation) or [created manually](node-installation.md#generate-a-wallet)):
+Open and let your wallet synchronize (the wallet you generated during node installation with the [auto-installer](node-installation.md#installation)):
 
 ```bash
 ~/xcash-official/xcash-core/build/release/bin/xcash-wallet-cli --wallet-file ~/xcash-official/xcash-wallets/<WALLET_NAME>
