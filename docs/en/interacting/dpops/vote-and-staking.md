@@ -42,7 +42,6 @@ You will find 2 types of delegates:
     Because of this, rewards are probabilistic and may vary significantly over time depending on network conditions,
     total stake distribution, delegate participation, and fees.
 
-
 ## Voting & Staking
 
 !!! info "Voting Rules"
