@@ -26,7 +26,7 @@ First, stop the wallet service (if it is currently running in the background):
 systemctl stop xcash-rpc-wallet
 ```
 
-Open and let your wallet synchronize (the wallet you generated during node installation with the [Auto Installer Script](node-installation.md#auto-installer)): 
+Open and let your wallet synchronize (the wallet you generated during node installation with the [auto installer script](node-installation.md#auto-installer)): 
 
 ```bash
 ~/xcash-official/xcash-core/build/release/bin/xcash-wallet-cli --wallet-file ~/xcash-official/xcash-wallets/<WALLET_NAME>
