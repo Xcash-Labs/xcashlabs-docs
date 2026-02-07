@@ -31,7 +31,7 @@ You will find 2 types of delegates:
 
 - **Solo Delegates**
   - Delegates who do not redistribute rewards to voters
-  - Typically operated for the delegate’s own staking/voting 
+  - Typically operated for by a singile XCash-Labs holder or a private group
 
 ## Staking Calculation
 
@@ -51,7 +51,6 @@ You will find 2 types of delegates:
     - Spending from the staked wallet balance will invalidate the vote.
 
 ## Casting Your Vote
-
 
 ## Desktop Wallet
 
