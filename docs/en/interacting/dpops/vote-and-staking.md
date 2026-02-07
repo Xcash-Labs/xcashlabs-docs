@@ -1,6 +1,6 @@
 ---
 title: Vote & Staking
-description: As an XCash-Labs holder, you can stake your delegate and vote for a preferred delegate. Follow the guide below to learn more about voting & staking.
+description: Learn how to stake your coins and vote for a delegate as an XCash-Labs holder, and understand how the voting and staking system works.
 ---
 
 # Vote & Staking
@@ -47,8 +47,73 @@ You will find 2 types of delegates:
 
 !!! info "Voting Rules"
     - **You can only have one vote per wallet.**
-    - You need a minimum of `1,000` coins in the wallet to vote.
+    - You need a minimum of `500` coins in the wallet to vote.
     - Spending from the staked wallet balance will invalidate the vote.
 
 ## Casting Your Vote
 
+
+## Desktop Wallet
+
+### Synchronize Your Wallet
+
+You can synchronize by:
+
+1. Running a local daemon (most secure, slower)
+2. Connecting to a remote node (faster)
+
+### Remote Node Example
+
+```bash
+./xcash-wallet-cli --daemon-address us1.xcash.foundation:18281
+```
+
+### Restore Wallet
+
+```bash
+./xcash-wallet-cli --restore-deterministic-wallet --daemon-address us1.xcash.foundation:18281
+```
+
+### Prepare Your Vote
+
+Before voting, consolidate outputs:
+
+```bash
+sweep_all <your_wallet_address>
+```
+
+Wait until funds are unlocked again before voting.
+
+### Cast a Vote
+
+```bash
+vote <delegate_name_or_address> <amount | all>
+```
+
+Your wallet must remain open until the top of the hour for confirmation.
+
+### Revote
+
+If your balance increases:
+
+```bash
+revote <amount>
+```
+
+## Android Wallet
+
+!!! warning
+    The Android wallet is still in beta. Always back up your keys and seed.
+
+Download:  
+https://github.com/X-CASH-official/android-wallet/releases
+
+Steps:
+
+1. Open wallet and sync
+2. Tap the DPoPS button
+3. Select delegate
+4. Tap **Vote**
+5. Wait for confirmation at the top of the hour
+
+You will receive rewards in this wallet after voting.
