@@ -73,6 +73,8 @@ At some point, you might have to need to restart or check the status of the serv
 - firewall
 - mongodb
 
+### Start a service
+
 To **start** a `systemd` service, run:
 - systemctl start <Service-name>
 
@@ -82,6 +84,7 @@ To **start** a `systemd` service, run:
     systemctl start xcash-dpops
 ```
 
+### Restart a service
 
 To **restart** a `systemd` service, run:
 - systemctl restart <Service-name>
@@ -92,6 +95,7 @@ To **restart** a `systemd` service, run:
     systemctl restart xcash-dpops
 ```
 
+### Stop a service
 
 To **stop** a `systemd` service, run:
 - systemctl stop <Service-name>
@@ -102,8 +106,9 @@ To **stop** a `systemd` service, run:
     systemctl stop xcash-dpops
 ```
 
+### Service status
 
-To **status** a `systemd` service, run:
+To get the **status** of a `systemd` service, run:
 - systemctl status <Service-name>
 
 **Example:**
