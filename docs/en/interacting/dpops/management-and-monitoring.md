@@ -74,14 +74,11 @@ At some point, you might have to need to restart or check the status of the serv
 - mongodb
 
 To **start** a `systemd` service, run:
-
-```bash
-    systemctl start <Service-name>
-```
+- systemctl start <Service-name>
 
 **Example:**
 
-```text
+```bash
     systemctl start xcash-dpops
 ```
 
