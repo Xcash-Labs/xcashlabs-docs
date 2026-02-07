@@ -51,10 +51,10 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Xcash-Labs/xcash-labs-dp
 
 In systemd, a unit represents any resource the system can manage, such as a service or process. These resources are defined through configuration files called unit files, which tell systemd how and when to run each program.
 
-The different services needed for the XCash-Labs consensus running on the server are listed below:
-
 !!! info
     All the **`unit`** files are located in **`/lib/systemd/system/`**
+
+The different services needed for the XCash-Labs consensus running on the server are listed below:
 
 - **/lib/systemd/system/xcash-daemon.service** : Runs the DPoPS (Delegated Proof of Private Stake) consensus program. This service handles delegate communication, block verification, voting, and block production for the network.
 - **xcash-dpops.service** : Runs the DPoPS (Delegated Proof of Private Stake) consensus program. This service handles delegate communication, block verification, voting, and block production for the network.
@@ -66,13 +66,18 @@ The different services needed for the XCash-Labs consensus running on the server
 
 At some point, you might have to need to restart or check the status of the services, either to reflect a change you have made, to update, or to run the program with different parameters.
 
-
+**Service-names:**
+- xcash-daemon
+- xcash-dpops
+- xcash-rpc-wallet
+- firewall
+- mongodb
 
 To **start** a `systemd` service, run:
 
-```text
-systemctl start SERVICE
-```
+```bash
+systemctl start <Service-name>
+
 
 _**Example:**_
 
