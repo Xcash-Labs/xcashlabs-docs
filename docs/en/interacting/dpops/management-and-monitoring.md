@@ -77,6 +77,7 @@ To **start** a `systemd` service, run:
 
 ```bash
     systemctl start <Service-name>
+```
 
 **Example:**
 
