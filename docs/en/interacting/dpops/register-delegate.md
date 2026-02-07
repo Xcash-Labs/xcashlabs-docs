@@ -98,7 +98,7 @@ delegate_update "<item>" "<value>"
 Available items:
 
 
-, , , , delegate_type, solo_addresses, delegate_fee, server_specs, minimum_payout
+, , , , , solo_addresses, delegate_fee, server_specs, minimum_payout
 
 
 | Item | Type | Description |
@@ -110,6 +110,8 @@ Available items:
 | `delegate_type` | **String** *(255 char max)* | One of: `solo`or `shared`. `shared` delegates set a fee and redistribute reward share. |
 | `delegate_fee` | **Number** | Percent fee `[0 - 100]` with up to 6 decimals. Example: `delegate_update delegate_fee 12.354321` |
 | `server_specs` | **String** *(255 char max)* | Description of server hardware/specs. Example: `delegate_update server_specs Operating System = Ubuntu 20.04 - CPU = 6 threads (Intel E5-2630 v4 - 2.20GHz) - RAM = 16GB DDR4 - Hard drive = 400GB SSD - Bandwidth Transfer = Unlimited` |
+| `minimum_payout` | **Number** | Minimum payout to stakers `[1 - 10000]`. Example: `delegate_update "minimum" "100"` |
+| `solo_addresses` | **String** | Percent fee `[0 - 100]` with up to 6 decimals. Example: `delegate_update delegate_fee 12.354321` |
 
 You will be prompted to wait for the next valid data interval. Once accepted, you should see:
 
