@@ -55,11 +55,15 @@ The different services needed for the XCash-Labs consensus running on the server
 
 !!! info
     All the **`unit`** files are located in **`/lib/systemd/system/`**
-    - /lib/systemd/system/xcash-daemon.service
-    - /lib/systemd/system/xcash-dpops.service
-    /lib/systemd/system/xcash-rpc-wallet.service
-    /lib/systemd/system/firewall.service
-    /lib/systemd/system/mongodb.service
+
+- /lib/systemd/system/xcash-daemon.service : Runs the DPoPS (Delegated Proof of Private Stake) consensus program. This service handles delegate communication, block verification, voting, and block production for the network.
+- xcash-rpc-wallet.service : Runs the wallet RPC service used by the delegate wallet. It manages the wallet in the background so rewards can be received, tracked, and distributed without keeping the CLI wallet open.
+
+firewall.service
+Manages the server’s firewall rules. It ensures only the required ports and services are accessible, helping secure the node from unwanted connections.
+
+mongodb.service
+Runs the MongoDB database used by the delegate node. It stores delegate data such as voter information, payout tracking, statistics, and other local node records.
 
 - xcash-daemon.service
 - xcash-dpops.service
