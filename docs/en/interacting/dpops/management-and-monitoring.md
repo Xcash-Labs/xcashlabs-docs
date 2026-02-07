@@ -123,51 +123,36 @@ To check the status and live logs of the XCash-Labs services, run the commands t
 
 For clearer, easier-to-read live logs, the examples below use parameters that limit the output to recent entries while following new activity as it happens.
 
-```text
-journalctl --unit=SERVICE --follow -n 100 --output cat
-```
+- journalctl --unit=SERVICE --follow -n 100 --output cat
 
 To check the **`xcash-dpops`** services, you can copy the following commands:
 
-
-
-```text
+```bash
 journalctl --unit=xcash-dpops --follow -n 100 --output cat
 ```
 
-
-
-```text
+```bash
 journalctl --unit=xcash-daemon --follow -n 100 --output cat
 ```
 
-
-
-```text
+```bash
 journalctl --unit=xcash-rpc-wallet --follow -n 100 --output cat
 ```
 
-
-
-```text
+```bash
 journalctl --unit=mongodb --follow -n 100 --output cat
 ```
 
-
-
-```text
+```bash
 journalctl --unit=firewall --follow -n 100 --output cat
 ```
 
-
-
 !!! info
-    The **`xcash-daemon`** service export its logs in a different place. To display the latest log, use the following command:
+    The **`xcash-daemon`** service export its logs in a different location than the other services. To display the latest log, use the following command:
 
-```text
-tail -n 100 ~/xcash-official/logs/xcash-daemon-log.txt
+```bash
+tail -n 100 ~/xcash-labs/logs/xcash-daemon-log.txt
 ```
-
 
 ### **Login service checking**
 
