@@ -83,59 +83,34 @@ To **start** a `systemd` service, run:
 ```
 
 
-
 To **restart** a `systemd` service, run:
+- systemctl restart <Service-name>
 
-```text
-systemctl restart SERVICE
+**Example:**
+
+```bash
+    systemctl restart xcash-dpops
 ```
-
-_**Example:**_
-
-```text
-systemctl restart xcash-rpc-wallet
-```
-
 
 
 To **stop** a `systemd` service, run:
+- systemctl stop <Service-name>
 
-```text
-systemctl stop SERVICE
-```
+**Example:**
 
-_**Example:**_
-
-```text
-systemctl stop xcash-daemon
+```bash
+    systemctl stop xcash-dpops
 ```
 
 
+To **status** a `systemd` service, run:
+- systemctl status <Service-name>
 
-To check the **status** of a `systemd` service, run:
+**Example:**
 
-```text
-systemctl status SERVICE
+```bash
+    systemctl status xcash-dpops
 ```
-
-_**Example:**_
-
-```text
-systemctl status mongodb
-```
-
-**Output:**
-
-```text
-● mongodb.service - MongoDB Database Server
-   Loaded: loaded (/lib/systemd/system/mongodb.service; disabled; vendor preset: enabled)
-   Active: active (exited) since Mon 2020-06-08 11:50:51 CEST; 38min ago
- Main PID: 14852 (code=exited, status=0/SUCCESS)
-   CGroup: /system.slice/mongodb.service
-           └─14854 /root/xcash-official/mongodb-linux-x86_64-ubuntu1804-4.2.3/bin/mongod --fork --syslog --dbpath /data/db/
-```
-
-
 
 ### **Monitoring & Logging**
 
