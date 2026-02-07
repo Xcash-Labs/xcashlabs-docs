@@ -53,6 +53,17 @@ In systemd, a unit represents any resource the system can manage, such as a serv
 
 The different services needed for the XCash-Labs consensus running on the server are listed below:
 
+!!! info
+    All the **`unit`** files are located in **`/lib/systemd/system/`**
+
+- xcash-daemon.service - Runs the main XCash-Labs blockchain daemon. This service connects to the network, synchronizes blocks, validates transactions, and maintains the local blockchain.
+- xcash-dpops.service
+- xcash-rpc-wallet.service
+- firewall.service
+- mongodb.service
+
+
+
 ```bash
 [Unit]
 Description=X-Cash DPOPS Daemon background process
