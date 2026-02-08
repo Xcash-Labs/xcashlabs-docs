@@ -117,4 +117,4 @@ image
 4. Click the vote button
 
 !!! info
-    - Currently the minimum amout to vote is set at 500
+    - Currently the minimum ammount needed to vote is set at 500 XCK
