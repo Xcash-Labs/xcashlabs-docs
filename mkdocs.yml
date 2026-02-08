@@ -14,7 +14,7 @@ nav:
     - Overview: 'interacting/overview.md'
     - Tokenomics: 'technical-specs.md'
     - Networks: 'infrastructure/networks.md'
-  - Delegated Proof of Private Stake(DPOPS):
+  - Delegated Proof of Private Stake (DPOPS):
     - 'interacting/dpops/get-started.md'
     - 'interacting/dpops/server-setup-guide.md'
     - 'interacting/dpops/node-installation.md'

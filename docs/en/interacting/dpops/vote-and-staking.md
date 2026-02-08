@@ -47,6 +47,7 @@ You will find 2 types of delegates:
 !!! info "Voting Rules"
     - **You can only have one vote per wallet.**
     - You need a minimum of `500` coins in the wallet to vote.
+    - Only uses account 0 unlocked balance for funds
     - Spending from the staked wallet balance will invalidate the vote.
 
 ## Casting Your Vote
@@ -55,21 +56,23 @@ You will find 2 types of delegates:
 
 ### Synchronize Your Wallet
 
-You can synchronize by:
+You can synchronize by connecting to a remote node, preferably a seed node or another trusted delegate node.  Pick a location that near you you.
 
-1. Running a local daemon (most secure, slower)
-2. Connecting to a remote node (faster)
+- seeds.xcashseeds.us (North America)
+- seeds.xcashseeds.uk (Europe)
+- seeds.xcashseeds.me (South America)
+- seeds.xcashseeds.cc (Asia)
 
 ### Remote Node Example
 
 ```bash
-./xcash-wallet-cli --daemon-address us1.xcash.foundation:18281
+./xcash-wallet-cli --daemon-address seeds.xcashseeds.us:18281
 ```
 
 ### Restore Wallet
 
 ```bash
-./xcash-wallet-cli --restore-deterministic-wallet --daemon-address us1.xcash.foundation:18281
+./xcash-wallet-cli --restore-deterministic-wallet --daemon-address seeds.xcashseeds.us:18281
 ```
 
 ### Prepare Your Vote
@@ -80,15 +83,13 @@ Before voting, consolidate outputs:
 sweep_all <your_wallet_address>
 ```
 
-Wait until funds are unlocked again before voting.
+Wait until funds are unlocked again before voting. Around 20 blocks or 20 minutes.
 
 ### Cast a Vote
 
 ```bash
 vote <delegate_name_or_address> <amount | all>
 ```
-
-Your wallet must remain open until the top of the hour for confirmation.
 
 ### Revote
 
@@ -98,20 +99,11 @@ If your balance increases:
 revote <amount>
 ```
 
-## Android Wallet
+## XCash-Labs Gui Wallet
 
-!!! warning
-    The Android wallet is still in beta. Always back up your keys and seed.
-
-Download:  
-https://github.com/X-CASH-official/android-wallet/releases
+Download: [https://xcashlabs.org/downloads](https://xcashlabs.org/downloads)
 
 Steps:
 
 1. Open wallet and sync
-2. Tap the DPoPS button
-3. Select delegate
-4. Tap **Vote**
-5. Wait for confirmation at the top of the hour
 
-You will receive rewards in this wallet after voting.
