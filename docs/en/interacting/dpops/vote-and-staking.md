@@ -108,3 +108,13 @@ Steps:
 
 1. Open wallet and sync
 
+2. Select the Advanced tab
+
+image
+
+3. Select the Delegate you wish to vote from from the drop down
+
+4. Click the vote button
+
+!!! info
+    - Currently the minimum amout to vote is set at 500
