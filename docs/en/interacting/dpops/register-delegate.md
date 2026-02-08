@@ -132,7 +132,7 @@ A solo delegate may choose to run a private group, where the delegate controls w
 
 To configure this, use delegate_update with the solo_addresses option to define the public wallet addresses that are allowed to vote for the delegate. Only these addresses will be eligible to receive shared rewards.
 
-Each allowed address must still vote for the delegate normally in order to participate.
+Each allowed address must still vote for the in order to collect a share of the rewards.
 
 
 ## 4. Prepare shared delegate payments
