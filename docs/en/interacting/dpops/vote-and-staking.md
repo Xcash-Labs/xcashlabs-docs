@@ -1,19 +1,19 @@
 ---
 title: Vote & Staking
-description: Learn how to stake your coins and vote for a delegate as an XCash-Labs holder, and understand how the voting and staking system works.
+description: As an XCash-Labs holder, you can stake your XCA and vote for a preferred delegate. Follow the guide below to understand how the voting and staking system works.
 ---
 
 # Vote & Staking
 
-!!! warning ""
+!!! info ""
     Currently you can vote from the CLI wallet or GUI wallet.
 
 ## Find Your Delegate
 
-All delegates are listed on the delegate explorer.
+All delegates are listed on the [XCash-Labs website](https://xcashlabs.org/delegates).  You will need to know the name of the delegate that you wish to vote for.
 
 !!! danger "Unverified Delegate Information"
-    Delegate explorer information may be self-reported by delegates.  
+    Delegate information may be self-reported by delegates.  
     There may be no automated checks verifying fees, payouts, or claims.
 
 !!! info ""
