@@ -56,8 +56,9 @@ You will find 2 types of delegates:
 
 ### Synchronize Your Wallet
 
-You can synchronize by connecting to a remote node, preferably a seed node or another trusted delegate node.  Pick a location that near you you.
+You can synchronize by connecting to a remote node—ideally a seed node or another trusted delegate. You can find available domains and IP addresses on the [XCash-Labs website](https://xcashlabs.org/delegates). For best performance, choose a node located geographically close to you.
 
+** Seed Nodes **
 - seeds.xcashseeds.us (North America)
 - seeds.xcashseeds.uk (Europe)
 - seeds.xcashseeds.me (South America)
