@@ -29,7 +29,7 @@ systemctl stop xcash-rpc-wallet
 Open and let your wallet synchronize (the wallet you generated during node installation with the [auto installer script](node-installation.md#auto-installer)): 
 
 ```bash
-~/xcash-official/xcash-core/build/release/bin/xcash-wallet-cli --wallet-file ~/xcash-official/xcash-wallets/<WALLET_NAME>
+~/xcash-labs/xcash-labs-core/build/Linux/master/release/bin/xcash-wallet-cli --wallet-file ~/xcash-labs/xcash-wallets/<WALLET_NAME>
 ```
 
 Replace **`<WALLET_NAME>`** with your wallet name.
@@ -89,7 +89,7 @@ systemctl stop xcash-rpc-wallet
 Open and synchronize the wallet you used to register:
 
 ```bash
-~/xcash-official/xcash-core/build/release/bin/xcash-wallet-cli --wallet-file ~/xcash-official/xcash-wallets/<WALLET_NAME>
+~/xcash-labs/xcash-labs-core/build/Linux/master/release/bin/xcash-wallet-cli --wallet-file ~/xcash-labs/xcash-wallets/<WALLET_NAME>
 ```
 
 !!! info
