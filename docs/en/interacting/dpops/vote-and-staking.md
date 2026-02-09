@@ -106,11 +106,11 @@ Download: [https://xcashlabs.org/downloads](https://xcashlabs.org/downloads)
 
 Steps:
 
-1. Open wallet and sync
+1. Open the wallet and let the sync complete.
 
-2. Select the Advanced tab on the left side of the menu
+2. Select the Advanced tab on the left side of the menu.
 
-image
+![instalation script](../../images/gui-wallet-vote1.png)
 
 3. Select the Delegate you wish to vote from from the drop down and the Vote button will appear.
 
