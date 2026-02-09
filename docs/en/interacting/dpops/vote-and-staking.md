@@ -108,13 +108,15 @@ Steps:
 
 1. Open wallet and sync
 
-2. Select the Advanced tab
+2. Select the Advanced tab on the left side of the menu
 
 image
 
-3. Select the Delegate you wish to vote from from the drop down
+3. Select the Delegate you wish to vote from from the drop down and the Vote button will appear.
 
 4. Click the vote button
 
+In some cases, voting may fail because the wallet needs to generate a reserve proof that exceeds the current input size. To resolve this, use the Sweep function to consolidate all funds. After the swept funds unlock (approximately 20 minutes), you can attempt the vote again.
+
 !!! info
-    - Currently the minimum ammount needed to vote is set at 500 XCK
+    - The current minimum voting requirement is set at 50 XCK to encourage early participation. This threshold is expected to increase gradually as the network grows and distribution becomes broader.
