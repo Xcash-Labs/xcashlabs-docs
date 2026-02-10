@@ -43,8 +43,14 @@ Set the inactivity timeout so it does not time out while waiting on commands to 
 set inactivity-lock-timeout 300
 ```
 
-Be sure you check out the [Server Requirements](server-requirements.md##server-requirements)
-Once your wallet is fully synchronized, your are ready to run:
+Be sure to review the [Server Requirements](server-requirements.md##server-requirements) and confirm that your setup meets the minimum specifications.
+
+Before installing, please check in with @minerjed on Discord for approval. This isn’t meant to restrict who can run a node—anyone is welcome to participate. The quick approval step simply helps coordinate new installations so we don’t get overwhelmed with many nodes coming online at the same time and can provide proper support to each operator.
+
+!!! info
+    You will need 1,000 XCK in your wallet to register. This requirement may be adjusted over time based on community feedback.
+
+Once your wallet is fully synchronized, your are ready to register:
 
 ```bash
 delegate_register <delegate_name> <IP_address|domain_name> <block_verifier_public_key>
