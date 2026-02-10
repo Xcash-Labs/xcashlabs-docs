@@ -38,10 +38,12 @@ This creates:
 
 ## Server Requirements
 
+Delegate nodes should be run on a VPS or dedicated server in a data center. Home PCs and residential connections often have higher latency, lower uptime, and bandwidth limits, which can reduce reliability and block production. A server-grade environment helps ensure stable participation in the network.
+
 | Requirement | Minimum | Recommended |
 |---|---:|---:|
 | **OS** | Ubuntu 22.04 | Ubuntu 24.04 LTS |
-| **CPU** | 2 cores | 8+ cores |
+| **CPU** | 4 cores | 8+ cores |
 | **RAM** | 8 GB | 32 GB |
 | **Storage** | 100 GB | 1 TB |
 | **Bandwidth** | 100 Mbps | 500 Mbps |
