@@ -43,7 +43,7 @@ Set the inactivity timeout so it does not time out while waiting on commands to 
 set inactivity-lock-timeout 300
 ```
 
-Be sure you check out the [Server Requirements](server-requirements.md#)[Server Requirements]
+Be sure you check out the [Server Requirements](server-requirements.md##server-requirements)
 Once your wallet is fully synchronized, your are ready to run:
 
 ```bash
