@@ -43,7 +43,8 @@ Set the inactivity timeout so it does not time out while waiting on commands to 
 set inactivity-lock-timeout 300
 ```
 
-Once your wallet is fully synchronized, run:
+Be sure you check out the [Server Requirements](server-requirements.md#)[Server Requirements]
+Once your wallet is fully synchronized, your are ready to run:
 
 ```bash
 delegate_register <delegate_name> <IP_address|domain_name> <block_verifier_public_key>
