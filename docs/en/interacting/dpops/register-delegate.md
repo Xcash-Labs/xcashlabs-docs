@@ -43,7 +43,7 @@ Set the inactivity timeout so it does not time out while waiting on commands to 
 set inactivity-lock-timeout 300
 ```
 
-Be sure to review the [Server Requirements](server-requirements.md##server-requirements) and confirm that your setup meets the minimum specifications.
+Be sure to review the [Server Requirements](server-setup-guide.md##server-requirements) and confirm that your setup meets the minimum specifications.
 
 Before installing, please check in with @minerjed on Discord for approval. This isn’t meant to restrict who can run a node—anyone is welcome to participate. The quick approval step simply helps coordinate new installations so we don’t get overwhelmed with many nodes coming online at the same time and can provide proper support to each operator.
 
