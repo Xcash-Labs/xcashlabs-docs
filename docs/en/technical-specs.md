@@ -11,7 +11,7 @@ title: XCash-Labs Technical Specification
 
 * XCash-Labs launched with no premine and no instamine
 * No ICO / no presale / no airdrop
-* XCK is the native coin of the network (not a token)
+* XCK (XCash Klassic) is the native cryptocurrency of the network - a true Layer 1 coin, not a token issued on another blockchain.
 
 ## Delegated Proof of Private Stake (DPoPS)
 
