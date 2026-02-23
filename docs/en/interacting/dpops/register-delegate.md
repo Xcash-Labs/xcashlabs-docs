@@ -40,7 +40,7 @@ Replace **`<WALLET_NAME>`** with your wallet name.
 Set the inactivity timeout so it does not time out while waiting on commands to complete.
 
 ```bash
-set inactivity-lock-timeout 300
+set inactivity-lock-timeout 900
 ```
 
 Be sure to review the [Server Requirements](server-setup-guide.md##server-requirements) and confirm that your setup meets the minimum specifications.
