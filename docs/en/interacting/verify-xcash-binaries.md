@@ -28,8 +28,8 @@ gpg --edit-key '0C79760B2656C210ABC60C886DAF4E5E07BA77F8'
 ```
 
 Then in the gpg utility trust the signature 
-gpg>trust
-gpg>4
+gpg> trust
+gpg> 4
 
 !!! danger
     If key with this fingerprint was not found then remove imported key immediately (gpg --delete-keys ...).
