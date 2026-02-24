@@ -27,7 +27,8 @@ Run the gpg utility to trust minerjed's public key (fingerprint must be exactly 
 gpg --edit-key '0C79760B2656C210ABC60C886DAF4E5E07BA77F8'
 ```
 
-Then in the gpg utility trust the signature 
+Then in the gpg utility trust the signature:
+
     gpg> trust
     gpg> 4
 
