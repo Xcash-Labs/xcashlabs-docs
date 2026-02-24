@@ -31,6 +31,7 @@ Then in the gpg utility trust the signature:
 
     gpg> trust
     gpg> 4
+    gpg> quit
 
 !!! danger
     If key with this fingerprint was not found then remove imported key immediately (gpg --delete-keys ...).
@@ -43,11 +44,12 @@ Please note the publication channel does not matter as long as you properly veri
 
 To verify these are real hashes (not tampered with) run:
 
-`curl https://www.xcashlabs.org/downloads/hashes.txt | gpg --verify`
-
+```bash
+gpg --verify <(curl -fsSL https://www.xcashlabs.org/downloads/hashes.txt.sig) <(curl -fsSL https://www.xcashlabs.org/downloads/hashes.txt)
+```   
 The expected output should contain the line:
 
-`gpg: Good signature from "minerjed <minerjed@xcashlabs.org>"`
+`gpg: Good signature from "XCASH Maintainer (minerjed) <az0006t@protonmail>" [unknown]`
 
 ## 3. Verify the hash
 
