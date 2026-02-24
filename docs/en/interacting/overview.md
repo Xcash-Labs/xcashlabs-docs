@@ -3,9 +3,9 @@ title: Interacting with xCash Klassic
 ---
 # Interacting with xCash Klassic
 
-XCash Klassic by xCash-Labs is built on the Monero v0.18.4.3 codebase and retains the core functionality and reliability of that foundation. This document offers a high-level overview of some of the capabilities currently available, though it does not cover everything the network can do. As development continues, more features, improvements, and documentation will be added over time.  The XCash-Labs network is composed of the top 50 elected delegates who are responsible for producing and validating blocks. XCash Klassic operates using this delegate-based infrastructure, meaning wallets connect to the network through one of these delegate nodes.
+XCash Klassic by xCash-Labs is built on the Monero v0.18.4.3 codebase and retains the core functionality and reliability of that foundation. This document offers a high-level overview of some of the capabilities currently available, though it does not cover everything the network can do. As development continues, more features, improvements, and documentation will be added.  
 
-Running a full node is supported for registered delegate nodes. Standard users interact with the network by connecting their wallets to an active delegate node rather than operating a full node themselves.
+The XCash-Labs network is composed of the top 50 elected delegates who are responsible for producing and validating blocks. XCash Klassic operates using this delegate-based infrastructure, meaning wallets connect to the network through one of these delegate nodes. Running a full node is supported for registered delegate nodes. Standard users interact with the network by connecting their wallets to an active delegate node rather than operating a full node themselves.
 
 You can interact with xCash Klassic via desktop GUI, commandline interface, and programming API.
 
@@ -52,17 +52,17 @@ extras/xcash-blockchain-depth
 
 ## Executables
 
-| Executable                 | Description
-| -------------------------- |:-----------------------------------------------------------------------------------------------------------------------------------
-| `xcashd`                  | The full node daemon. Does not require a wallet. <br />[Documentation](../interacting/xcashd-reference.md).
-| `xcash-wallet-gui`        | Wallet logic and __graphical__ user interface.
-| `xcash-wallet-cli`        | Wallet logic and __commandline__ user interface.
-| `xcash-wallet-rpc`        | Wallet logic and __HTTP API__ (JSON-RPC protocol). <br />Requires `xcashd` running.
-| `xcash-blockchain-prune`  | Prune existing local blockchain. This saves 2/3 of disk space (down to {{ lmdb_size_pruned }} GiB  as of {{ lmdb_size_updated }}). This is preferable over `xcashd --prune-blockchain` which only logically releases space inside the file while the file remains large. The `xcash-blockchain-prune` creates a shrunken copy of the blockchain file.
-| `xcash-gen-ssl-cert`      | Generate 4096 bit RSA private key and self signed TLS certificate for use with `xcashd` RPC interface. Note, xCash Klassic daemon automatically generates TLS certificate on each restart. Manual generation with this tool is only useful if you want to pin TLS certificate fingerprint in your xCash Klassic wallet.
-| `xcash-gen-trusted-multisig`          | Tool to generate a set of multisig wallets. <br />See chapter on [multisignatures](../multisignature.md).
-| `xcash-blockchain-export` | Tool to export blockchain to `blockchain.raw` file.
-| `xcash-blockchain-import` | Tool to import a raw blockchain, ideally your own trusted copy.
+| Executable                  | Description
+| ----------------------------|:-----------------------------------------------------------------------------------------------------------------------------------
+| `xcashd`                    | The full node daemon. Does not require a wallet. <br />[Documentation](../interacting/xcashd-reference.md).
+| `xcash-wallet-gui`          | Wallet logic and __graphical__ user interface.
+| `xcash-wallet-cli`          | Wallet logic and __commandline__ user interface.
+| `xcash-wallet-rpc`          | Wallet logic and __HTTP API__ (JSON-RPC protocol). <br />Requires `xcashd` running.
+| `xcash-blockchain-prune`    | Prune existing local blockchain. This saves 2/3 of disk space (down to {{ lmdb_size_pruned }} GiB  as of {{ lmdb_size_updated }}). This is preferable over `xcashd --prune-blockchain` which only logically releases space inside the file while the file remains large. The `xcash-blockchain-prune` creates a shrunken copy of the blockchain file.
+| `xcash-gen-ssl-cert`        | Generate 4096 bit RSA private key and self signed TLS certificate for use with `xcashd` RPC interface. Note, xCash Klassic daemon automatically generates TLS certificate on each restart. Manual generation with this tool is only useful if you want to pin TLS certificate fingerprint in your xCash Klassic wallet.
+| `xcash-gen-trusted-multisig`| Tool to generate a set of multisig wallets. <br />See chapter on [multisignatures](../multisignature.md).
+| `xcash-blockchain-export`   | Tool to export blockchain to `blockchain.raw` file.
+| `xcash-blockchain-import`   | Tool to import a raw blockchain, ideally your own trusted copy.
 
 ## Executables - legacy
 
@@ -83,10 +83,7 @@ You most likely should not bother with these legacy or very specialized tools.
 There are quite a few ways you can interact with XCash-Labs software.
 Perhaps the most surprising for newcomers is that `xcashd` daemon accepts interactive keyboard commands while it is running.
 
-Also, please note that `xcashd` and `xcash-wallet-rpc` are both accessible via their respective HTTP API / JSON-RPC endpoints.
-
-- [xcash-rpc](../rpc-library/xcashd-rpc.md)
-- [wallet-rpc](../rpc-library/wallet-rpc.md)
+Each executable includes a built-in help menu. To see all available configuration options, startup flags, and usage details, run the program with the --help parameter (for example, xcashd --help).
 
 All wallet implementations depend on a fully synchronized `xcashd` running.
 
@@ -114,3 +111,4 @@ Data directory contains:
 
 * `lmdb/` - the blockchain database directory
 * `p2pstate.bin` - saved memory of discovered and rated peers
+
