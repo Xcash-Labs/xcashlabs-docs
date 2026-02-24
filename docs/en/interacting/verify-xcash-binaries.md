@@ -23,9 +23,13 @@ curl -fsSL https://raw.githubusercontent.com/Xcash-Labs/xcash-labs-core/master/u
 
 Trust minerjed's public key (fingerprint must be exactly this):
 
-    gpg --edit-key '0C79760B2656C210ABC60C886DAF4E5E07BA77F8'
-    trust
-    4
+```bash
+gpg --edit-key '0C79760B2656C210ABC60C886DAF4E5E07BA77F8'
+```
+
+Then in the gpg utility trust the signature 
+gpg>trust
+gpg>4
 
 !!! danger
     If key with this fingerprint was not found then remove imported key immediately (gpg --delete-keys ...).
