@@ -21,7 +21,7 @@ Import binaryFate's public key to your keyring:
 curl -fsSL https://raw.githubusercontent.com/Xcash-Labs/xcash-labs-core/master/utils/gpg_keys/minerjed.asc | gpg --import
 ```
 
-Trust minerjed's public key (fingerprint must be exactly this):
+Run the gpg utility to trust minerjed's public key (fingerprint must be exactly this):
 
 ```bash
 gpg --edit-key '0C79760B2656C210ABC60C886DAF4E5E07BA77F8'
