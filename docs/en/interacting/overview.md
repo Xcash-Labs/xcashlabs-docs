@@ -1,23 +1,25 @@
 ---
-title: Interacting with XCash-Labs
+title: Interacting with XCash Klassic
 ---
-# Interacting with XCash-Labs
+# Interacting with XCash Klassic by xCash-Labs
 
-You can interact with XCash-Labs via desktop GUI, commandline interface, and programming API.
+XCash Klassic by xCash-Labs is built on the Monero v0.18.4.3 codebase and retains the core functionality and reliability of that foundation. This document offers a high-level overview of some of the capabilities currently available, though it does not cover everything the network can do. As development continues, more features, improvements, and documentation will be added over time.
 
-On top of that, XCash-Labs nodes interact with each other in a peer-to-peer network.
+You can interact with xCash Klassic via desktop GUI, commandline interface, and programming API.
+
+On top of that, xCash Klassic nodes interact with each other in a peer-to-peer network.
 
 ## Installation directory overview
 
 Once unpacked you will see several executable files. You will also find a nice PDF guide for the GUI wallet.
 
-XCash-Labs project nicely decouples network node logic from wallet logic.
+xCash Klassic project nicely decouples network node logic from wallet logic.
 Wallet logic is offered through three independent user interfaces - the GUI, the CLI, and the HTTP API.
 
 ```
 # cd xcash-gui-{{ cli_vers }}
 
-# ---- guide to XCash-Labs GUI ----
+# ---- guide to xCash Klassic GUI ----
 
 xcash-gui-wallet-guide.pdf
 
@@ -57,7 +59,7 @@ extras/xcash-blockchain-depth
 | `xcash-wallet-cli`        | Wallet logic and __commandline__ user interface.
 | `xcash-wallet-rpc`        | Wallet logic and __HTTP API__ (JSON-RPC protocol). <br />Requires `xcashd` running.
 | `xcash-blockchain-prune`  | Prune existing local blockchain. This saves 2/3 of disk space (down to {{ lmdb_size_pruned }} GiB  as of {{ lmdb_size_updated }}). This is preferable over `xcashd --prune-blockchain` which only logically releases space inside the file while the file remains large. The `xcash-blockchain-prune` creates a shrunken copy of the blockchain file.
-| `xcash-gen-ssl-cert`      | Generate 4096 bit RSA private key and self signed TLS certificate for use with `xcashd` RPC interface. Note, XCash-Labs daemon automatically generates TLS certificate on each restart. Manual generation with this tool is only useful if you want to pin TLS certificate fingerprint in your XCash-Labs wallet.
+| `xcash-gen-ssl-cert`      | Generate 4096 bit RSA private key and self signed TLS certificate for use with `xcashd` RPC interface. Note, xCash Klassic daemon automatically generates TLS certificate on each restart. Manual generation with this tool is only useful if you want to pin TLS certificate fingerprint in your xCash Klassic wallet.
 | `xcash-gen-trusted-multisig`          | Tool to generate a set of multisig wallets. <br />See chapter on [multisignatures](../multisignature.md).
 | `xcash-blockchain-export` | Tool to export blockchain to `blockchain.raw` file.
 | `xcash-blockchain-import` | Tool to import a raw blockchain, ideally your own trusted copy.
