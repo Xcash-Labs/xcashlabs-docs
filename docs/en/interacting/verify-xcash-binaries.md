@@ -17,8 +17,9 @@ minerjed is XCash-Labs core developer who signs the releases.
 His public key is available on GitHub in the project source code.
 Import binaryFate's public key to your keyring:
 
-`curl https://github.com/Xcash-Labs/xcash-labs-core/blob/master/utils/gpg_keys/minerjed.asc
- | gpg --import`
+```bash
+curl -fsSL https://raw.githubusercontent.com/Xcash-Labs/xcash-labs-core/master/utils/gpg_keys/minerjed.asc | gpg --import
+```
 
 Trust minerjed's public key (fingerprint must be exactly this):
 
