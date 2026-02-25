@@ -3,9 +3,9 @@ title: Interacting with xCash Klassic
 ---
 # Interacting with xCash Klassic
 
-XCash Klassic by xCash-Labs is built on the Monero v0.18.4.3 codebase and retains the core functionality and reliability of that foundation. This document offers a high-level overview of some of the capabilities currently available, though it does not cover everything the network can do. As development continues, more features, improvements, and documentation will be added.  
+XCash Klassic by xCash-Labs is built on the Monero v0.18.3.4 codebase and retains the core functionality and reliability of that foundation. This document offers a high-level overview of some of the capabilities currently available, though it does not cover everything the network can do. As development continues, more features, improvements, and documentation will be added.  
 
-The XCash-Labs network is composed of the top 50 elected delegates who are responsible for producing and validating blocks. XCash Klassic operates using this delegate-based infrastructure, meaning wallets connect to the network through one of these delegate nodes. Running a full node is supported for registered delegate nodes. Standard users interact with the network by connecting their wallets to an active delegate node rather than operating a full node themselves.
+The XCash-Labs network is composed of the top 50 elected delegates who are responsible for producing and validating blocks. XCash Klassic operates using this delegate-based infrastructure, meaning wallets connect to the network through one of these delegate nodes. Running a full node is currently only supported for registered delegate nodes. Standard users interact with the network by connecting their wallets to an active delegate node rather than operating a full node themselves.
 
 You can interact with xCash Klassic via desktop GUI, commandline interface, and programming API.
 
