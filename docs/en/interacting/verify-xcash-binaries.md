@@ -1,79 +1,114 @@
 ---
-title: Verifying XCash-Labs Binaries Signature
+title: Verifying XCash-Labs Binary Signatures
 ---
+
 # Verify XCash-Labs Binaries
 
-Verification must be carried on **before extracting the archive and before using XCash-Labs**.
+Verification **must be performed before extracting the archive and before running any XCash-Labs software**.
 
-Instructions were tested on Linux. They should also work on macOS with slight modifications.
+These instructions were tested on Linux and should also work on macOS with minor adjustments.
 
-## 1. Import lead maintainer PGP key
+---
 
-This is a one time action. Skip this step for subsequent XCash-Labs releases.
+## 1. Import the lead maintainer PGP key
 
-XCash-Labs core developers sign a list of hashes of released binaries.
+This is a one-time step. You can skip it for future releases once the key is trusted.
 
-minerjed is XCash-Labs core developer who signs the releases.
-His public key is available on GitHub in the project source code.
-Import binaryFate's public key to your keyring:
+XCash-Labs releases are signed by the lead maintainer.  
+Import the public key:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Xcash-Labs/xcash-labs-core/master/utils/gpg_keys/minerjed.asc | gpg --import
 ```
 
-Run the gpg utility to trust minerjed's public key (fingerprint must be exactly this):
+Verify and trust the key (the fingerprint **must match exactly**):
 
-```bash
-gpg --edit-key '0C79760B2656C210ABC60C886DAF4E5E07BA77F8'
+```
+0C79 760B 2656 C210 ABC6  0C88 6DAF 4E5E 07BA 77F8
 ```
 
-Then in the gpg utility trust the signature:
-
-    gpg> trust
-    gpg> 4
-    gpg> quit
-
-!!! danger
-    If key with this fingerprint was not found then remove imported key immediately (gpg --delete-keys ...).
-    That would mean the key changed (likely was compromised).
-
-## 2. Verify signature of hash list (hashes.txt)
-
-The list of binaries and their hashes is published on [xcashlabs.org](https://www.xcashlabs.org/downloads/hashes.txt).
-Please note the publication channel does not matter as long as you properly verify the signature!
-
-To verify these are real hashes (not tampered with) run:
+Open the trust editor:
 
 ```bash
-gpg --verify <(curl -fsSL https://www.xcashlabs.org/downloads/hashes.txt.sig) <(curl -fsSL https://www.xcashlabs.org/downloads/hashes.txt)
-```   
-The expected output should contain the line:
+gpg --edit-key 0C79760B2656C210ABC60C886DAF4E5E07BA77F8
+```
 
-`gpg: Good signature from "XCASH Maintainer (minerjed) <az0006t@protonmail>" [unknown]`
+Then set trust:
 
-## 3. Verify the hash
-
-By this step we checked that published hashes were not tampered with.
-
-The last step is to compare published hash with downloaded archive SHA-256 hash.
-
-[Download XCash-Labs](../interacting/download-xcash-binaries.md) if you didn't already (but do not unpack).
-
-Replace the example file name with actual one:
-
-    file_name=xcash-gui-linux-x64-{{ cli_vers }}.tar.bz2
-
-    file_hash=`sha256sum $file_name | cut -c 1-64`
-
-    curl https://www.xcashlabs.org/downloads/hashes.txt > /tmp/reference-hashes.txt
-
-    # verify the signature (previous step is repeated here for completeness)
-    gpg --verify /tmp/reference-hashes.txt
-
-    # grep must print the hash (output cannot be empty)
-    grep $file_hash /tmp/reference-hashes.txt
+```
+gpg> trust
+gpg> 4
+gpg> quit
+```
 
 !!! danger
-    If the grep output is empty then double check everything because apparently the hashes don't match.
+    If the fingerprint does not match, delete the key immediately:
 
-If grep printed filename and hash then everything is alright!
+    `gpg --delete-keys 0C79760B2656C210ABC60C886DAF4E5E07BA77F8`
+
+    A mismatch could indicate a compromised or replaced key.
+
+---
+
+## 2. Verify the signed hash list
+
+The official hash list is published here:  
+https://www.xcashlabs.org/downloads/hashes.txt
+
+Always verify the signature before trusting the file.
+
+```bash
+gpg --verify <(curl -fsSL https://www.xcashlabs.org/downloads/hashes.txt.sig) \
+             <(curl -fsSL https://www.xcashlabs.org/downloads/hashes.txt)
+```
+
+Expected output should include:
+
+```
+gpg: Good signature from "XCASH Maintainer (minerjed) <az0006t@protonmail>"
+```
+
+The `[unknown]` trust level is normal unless you fully signed the key locally.
+
+---
+
+## 3. Verify the downloaded file hash
+
+Now confirm your downloaded archive matches the published hash.
+
+Download the binaries (do **not** extract yet):  
+[Download XCash-Labs](../interacting/download-xcash-binaries.md)
+
+Example:
+
+```bash
+file_name=xcash-gui-linux-x64-VERSION.tar.bz2
+file_hash=$(sha256sum "$file_name" | cut -c1-64)
+
+curl -fsSL https://www.xcashlabs.org/downloads/hashes.txt > /tmp/reference-hashes.txt
+
+grep "$file_hash" /tmp/reference-hashes.txt
+```
+
+If the hash appears in the output, the file is authentic.
+
+!!! danger
+    If no match is found:
+
+    - Do **not** run the binaries  
+    - Re-download the file  
+    - Verify the signature again  
+
+    A mismatch means the file may be corrupted or tampered with.
+
+---
+
+## Summary
+
+You are safe to run the binaries only if:
+
+- The maintainer key fingerprint matches  
+- The hash list signature is valid  
+- Your downloaded file hash matches the published hash  
+
+If all checks pass, the release is authentic.

@@ -1,27 +1,26 @@
 ---
-title: Download XCash-Labs
+title: Download XCash-Labs Binaries
 ---
-# Download XCash-Labs
 
-A single archive contains all you need to start using XCash-Labs (the full node and the wallet).
+# Downloading XCash-Labs Binaries
 
-We recommend downloading XCash-Labs binaries directly from GitHub or from [https://xcashlabs.org/downloads](https://xcashlabs.org/downloads).
+The download archive contains everything required to start using **XCash Klassic**. 
+To keep things simple for end-users, only wallet binaries are provided, as these are all that’s needed to interact with the network.
 
-GUI + CLI: [https://github.com/Xcash-Labs/xcash-gui/releases](https://github.com/Xcash-Labs/xcash-gui/releases)
-CLI only: [https://github.com/Xcash-Labs/xcash-labs-core/releases](https://github.com/Xcash-Labs/xcash-labs-core/releases)
+You can download the latest binaries directly from:  
+https://xcashlabs.org/downloads
 
-GUI is a graphical desktop wallet.
+- **GUI wallet** — graphical desktop wallet for everyday use  
+- **CLI wallet** — command-line wallet for advanced users and servers  
 
-CLI is a commandline desktop wallet.
+It is strongly recommended that you **verify the signature** of any downloaded archive before using it:  
+[Verify XCash-Labs binaries](../interacting/verify-xcash-binaries.md)
 
-It is critical to [verify the signature](../interacting/verify-xcash-binaries.md) of the downloaded archive.
+---
 
-## Which version to download?
+## Which version should I download?
 
-Download the latest version matching your operating system and processor architecture.
+Download the latest release that matches your operating system and processor architecture.
 
-The CLI version is released earlier and is suitable for server deployments.
-
-The GUI version contains both CLI and GUI. It is preferable for end-users.
-
-All versions contain a wallet.
+- The **CLI wallet** is typically released first and is suitable for servers or advanced setups.  
+- The **GUI wallet** includes both the GUI and CLI components and is recommended for most users.
