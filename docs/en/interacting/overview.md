@@ -33,3 +33,7 @@ While XCash Klassic shares its privacy technology and transaction structure with
 
 - **User experience focus**  
   The network is designed so most users can interact through wallets without running full infrastructure, reducing setup complexity while maintaining strong privacy and security.
+
+## Acknowledgments and Open-Source Credits
+
+  XCash Klassic is built on a foundation of open-source work made possible by the broader privacy-focused cryptocurrency community. We would like to acknowledge and thank the teams behind the CryptoNoteStarter, the Monero Project, and the original X-CASH team for developing and maintaining open-source code that made this project possible. Their work provided the technical groundwork upon which XCash Klassic has been rebuilt and modernized.
