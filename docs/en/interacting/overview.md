@@ -3,7 +3,7 @@ title: Interacting with XCash Klassic
 ---
 # Using XCash Klassic
 
-XCash Klassic by XCash-Labs is a complete rewrite and modernization of the original X-CASH project, built on the Monero v0.18.3.4 codebase. It preserves the core privacy, transaction structure, and reliability of that foundation while introducing a redesigned consensus and governance model focused on long-term stability and coordinated block production. This document provides a high-level overview of the network’s current capabilities and will continue to expand as development progresses.
+XCash Klassic by XCash-Labs is a complete rewrite and modernization of the original X-CASH project, built on the Monero v0.18.3.4 codebase. It preserves the core privacy, transaction structure, and reliability while introducing a redesigned consensus and governance model focused on long-term stability and coordinated block production. This document provides a high-level overview of the network’s current capabilities and will continue to expand as development progresses.
 
 The XCash-Labs network operates using Delegated Proof-of-Private-Stake (DPoPS), in which the top 50 elected delegates are responsible for producing and validating blocks. This replaces traditional proof-of-work mining with a deterministic, delegate-driven system while maintaining the privacy technologies and transaction model inherited from Monero.
 
