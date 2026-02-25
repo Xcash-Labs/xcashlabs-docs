@@ -1,7 +1,7 @@
 # Project information
-site_name: xCash-Labs Docs
-site_description: 'xCash-Labs Documentation'
-site_author: "xCash-Labs Community"
+site_name: XCash-Labs Docs
+site_description: 'XCash-Labs Documentation'
+site_author: "XCash-Labs Community"
 site_url: 'https://docs.xcashlabs.org'
 site_dir: '/var/www/public'
 
