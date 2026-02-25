@@ -1,7 +1,7 @@
 # Project information
-site_name: XCash-Labs Docs
-site_description: 'XCash-Labs Documentation'
-site_author: "XCash-Labs Community"
+site_name: xCash-Labs Docs
+site_description: 'xCash-Labs Documentation'
+site_author: "xCash-Labs Community"
 site_url: 'https://docs.xcashlabs.org'
 site_dir: '/var/www/public'
 
@@ -9,7 +9,7 @@ copyright: '© 2026 XCash-Labs Community under <a href="https://opensource.org/l
 
 nav:
 - Home: 'index.md'
-- Interacting:
+- Using xCash Klassic:
   - The Basics:
     - Overview: 'interacting/overview.md'
     - Tokenomics: 'technical-specs.md'
