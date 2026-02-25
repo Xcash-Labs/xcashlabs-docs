@@ -7,13 +7,13 @@ title: Download XCash-Labs Binaries
 The download archive contains everything required to start using **XCash Klassic**. 
 To keep things simple for end-users, only wallet binaries are provided, as these are all that’s needed to interact with the network.
 
-You can download the latest binaries directly from:  
-https://xcashlabs.org/downloads
+You can download the latest binaries directly from:
+[https://xcashlabs.org/downloads](https://xcashlabs.org/downloads)
 
 - **GUI wallet** — graphical desktop wallet for everyday use  
 - **CLI wallet** — command-line wallet for advanced users and servers  
 
-It is strongly recommended that you **verify the signature** of any downloaded archive before using it:  
+It is strongly recommended that you **verify the signature** of any downloaded archive before using:  
 [Verify XCash-Labs binaries](../interacting/verify-xcash-binaries.md)
 
 ---
