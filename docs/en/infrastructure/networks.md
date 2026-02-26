@@ -6,9 +6,8 @@ title: Mainnet, Stagenet, Testnet
 !!! note ""
     XCash-Labs plans to offers multiple network environments to support both real-world usage and future development/testing:
 
-    [**mainnet**](#mainnet)    
-    [**stagenet**](#stagenet)    
-    [**testnet**](#testnet)    
+    [**mainnet**](#mainnet)      
+    [**testnet**](#testnet)   Planned for a future release.
 
     Every network has its own genesis block and is entirely separate from others.
 
@@ -18,17 +17,18 @@ title: Mainnet, Stagenet, Testnet
     Be cautious when using **_any_** remote node or block explorer.
 
     Malicious service providers may log and associate your IP address, TXIDs, addresses, and more.
-    If you must use untrusted nodes, consider using them over Tor (Onion) or I2P whenever supported.
 
 ### Nodes
 
-- Nodes - Self-Hosted (Recommended)
-    - Run your own XCash-Labs node
-    - Use a node which is controlled by somebody you trust
+**Delegate Nodes (Standard Model)**  
+- XCash Klassic wallets connect to delegate-operated nodes (remote nodes) by design  
+- These nodes maintain the full blockchain and participate in block production  
+- Most users interact with the network through these delegate nodes  
 
-- Nodes - Remote (Use caution)
-    - Remote nodes are convenient, but may reduce privacy
-    - Prefer nodes operated by trusted community members or infrastructure providers
+**Choosing a Remote Node (Use Care)**  
+- Remote node operators may observe connection metadata such as IP address and request timing  
+- Prefer connecting to trusted or well-known delegates  
+- Avoid using unknown public nodes for sensitive activity 
 
 
 ### Block Explorers - Self-Hosted
