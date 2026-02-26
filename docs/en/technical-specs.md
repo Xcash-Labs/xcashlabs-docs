@@ -1,15 +1,15 @@
 ---
 title: XCash-Labs Technical Specification
 ---
-# XCash-Labs Technical Specs
+# XCash Klassic Technical Specs
 
 ## Live
 
-* XCash-Labs blockchain is live since 2026-01-10 (genesis)
+* XCash Klassic blockchain is live since 2026-01-10 (genesis)
 
 ## No premine, no instamine, no ICO, no token
 
-* XCash-Labs launched with no premine and no instamine
+* XCash Klassic launched with no premine and no instamine
 * No ICO / no presale / no airdrop
 * XCK (XCash Klassic) is the native cryptocurrency of the network - a true Layer 1 coin, not a token issued on another blockchain.
 
@@ -22,7 +22,7 @@ title: XCash-Labs Technical Specification
 
 ## Difficulty retarget
 
-* XCash-Labs uses DPoPS block production, therefore PoW difficulty retargeting is not used (PoW hash fields may exist for format compatibility)
+* XCash Klassic uses DPoPS block production, therefore PoW difficulty retargeting is not used (PoW hash fields may exist for format compatibility)
 
 ## Block time
 
@@ -66,7 +66,7 @@ title: XCash-Labs Technical Specification
 
 ## Divisibility
 
-* XCash-Labs is divisible up to 0.000001 XCK (6 decimals)
+* XCash Klassic is divisible up to 0.000001 XCK (6 decimals)
 
 ## Sender privacy
 
@@ -96,7 +96,7 @@ title: XCash-Labs Technical Specification
 
 ###Recommended protection for node operators:
 
-* run nodes behind a firewall and strict allowlists
+* run nodes behind a firewall (iptables) and strict allowlists
 * restrict inbound ports and enforce rate limits
 * monitor connectivity and latency (DPoPS relies on stable networking)
  
