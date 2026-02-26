@@ -9,13 +9,13 @@ So now you have downloaded and verified the software package. This secting is fr
 
 ??? abstract "Installing xcash-gui on Windows (tested on 10/11)"
 
-    # 1. At this point you should have xcash-gui-win-x64-v0.18.4.3.exe install package on your desktop.
+    1. At this point you should have xcash-gui-win-x64-v0.18.4.3.exe install package on your desktop.
     
-    # 2. Right click the install package icon and clik Properties.
+    2. Right click the install package icon and clik Properties.
     
-    # 3. At the bottom of the general block, click Unblock and then OK.
+    3. At the bottom of the general block, click Unblock and then OK.
     
-    # 4. Then double click the install package icon and just follow the prompts.
+    4. Then double click the install package icon and just follow the prompts.
 
 ??? abstract "Installing xcash-gui on Ubuntu (tested on Ubuntu Desktop 22.04)"
 
