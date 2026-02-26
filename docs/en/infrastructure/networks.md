@@ -60,10 +60,4 @@ Testnet will be the "experimental" network and blockchain where protocol feature
 
 Testnet may fork earlier and more often than mainnet.
 Developers should keep their sources up to date and compile often.
-
-## FAQ
-
-??? question "Why do testnet coins have no value?"
-
-    A: This is simply the convention the community embraces.
-    Value only comes from a shared belief that mainnet coins will be accepted by other people in the future.
+Testnet coins have no value.
