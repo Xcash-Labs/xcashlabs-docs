@@ -7,7 +7,7 @@ So now you have downloaded and verified the software package. This secting is fr
 
 ## Wallet
 
-??? abstract "Installing xcash-gui on Windows (tested on windows 10/11)"
+??? abstract "## SInstalling xcash-gui on Windows (tested on windows 10/11)"
 
     1. At this point you should have xcash-gui-win-x64-v0.18.4.3.exe install package on your desktop.
     
