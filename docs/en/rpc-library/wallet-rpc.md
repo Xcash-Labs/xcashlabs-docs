@@ -42,7 +42,7 @@ curl \
     -H 'Content-Type: application/json'
 ```
 
-Note: "[atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.")" refer to the smallest fraction of 1 XMR according to the monerod implementation. **1 XMR = 1e12 [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").**
+Note: "[atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.")" refer to the smallest fraction of 1 XCK according to the xcashd implementation. **1 XCK = 1e12 [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").**
 
 ## Index of JSON-RPC Methods
 
@@ -236,8 +236,8 @@ Inputs:
 Outputs:
 
 -   _good_  - boolean; States if the inputs proves the reserve.
--   _spent_  - unsigned int; Amount (in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.")) of the total that has been spent.
--   _total_  - unsigned int; Total amount (in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.")) of the reserve that was proven.
+-   _spent_  - unsigned int; Amount (in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.")) of the total that has been spent.
+-   _total_  - unsigned int; Total amount (in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.")) of the reserve that was proven.
 
 In the example below, the reserve has been proven:
 
@@ -595,14 +595,14 @@ Inputs:
 Outputs:
 
 -   _desc_  - The description of the transfer as a list of:
-    -   _amount_in_  - unsigned int (64 bit); The sum of the inputs spent by the transaction in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
-    -   _amount_out_  - unsigned int (64 bit); The sum of the outputs created by the transaction in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
+    -   _amount_in_  - unsigned int (64 bit); The sum of the inputs spent by the transaction in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
+    -   _amount_out_  - unsigned int (64 bit); The sum of the outputs created by the transaction in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
     -   _recipients_  - list of:
         -   _address_  - string; The public address of the recipient.
-        -   _amount_  - unsigned int; The amount sent to the recipient in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
+        -   _amount_  - unsigned int; The amount sent to the recipient in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
     -   _change_address_  - string; The address of the change recipient.
-    -   _change_amount_  - unsigned int; The amount sent to the change address in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
-    -   _fee_  - unsigned int; The fee charged for the transaction in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
+    -   _change_amount_  - unsigned int; The amount sent to the change address in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
+    -   _fee_  - unsigned int; The fee charged for the transaction in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
     -   _payment_id_  - string; payment ID for this transfer.
     -   _ring_size_  - unsigned int; The number of inputs in the ring (1 real output + the number of decoys from the blockchain) (Unless dealing with pre rct outputs, this field is ignored on mainnet).
     -   _unlock_time_  - unsigned int; The number of blocks before the monero can be spent (0 for no lock).
@@ -1199,7 +1199,7 @@ Inputs:
 Outputs:
 
 -   _balance_  - unsigned int; The total balance of the current xcash-wallet-rpc in session.
--   _unlocked_balance_  - unsigned int; Unlocked funds are those funds that are sufficiently deep enough in the Monero blockchain to be considered safe to spend.
+-   _unlocked_balance_  - unsigned int; Unlocked funds are those funds that are sufficiently deep enough in the XCash Klassic blockchain to be considered safe to spend.
 -   _multisig_import_needed_  - boolean; True if importing multisig data is needed for returning a correct balance.
 -   _time_to_unlock_  - unsigned int; Time (in seconds) before balance is safe to spend.
 -   _blocks_to_unlock_  - unsigned int; Number of blocks before balance is safe to spend.
@@ -1445,7 +1445,7 @@ Inputs:
 
 -   _all_  - boolean; Proves all wallet balance to be disposable.
 -   _account_index_  - unsigned int; Specify the account from which to prove reserve. (ignored if `all` is set to true)
--   _amount_  - unsigned int; Amount (in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.")) to prove the account has in reserve. (ignored if `all` is set to true)
+-   _amount_  - unsigned int; Amount (in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.")) to prove the account has in reserve. (ignored if `all` is set to true)
 -   _message_  - string; (Optional) add a message to the signature to further authenticate the proving process. If a _message_ is added to `get_reserve_proof` (optional), this message will be required when using `check_reserve_proof`
 
 Outputs:
@@ -1911,8 +1911,8 @@ Inputs:
 Outputs:
 
 -   _height_  - unsigned int;
--   _spent_  - unsigned int; Amount (in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.")) spent from those key images.
--   _unspent_  - unsigned int; Amount (in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.")) still available from those key images.
+-   _spent_  - unsigned int; Amount (in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.")) spent from those key images.
+-   _unspent_  - unsigned int; Amount (in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.")) still available from those key images.
 
 Example:
 
@@ -2225,15 +2225,15 @@ Analyzes a string to determine whether it is a valid monero wallet address and r
 Inputs:
 
 -   _address_  - string; The address to validate.
--   _any_net_type_  - boolean (Optional); If true, consider addresses belonging to any of the three Monero networks (mainnet, stagenet, and testnet) valid. Otherwise, only consider an address valid if it belongs to the network on which the rpc-wallet's current daemon is running (Defaults to false).
+-   _any_net_type_  - boolean (Optional); If true, consider addresses belonging to any of the three XCash Klassic networks (mainnet, stagenet, and testnet) valid. Otherwise, only consider an address valid if it belongs to the network on which the rpc-wallet's current daemon is running (Defaults to false).
 -   _allow_openalias_  - boolean (Optional); If true, consider [OpenAlias-formatted addresses](https://www.getmonero.org/resources/moneropedia/openalias.html) valid (Defaults to false).
 
 Outputs:
 
--   _valid_  - boolean; True if the input address is a valid Monero address.
+-   _valid_  - boolean; True if the input address is a valid XCash Klassic address.
 -   _integrated_  - boolean; True if the given address is an [integrated address](https://www.getmonero.org/resources/moneropedia/address.html).
 -   _subaddress_  - boolean; True if the given address is a [subaddress](https://github.com/monero-project/monero/pull/2056)
--   _nettype_  - string; Specifies which of the three Monero networks (mainnet, stagenet, and testnet) the address belongs to.
+-   _nettype_  - string; Specifies which of the three XCash Klassic networks (mainnet, stagenet, and testnet) the address belongs to.
 -   _openalias_address_  - string; Address which the [OpenAlias-formatted address](https://www.getmonero.org/resources/moneropedia/openalias.html) points to, if given.
 
 Example:
@@ -2338,7 +2338,7 @@ Alias:  _None_.
 Inputs:
 
 -   _address_  - string; Wallet address
--   _amount_  - unsigned int; (optional) the integer amount to receive, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
+-   _amount_  - unsigned int; (optional) the integer amount to receive, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
 -   _payment_id_  - string; (Optional, defaults to a random ID) 16 characters hex encoded.
 -   _recipient_name_  - string; (optional) name of the payment recipient
 -   _tx_description_  - string; (optional) Description of the reason for the tx
@@ -2399,7 +2399,7 @@ Outputs:
 
 -   _uri_  - JSON object containing payment information:
     -   _address_  - string; Wallet address
-    -   _amount_  - unsigned int; Integer amount to receive, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.") (0 if not provided)
+    -   _amount_  - unsigned int; Integer amount to receive, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.") (0 if not provided)
     -   _payment_id_  - string; (Optional, defaults to a random ID) 16 characters hex encoded.
     -   _recipient_name_  - string; Name of the payment recipient (empty if not provided)
     -   _tx_description_  - string; Description of the reason for the tx (empty if not provided)
@@ -2717,7 +2717,7 @@ $ curl -X POST http://127.0.0.1:18088/json_rpc -d '{"jsonrpc":"2.0","id":"0","me
 
 ### **set_daemon**
 
-Connect the RPC server to a Monero daemon.
+Connect the RPC server to a XCash Klassic daemon.
 
 Alias:  _None_.
 
@@ -2740,7 +2740,7 @@ Outputs: _None_.
 Example:
 
 ```json
-$ curl -X POST http://127.0.0.1:18088/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"set_daemon","params": {"address":"http://localhost:18081","trusted":true,"ssl_support":"enabled","ssl_private_key_path":"path/to/ssl/key","ssl_certificate_path":"path/to/ssl/certificate","ssl_ca_file":"path/to/ssl/ca/file","ssl_allowed_fingerprints":["85:A7:68:29:BE:73:49:80:84:91:7A:BB:1F:F1:AD:7E:43:FE:CC:B8"],"ssl_allow_any_cert":true}},' -H 'Content-Type: application/json'
+$ curl -X POST http://127.0.0.1:18088/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"set_daemon","params": {"address":"http://localhost:18281","trusted":true,"ssl_support":"enabled","ssl_private_key_path":"path/to/ssl/key","ssl_certificate_path":"path/to/ssl/certificate","ssl_ca_file":"path/to/ssl/ca/file","ssl_allowed_fingerprints":["85:A7:68:29:BE:73:49:80:84:91:7A:BB:1F:F1:AD:7E:43:FE:CC:B8"],"ssl_allow_any_cert":true}},' -H 'Content-Type: application/json'
 {
   "id": "0",
   "jsonrpc": "2.0",
@@ -2977,7 +2977,7 @@ $ curl -X POST http://127.0.0.1:18088/json_rpc -d '{"jsonrpc":"2.0","id":"0","me
 
 ### **start_mining**
 
-Start mining in the Monero daemon.
+Start mining in the XCash Klassic daemon.
 
 Alias:  _None_.
 
@@ -3004,7 +3004,7 @@ $ curl -X POST http://127.0.0.1:18088/json_rpc -d '{"jsonrpc":"2.0","id":"0","me
 
 ### **stop_mining**
 
-Stop mining in the Monero daemon.
+Stop mining in the XCash Klassic daemon.
 
 Alias:  _None_.
 
@@ -3362,8 +3362,8 @@ Alias:  _None_.
 
 Inputs:
 
--   _destinations_  - array of destinations to receive XMR:
-    -   _amount_  - unsigned int; Amount to send to each destination, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
+-   _destinations_  - array of destinations to receive XCK:
+    -   _amount_  - unsigned int; Amount to send to each destination, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
     -   _address_  - string; Destination public address.
 -   _account_index_  - unsigned int; (Optional) Transfer from this account index. (Defaults to 0)
 -   _subaddr_indices_  - array of unsigned int; (Optional) Transfer from this set of subaddresses. (Defaults to empty - all indices)
@@ -3443,8 +3443,8 @@ Alias:  _None_.
 
 Inputs:
 
--   _destinations_  - array of destinations to receive XMR:
-    -   _amount_  - unsigned int; Amount to send to each destination, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
+-   _destinations_  - array of destinations to receive XCK:
+    -   _amount_  - unsigned int; Amount to send to each destination, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
     -   _address_  - string; Destination public address.
 -   _account_index_  - unsigned int; (Optional) Transfer from this account index. (Defaults to 0)
 -   _subaddr_indices_  - array of unsigned int; (Optional) Transfer from this set of subaddresses. (Defaults to empty - all indices)

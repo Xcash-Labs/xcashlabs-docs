@@ -138,7 +138,7 @@ plugins:
   - macros:
       include_dir: docs/macros/includes
       include_yaml:
-        - docs/macros/monerod.yml
+        - docs/macros/xcashd.yml
   - i18n:
       docs_structure: folder
       languages:

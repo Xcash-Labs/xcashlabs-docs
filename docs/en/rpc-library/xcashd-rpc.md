@@ -4,25 +4,25 @@ title: "Daemon RPC documentation"
 
 # Daemon RPC
 
-**`monerod`** [Overview](../interacting/xcash-reference.md)
+**`xcashd`** [Overview](../interacting/xcash-reference.md)
 
 ## Introduction
 
-This is a list of the monerod daemon RPC calls, their inputs and outputs, and examples of each.
+This is a list of the xcashd daemon RPC calls, their inputs and outputs, and examples of each.
 
-Note: "[atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.")" refer to the smallest fraction of 1 XMR according to the monerod implementation. **1 XMR = 1e12 [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").**
+Note: **atomic Units** refer to the smallest fraction of 1 XCK according to the xcashd implementation. **1 XCK = 1e6 atomic-units.**
 
 ## JSON-RPC example
 
 The API is based on [JSON-RPC standard](https://en.wikipedia.org/wiki/JSON-RPC) version 2.0.
 
-Many `monerod` RPC calls use the daemon's JSON RPC interface while others use their own interfaces, as demonstrated [below](#other-daemon-rpc-calls).
+Many `xcashd` RPC calls use the daemon's JSON RPC interface while others use their own interfaces, as demonstrated [below](#other-daemon-rpc-calls).
 
-Assuming `monerod` is running on 127.0.0.1:18081, you would call it like this:
+Assuming `xcashd` is running on 127.0.0.1:18281, you would call it like this:
 
 ```json
 IP=127.0.0.1
-PORT=18081
+PORT=18281
 METHOD='get_block_header_by_height'
 PARAMS='{"height":912345}'
 curl \
@@ -31,11 +31,11 @@ curl \
     -H 'Content-Type: application/json'
 ```
 
-If `monerod` was executed with the `--rpc-login` argument as `username:password`, then follow this example:
+If `xcashd` was executed with the `--rpc-login` argument as `username:password`, then follow this example:
 
 ```json
 IP=127.0.0.1
-PORT=18081
+PORT=18281
 METHOD='get_block_header_by_height'
 PARAMS='{"height":912345}'
 curl \
@@ -126,7 +126,7 @@ Some methods include parameters, while others do not. Examples of each JSON RPC 
 
 ### **add_aux_pow**
 
-Easily enable merge mining with Monero without requiring software that manually alters the extra field in the coinbase tx to include the merkle root of the aux blocks.
+Easily enable merge mining with XCash Klassic without requiring software that manually alters the extra field in the coinbase tx to include the merkle root of the aux blocks.
 
 Alias: _None_ .
 
@@ -150,7 +150,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"add_aux_pow","params":{"blocktemplate_blob":" ... ","aux_pow":[{"id":"3200b4ea97c3b2081cd4190b58e49572b2319fed00d030ad51809dff06b5d8c8","hash":"7b35762de164b20885e15dbe656b1138db06bb402fa1796f5765a23933d8859a"}]}}' -H 'Content-Type: application/json''
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"add_aux_pow","params":{"blocktemplate_blob":" ... ","aux_pow":[{"id":"3200b4ea97c3b2081cd4190b58e49572b2319fed00d030ad51809dff06b5d8c8","hash":"7b35762de164b20885e15dbe656b1138db06bb402fa1796f5765a23933d8859a"}]}}' -H 'Content-Type: application/json''
 
 {
   "id": "0",
@@ -192,7 +192,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"banned","params":{"address":"95.216.203.255"}}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"banned","params":{"address":"95.216.203.255"}}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -226,7 +226,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"calc_pow","params":{"major_version":14,"height":2286447,"block_blob":"0e0ed286da8006ecdc1aab3033cf1716c52f13f9d8ae0051615a2453643de94643b550d543becd0000000002abc78b0101ffefc68b0101fcfcf0d4b422025014bb4a1eade6622fd781cb1063381cad396efa69719b41aa28b4fce8c7ad4b5f019ce1dc670456b24a5e03c2d9058a2df10fec779e2579753b1847b74ee644f16b023c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000051399a1bc46a846474f5b33db24eae173a26393b976054ee14f9feefe99925233802867097564c9db7a36af5bb5ed33ab46e63092bd8d32cef121608c3258edd55562812e21cc7e3ac73045745a72f7d74581d9a0849d6f30e8b2923171253e864f4e9ddea3acb5bc755f1c4a878130a70c26297540bc0b7a57affb6b35c1f03d8dbd54ece8457531f8cba15bb74516779c01193e212050423020e45aa2c15dcb","seed_hash":"d432f499205150873b2572b5f033c9c6e4b7c6f3394bd2dd93822cd7085e7307"}}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"calc_pow","params":{"major_version":14,"height":2286447,"block_blob":"0e0ed286da8006ecdc1aab3033cf1716c52f13f9d8ae0051615a2453643de94643b550d543becd0000000002abc78b0101ffefc68b0101fcfcf0d4b422025014bb4a1eade6622fd781cb1063381cad396efa69719b41aa28b4fce8c7ad4b5f019ce1dc670456b24a5e03c2d9058a2df10fec779e2579753b1847b74ee644f16b023c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000051399a1bc46a846474f5b33db24eae173a26393b976054ee14f9feefe99925233802867097564c9db7a36af5bb5ed33ab46e63092bd8d32cef121608c3258edd55562812e21cc7e3ac73045745a72f7d74581d9a0849d6f30e8b2923171253e864f4e9ddea3acb5bc755f1c4a878130a70c26297540bc0b7a57affb6b35c1f03d8dbd54ece8457531f8cba15bb74516779c01193e212050423020e45aa2c15dcb","seed_hash":"d432f499205150873b2572b5f033c9c6e4b7c6f3394bd2dd93822cd7085e7307"}}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -256,7 +256,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"flush_cache","params":{"bad_txs":true,"bad_blocks":true}}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"flush_cache","params":{"bad_txs":true,"bad_blocks":true}}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -287,7 +287,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"flush_txpool","params":{"txids":["dc16fa8eaffe1484ca9014ea050e13131d3acf23b419f33bb4cc0b32b6c49308",""]}}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"flush_txpool","params":{"txids":["dc16fa8eaffe1484ca9014ea050e13131d3acf23b419f33bb4cc0b32b6c49308",""]}}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -315,10 +315,10 @@ Outputs:
 - _status_ - string; General RPC error code. "OK" means everything looks good.
 - _untrusted_ - boolean; States if the result is obtained using the bootstrap mode, and is therefore not trusted (`true`), or when the daemon is fully synced and thus handles the RPC locally (`false`)
 
-The example below uses monerod with the start flags `--regtest --offline --fixed-difficulty 1`. `--offline` ensures that the node does not connect to the main network and learn of its latest chaintip and `--fixed-difficulty` keeps the difficulty constant, allowing a large number of blocks to be generated quickly.
+The example below uses xcashd with the start flags `--regtest --offline --fixed-difficulty 1`. `--offline` ensures that the node does not connect to the main network and learn of its latest chaintip and `--fixed-difficulty` keeps the difficulty constant, allowing a large number of blocks to be generated quickly.
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"generateblocks","params":{"amount_of_blocks":1,"wallet_address":"44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A","starting_nonce": 0}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"generateblocks","params":{"amount_of_blocks":1,"wallet_address":"44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A","starting_nonce": 0}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -358,7 +358,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_alternate_chains"}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_alternate_chains"}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -402,7 +402,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_bans"}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_bans"}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -455,7 +455,7 @@ Outputs:
       - _gen_ - Miner txs are coinbase txs, or "gen".
         - _height_ - This block height, a.k.a. when the coinbase is generated.
     - _vout_ - List of transaction outputs. Each output contains:
-      - _amount_ - The amount of the coinbase output, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
+      - _amount_ - The amount of the coinbase output, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
       - _target_ -
         - _tagged_key_ -
           - _key_ - the public key of the output
@@ -472,7 +472,7 @@ Outputs:
 In the following example, block 2751506 is looked up by its height. Note that block 2751506 does not have any non-coinbase transactions. (See the next example for a block with extra transactions):
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_block","params":{"height":2751506}}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_block","params":{"height":2751506}}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -518,7 +518,7 @@ $ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"g
 In the following example, block 2751210 is looked up by its hash. Note that block 2751210 has 2 non-coinbase transactions:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_block","params":{"hash":"86d421322b700166dde2d7eba1cc8600925ef640abf6c0a2cc8ce0d6dd90abfd"}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_block","params":{"hash":"86d421322b700166dde2d7eba1cc8600925ef640abf6c0a2cc8ce0d6dd90abfd"}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -579,7 +579,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_block_count"}' -H 'Content-Type: application/json'  
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_block_count"}' -H 'Content-Type: application/json'  
 
 {  
   "id": "0",  
@@ -615,7 +615,7 @@ Outputs:
 In this example, block 912345 is looked up by its hash:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_block_header_by_hash","params":{"hash":"e22cf75f39ae720e8b71b3d120a5ac03f0db50bba6379e2850975b4859190bc6"}}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_block_header_by_hash","params":{"hash":"e22cf75f39ae720e8b71b3d120a5ac03f0db50bba6379e2850975b4859190bc6"}}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -675,7 +675,7 @@ Outputs:
 In this example, block 912345 is looked up by its height (notice that the returned information is the same as in the previous example):
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_block_header_by_height","params":{"height":912345}}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_block_header_by_height","params":{"height":912345}}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -737,7 +737,7 @@ Outputs:
 In this example, blocks range from height 1545999 to 1546000 is looked up (notice that the returned information are ascending order and that it is at the April 2018 network upgrade time):
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_block_headers_range","params":{"start_height":1545999,"end_height":1546000}}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_block_headers_range","params":{"start_height":1545999,"end_height":1546000}}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -831,7 +831,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_block_template","params":{"wallet_address":"44GBHzv6ZyQdJkjqZje6KLZ3xSyN1hBSFAnLP6EAqJtCRVzMzZmeXTC2AHKDS9aEDTRKmo6a6o9r9j86pYfhCWDkKjbtcns","reserve_size":60}}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_block_template","params":{"wallet_address":"44GBHzv6ZyQdJkjqZje6KLZ3xSyN1hBSFAnLP6EAqJtCRVzMzZmeXTC2AHKDS9aEDTRKmo6a6o9r9j86pYfhCWDkKjbtcns","reserve_size":60}}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -870,20 +870,20 @@ Inputs:
 Outputs:
 
 - _credits_ - unsigned int; If payment for RPC is enabled, the number of credits available to the requesting client. Otherwise, 0.
-- _emission_amount_ - unsigned int; Least significant 64 bits for 128 bit integer representing the new coins emitted in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR."). (See src/rpc/core_rpc_server.cpp store_128)
-- _emission_amount_top64_ - unsigned it; Most significant 64 bits for 128 bit integer representing the new coins emitted in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.")
-- _fee_amount_ - unsigned int; Most significant 64 bits for 128 bit integer representing the sum of fees in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
-- _fee_amount_top64_ - unsigned int; Most significant 64 bits for 128 bit integer representing the sum of fees in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
+- _emission_amount_ - unsigned int; Least significant 64 bits for 128 bit integer representing the new coins emitted in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK."). (See src/rpc/core_rpc_server.cpp store_128)
+- _emission_amount_top64_ - unsigned it; Most significant 64 bits for 128 bit integer representing the new coins emitted in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.")
+- _fee_amount_ - unsigned int; Most significant 64 bits for 128 bit integer representing the sum of fees in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
+- _fee_amount_top64_ - unsigned int; Most significant 64 bits for 128 bit integer representing the sum of fees in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
 - _status_ - string; General RPC error code. "OK" means everything looks good.
 - _top_hash_ - string; If payment for RPC is enabled, the hash of the highest block in the chain. Otherwise, empty.
 - _untrusted_ - boolean; States if the result is obtained using the bootstrap mode, and is therefore not trusted (`true`), or when the daemon is fully synced and thus handles the RPC locally (`false`)
-- _wide_emission_amount_ - string (128 bit hex encoded integer); New coins emitted in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
-- _wide_fee_amount_ - string (128 bit hex encoded integer); Sum of fees in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
+- _wide_emission_amount_ - string (128 bit hex encoded integer); New coins emitted in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
+- _wide_fee_amount_ - string (128 bit hex encoded integer); Sum of fees in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
 
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_coinbase_tx_sum","params":{"height":1563078,"count":2}}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_coinbase_tx_sum","params":{"height":1563078,"count":2}}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -946,7 +946,7 @@ Outputs:
 Following is an example of `get_connections` and it's return:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_connections"}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_connections"}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -1003,7 +1003,7 @@ Inputs:
 Outputs:
 
 - _credits_ - unsigned int; If payment for RPC is enabled, the number of credits available to the requesting client. Otherwise, 0.
-- _fee_ - unsigned int; Amount of fees estimated per byte in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.")
+- _fee_ - unsigned int; Amount of fees estimated per byte in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.")
 - _fees_ - array of unsigned int; Represents the base fees at different priorities [slow, normal, fast, fastest].
 - _quantization_mask_ - unsigned int; Final fee should be rounded up to an even multiple of this value
 - _status_ - string; General RPC error code. "OK" means everything looks good.
@@ -1013,7 +1013,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_fee_estimate"}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_fee_estimate"}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -1083,8 +1083,8 @@ Outputs:
 - _tx_count_ - unsigned int; Total number of non-coinbase transactions in the chain.
 - _tx_pool_size_ - unsigned int; Number of transactions that have been broadcast but not included in a block.
 - _$1_ - boolean; States if the result is obtained using the bootstrap mode, and is therefore not trusted (`true`), or when the daemon is fully synced and thus handles the RPC locally (`false`)
-- _update_available_ - boolean; States if a newer Monero software version is available.
-- _version_ - string; The version of the Monero software the node is running.
+- _update_available_ - boolean; States if a newer XCash Klassic software version is available.
+- _version_ - string; The version of the XCash Klassic software the node is running.
 - _was_bootstrap_ever_used_ - boolean; States if a bootstrap node has ever been used since the daemon started.
 - _white_peerlist_size_ - unsigned int; White Peerlist Size
 - _wide_cumulative_difficulty_ - Cumulative difficulty of all blocks in the blockchain as a hexadecimal string representing a 128-bit number.
@@ -1093,7 +1093,7 @@ Outputs:
 Following is an example `get_info` call and its return:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_info"}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_info"}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -1165,7 +1165,7 @@ Outputs:
   - _cumulative_difficulty_ - unsigned int; Least-significant 64 bits of the cumulative difficulty of all blocks up to the block in the reply.
   - _cumulative_difficulty_top64_ - unsigned int; Most-significant 64 bits of the 128-bit cumulative difficulty.
   - _depth_ -  unsigned int; The number of blocks succeeding this block on the blockchain. A larger number means an older block.
-  - _difficulty_ - unsigned int; The strength of the Monero network based on mining power.
+  - _difficulty_ - unsigned int; The strength of the XCash Klassic network based on mining power.
   - _difficulty_top64_ - unsigned int; Most-significant 64 bits of the 128-bit network difficulty.
   - _hash_ - string; The hash of this block.
   - _height_ - unsigned int; The number of blocks preceding this block on the blockchain.
@@ -1173,12 +1173,12 @@ Outputs:
   - _major_version_ - unsigned int; The major version of the monero protocol at this block height.
   - _miner_tx_hash_ - string; The hash of this block's coinbase transaction.
   - _minor_version_ - unsigned int; The minor version of the monero protocol at this block height.
-  - _nonce_ - unsigned int; a cryptographic random one-time number used in mining a Monero block.
+  - _nonce_ - unsigned int; a cryptographic random one-time number used in mining a XCash Klassic block.
   - _num_txes_ - unsigned int; Number of transactions in the block, not counting the coinbase tx.
   - _orphan_status_ - boolean; Usually `false`. If `true`, this block is not part of the longest chain.
   - _pow_hash_ - string; The hash, as a hexadecimal string, calculated from the block as proof-of-work.
   - _prev_hash_ - string; The hash of the block immediately preceding this block in the chain.
-  - _reward_ - unsigned int; The amount of [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.") rewarded to the miner. The reward is the sum of new coins created (the emission) and fees paid by transactions in this block. Note: 1 XMR = 1e12 [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
+  - _reward_ - unsigned int; The amount of [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.") rewarded to the miner. The reward is the sum of new coins created (the emission) and fees paid by transactions in this block. Note: 1 XCK = 1e12 [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
   - _timestamp_ - unsigned int; The unix time at which the block was recorded into the blockchain.
   - _wide_cumulative_difficulty_ - Cumulative difficulty of all blocks in the blockchain as a hexadecimal string representing a 128-bit number.
   - _wide_difficulty_ - string; Network difficulty (analogous to the strength of the network) as a hexadecimal string representing a 128-bit number.
@@ -1190,7 +1190,7 @@ Outputs:
 In this example, the most recent block (1562023 at the time) is returned:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_last_block_header"}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_last_block_header"}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -1255,7 +1255,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_miner_data"}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_miner_data"}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -1315,7 +1315,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_output_distribution","params":{"amounts":[628780000],"from_height":1462078}}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_output_distribution","params":{"amounts":[628780000],"from_height":1462078}}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -1351,7 +1351,7 @@ Outputs:
 
 - _credits_ - unsigned int; If payment for RPC is enabled, the number of credits available to the requesting client. Otherwise, 0.
 - _histogram_ - list of histogram entries, in the following structure:
-  - _amount_ - unsigned int; Output amount in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.")
+  - _amount_ - unsigned int; Output amount in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.")
   - _total_instances_ - unsigned int;
   - _unlocked_instances_ - unsigned int;
   - _recent_instances_ - unsigned int;
@@ -1362,7 +1362,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_output_histogram","params":{"amounts":[20000000000]}}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_output_histogram","params":{"amounts":[20000000000]}}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -1404,7 +1404,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_txpool_backlog"}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_txpool_backlog"}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -1441,7 +1441,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_version"}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_version"}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -1491,7 +1491,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"hard_fork_info"}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"hard_fork_info"}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -1532,7 +1532,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"on_get_block_hash","params":[912345]}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"on_get_block_hash","params":[912345]}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -1561,7 +1561,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"prune_blockchain","params":{"check":true}}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"prune_blockchain","params":{"check":true}}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -1594,7 +1594,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"relay_tx","params":{"txids":["9fd75c429cbe52da9a52f2ffc5fbd107fe7fd2099c0d8de274dc8a67e0c98613"]}}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"relay_tx","params":{"txids":["9fd75c429cbe52da9a52f2ffc5fbd107fe7fd2099c0d8de274dc8a67e0c98613"]}}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -1632,7 +1632,7 @@ Examples:
 In the following example, host is banned with its IP address string-formatted as A.B.C.D:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"set_bans","params":{"bans":[{"host":"192.168.1.51","ban":true,"seconds":30}]}}' -H  'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"set_bans","params":{"bans":[{"host":"192.168.1.51","ban":true,"seconds":30}]}}' -H  'Content-Type: application/json'
 
 {
   "id": "0",
@@ -1649,7 +1649,7 @@ $ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"s
 In the following example, integer-formatted IP is banned:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"set_bans","params":{"bans":[{"ip":838969536,"ban":true,"seconds":30}]}}' -H  'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"set_bans","params":{"bans":[{"ip":838969536,"ban":true,"seconds":30}]}}' -H  'Content-Type: application/json'
 
 {
   "id": "0",
@@ -1679,7 +1679,7 @@ Outputs:
 In this example, a block blob which has not been mined is submitted:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"submit_block","params":["0707e6bdfedc053771512f1bc27c62731ae9e8f2443db64ce742f4e57f5cf8d393de28551e441a0000000002fb830a01ffbf830a018cfe88bee283060274c0aae2ef5730e680308d9c00b6da59187ad0352efe3c71d36eeeb28782f29f2501bd56b952c3ddc3e350c2631d3a5086cac172c56893831228b17de296ff4669de020200000000"]}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"submit_block","params":["0707e6bdfedc053771512f1bc27c62731ae9e8f2443db64ce742f4e57f5cf8d393de28551e441a0000000002fb830a01ffbf830a018cfe88bee283060274c0aae2ef5730e680308d9c00b6da59187ad0352efe3c71d36eeeb28782f29f2501bd56b952c3ddc3e350c2631d3a5086cac172c56893831228b17de296ff4669de020200000000"]}' -H 'Content-Type: application/json'
 
 {
   "error": {
@@ -1722,7 +1722,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"sync_info"}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"sync_info"}' -H 'Content-Type: application/json'
 
 {
   "id": "0",
@@ -1812,7 +1812,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/get_alt_blocks_hashes -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/get_alt_blocks_hashes -H 'Content-Type: application/json'
 
 {
   "blks_hashes": ["dd4998cfe92a959a5a0e4ed72432cf23d7dfc4179cbea871ee2a705d71fb5e25","f36c3856ffde6a7d06fc832c80ede4ad5b6c8f702c9736dae1e2140d86504db9","8d0c1f806817259d213c8829ea3356334e0d8fdd3b118e1243756e12dce767bb"],
@@ -1856,7 +1856,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/get_blocks.bin -d '{"block_ids":["d109a406528a7b44fef8bc03e75eaabb0f919f852884b43b550b8b3be80a49e7"],"start_height":1562062}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/get_blocks.bin -d '{"block_ids":["d109a406528a7b44fef8bc03e75eaabb0f919f852884b43b550b8b3be80a49e7"],"start_height":1562062}' -H 'Content-Type: application/json'
 
 ```
 --->
@@ -1882,9 +1882,9 @@ Outputs:
 Example:
 
 ```Bash
-$ echo -e '\x7B\x22\x68\x65\x69\x67\x68\x74\x73\x22\x3A\x5B\x31\x35\x36\x34\x32\x34\x36\x5D\x7D\x' | curl --data-binary @- http://127.0.0.1:18081/get_blocks_by_height.bin
-$ echo -e '1564246' | curl --data-binary @- http://127.0.0.1:18081/get_blocks_by_height.bin
-curl http://127.0.0.1:18081/get_blocks_by_height.bin --data-binary '{"heights":[1564246]}'
+$ echo -e '\x7B\x22\x68\x65\x69\x67\x68\x74\x73\x22\x3A\x5B\x31\x35\x36\x34\x32\x34\x36\x5D\x7D\x' | curl --data-binary @- http://127.0.0.1:18281/get_blocks_by_height.bin
+$ echo -e '1564246' | curl --data-binary @- http://127.0.0.1:18281/get_blocks_by_height.bin
+curl http://127.0.0.1:18281/get_blocks_by_height.bin --data-binary '{"heights":[1564246]}'
 
 ```
 --->
@@ -1914,7 +1914,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/get_hashes.bin -d '{"block_ids":["d109a406528a7b44fef8bc03e75eaabb0f919f852884b43b550b8b3be80a49e7"],"start_height":1562062}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/get_hashes.bin -d '{"block_ids":["d109a406528a7b44fef8bc03e75eaabb0f919f852884b43b550b8b3be80a49e7"],"start_height":1562062}' -H 'Content-Type: application/json'
 
 ```
 --->
@@ -1937,7 +1937,7 @@ Outputs:
 - _untrusted_ - boolean; States if the result is obtained using the bootstrap mode, and is therefore not trusted (`true`), or when the daemon is fully synced and thus handles the RPC locally (`false`)
 
 ```json
-$ curl http://127.0.0.1:18081/get_height -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/get_height -H 'Content-Type: application/json'
 
 {
   "hash": "7e23a28cfa6df925d5b63940baf60b83c0cbb65da95f49b19e7cf0ce7dd709ce",
@@ -1979,7 +1979,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/get_limit -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/get_limit -H 'Content-Type: application/json'
 
 {
   "limit_down": 32768,
@@ -2010,7 +2010,7 @@ Outputs:
 Example: 
 
 ```json
-$ curl http://127.0.0.1:18081/get_net_stats -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/get_net_stats -H 'Content-Type: application/json'
 
 {
   "start_time": 1665147355,
@@ -2045,7 +2045,7 @@ Outputs:
 Example:
 
 ```Bash
-$ curl http://127.0.0.1:18081/get_o_indexes.bin --data-binary '{"txid":"d6e48158472848e6687173a91ae6eebfa3e1d778e65252ee99d7515d63090408"}'
+$ curl http://127.0.0.1:18281/get_o_indexes.bin --data-binary '{"txid":"d6e48158472848e6687173a91ae6eebfa3e1d778e65252ee99d7515d63090408"}'
 
 ```
 --->
@@ -2140,7 +2140,7 @@ Outputs:
 Example:
 
 ```Bash
-$ curl http://127.0.0.1:18081/get_o_indexes.bin --data-binary '{"txid":"d6e48158472848e6687173a91ae6eebfa3e1d778e65252ee99d7515d63090408"}'
+$ curl http://127.0.0.1:18281/get_o_indexes.bin --data-binary '{"txid":"d6e48158472848e6687173a91ae6eebfa3e1d778e65252ee99d7515d63090408"}'
 
 ```
 --->
@@ -2169,7 +2169,7 @@ Outputs:
 Example (truncated lists):
 
 ```json
-$ curl http://127.0.0.1:18081/get_peer_list -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/get_peer_list -H 'Content-Type: application/json'
 
 {
   "gray_list": [{
@@ -2232,7 +2232,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/get_public_nodes -d '{"gray":true}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/get_public_nodes -d '{"gray":true}' -H 'Content-Type: application/json'
 
 {
   "gray": [{
@@ -2252,7 +2252,7 @@ $ curl http://127.0.0.1:18081/get_public_nodes -d '{"gray":true}' -H 'Content-Ty
     "host": "70.52.75.3",
     "last_seen": 1722812577,
     "rpc_credits_per_hash": 0,
-    "rpc_port": 18081
+    "rpc_port": 18281
   },{
     "host": "::ffff:207.180.221.220",
     "last_seen": 1722872337,
@@ -2285,7 +2285,7 @@ Outputs:
   - _blob_size_ - unsigned int; The size of the full transaction blob.
   - _do_not_relay_ ; boolean; States if this transaction should not be relayed
   - _double_spend_seen_ - boolean; States if this transaction has been seen as double spend.
-  - _fee_ - unsigned int; The amount of the mining fee included in the transaction, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
+  - _fee_ - unsigned int; The amount of the mining fee included in the transaction, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
   - _id_hash_ - string; The transaction ID hash.
   - _kept_by_block_ - boolean; States if the tx was included in a block at least once (`true`) or not (`false`).
   - _last_failed_height_ - unsigned int; If the transaction validation has previously failed, this tells at what height that occurred.
@@ -2301,11 +2301,11 @@ Outputs:
     - _unlock_time_ - If not 0, this tells when a transaction output is spendable.
     - _vin_ - List of inputs into transaction:
       - _key_ - The public key of the previous output spent in this transaction.
-        - _amount_ - The amount of the input, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
+        - _amount_ - The amount of the input, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
         - _key_offsets_ - A list of integer offsets to the input.
         - _k_image_ - The key image for the given input
     - _vout_ - List of outputs from transaction:
-      - _amount_ - Amount of transaction output (if coinbase output, otherwise 0), in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
+      - _amount_ - Amount of transaction output (if coinbase output, otherwise 0), in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
       - _target_ - Output destination information:
         - _tagged_key_ 
           - _key_ - The stealth public key of the receiver. Whoever owns the private key associated with this key controls this transaction output.
@@ -2339,7 +2339,7 @@ Outputs:
 Example (Note: Some lists in the returned information have been truncated for display reasons):
 
 ```json
-$ curl http://127.0.0.1:18081/get_transaction_pool -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/get_transaction_pool -H 'Content-Type: application/json'
 
 {
   "spent_key_images": [{
@@ -2394,7 +2394,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/get_transaction_pool_hashes -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/get_transaction_pool_hashes -H 'Content-Type: application/json'
 
 {
   "credits": 0,
@@ -2424,7 +2424,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/get_transaction_pool_hashes.bin -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/get_transaction_pool_hashes.bin -H 'Content-Type: application/json'
 
 {
   "status": "OK",
@@ -2451,7 +2451,7 @@ Outputs:
   - _bytes_med_ - unsigned int; Median transaction size in pool
   - _bytes_min_ - unsigned int; Min transaction size in pool
   - _bytes_total_ - unsigned int; total size of all transactions in pool
-  - _fee_total_ - unsigned int; The sum of the fees for all transactions currently in the transaction pool [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
+  - _fee_total_ - unsigned int; The sum of the fees for all transactions currently in the transaction pool [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
   - _histo_ - structure _txpool_histo_ as follows:
     - _txs_ - unsigned int; number of transactions
     - _bytes_ - unsigned int; size in bytes.
@@ -2469,7 +2469,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/get_transaction_pool_stats -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/get_transaction_pool_stats -H 'Content-Type: application/json'
 
 {
   "credits": 0,
@@ -2523,11 +2523,11 @@ Outputs:
     - _unlock_time_ - If not 0, this tells when a transaction output is spendable.
     - _vin_ - List of inputs into transaction:
       - _key_ - The public key of the previous output spent in this transaction.
-        - _amount_ - The amount of the input, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
+        - _amount_ - The amount of the input, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
         - _key_offsets_ - A list of integer offsets to the input.
         - _k_image_ - The key image for the given input
     - _vout_ - List of outputs from transaction:
-      - _amount_ - Amount of transaction output (if coinbase output, otherwise 0), in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XMR.").
+      - _amount_ - Amount of transaction output (if coinbase output, otherwise 0), in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
       - _target_ - Output destination information:
         - _tagged_key_ 
           - _key_ - The stealth public key of the receiver. Whoever owns the private key associated with this key controls this transaction output.
@@ -2571,7 +2571,7 @@ Outputs:
 Example 1: Return transaction information in binary format.
 
 ```json
-$ curl http://127.0.0.1:18081/get_transactions -d '{"txs_hashes":["d6e48158472848e6687173a91ae6eebfa3e1d778e65252ee99d7515d63090408"]}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/get_transactions -d '{"txs_hashes":["d6e48158472848e6687173a91ae6eebfa3e1d778e65252ee99d7515d63090408"]}' -H 'Content-Type: application/json'
 
 {
   "credits": 0,
@@ -2599,7 +2599,7 @@ $ curl http://127.0.0.1:18081/get_transactions -d '{"txs_hashes":["d6e4815847284
 Example 2: Decode returned transaction information in JSON format. Note: the "vin", "vout", "rct_signatures", "rctsig_prunable" list have been truncated in the displayed return for space considerations.
 
 ```json
-$ curl http://127.0.0.1:18081/get_transactions -d '{"txs_hashes":["a9c71fe27ccf978a56ef96e50b680a3d569754cd4d070e51d10fa9f6f658b8e3"],"decode_as_json":true}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/get_transactions -d '{"txs_hashes":["a9c71fe27ccf978a56ef96e50b680a3d569754cd4d070e51d10fa9f6f658b8e3"],"decode_as_json":true}' -H 'Content-Type: application/json'
 
 {
   "credits": 0,
@@ -2628,7 +2628,7 @@ $ curl http://127.0.0.1:18081/get_transactions -d '{"txs_hashes":["a9c71fe27ccf9
 Example 3: Returned a missed (unexisting) transaction.
 
 ```json
-$ curl http://127.0.0.1:18081/get_transactions -d '{"txs_hashes":["d6e48158472848e6687173a91ae6eebfa3e1d778e65252ee99d7515d63090409"]}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/get_transactions -d '{"txs_hashes":["d6e48158472848e6687173a91ae6eebfa3e1d778e65252ee99d7515d63090409"]}' -H 'Content-Type: application/json'
 
 {
   "credits": 0,
@@ -2660,7 +2660,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/in_peers -d '{"in_peers": 3232235535}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/in_peers -d '{"in_peers": 3232235535}' -H 'Content-Type: application/json'
 
 {
   "in_peers": 3232235535,
@@ -2692,7 +2692,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/is_key_image_spent -d '{"key_images":["8d1bd8181bf7d857bdb281e0153d84cd55a3fcaa57c3e570f4a49f935850b5e3","7319134bfc50668251f5b899c66b005805ee255c136f0e1cecbb0f3a912e09d4"]}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/is_key_image_spent -d '{"key_images":["8d1bd8181bf7d857bdb281e0153d84cd55a3fcaa57c3e570f4a49f935850b5e3","7319134bfc50668251f5b899c66b005805ee255c136f0e1cecbb0f3a912e09d4"]}' -H 'Content-Type: application/json'
 
 {
   "credits": 0,
@@ -2736,7 +2736,7 @@ Outputs:
 Example while mining:
 
 ```json
-$ curl http://127.0.0.1:18081/mining_status -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/mining_status -H 'Content-Type: application/json'
 
 {
   "active": true,
@@ -2762,7 +2762,7 @@ $ curl http://127.0.0.1:18081/mining_status -H 'Content-Type: application/json'
 Example while not mining:
 
 ```json
-$ curl http://127.0.0.1:18081/mining_status -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/mining_status -H 'Content-Type: application/json'
 
 {
   "active": false,
@@ -2806,7 +2806,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/out_peers -d '{"out_peers": 3232235535}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/out_peers -d '{"out_peers": 3232235535}' -H 'Content-Type: application/json'
 
 {
   "out_peers": 3232235535,
@@ -2834,7 +2834,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/pop_blocks -d '{"nblocks":6}' -H 'Content-Type: application/json''
+$ curl http://127.0.0.1:18281/pop_blocks -d '{"nblocks":6}' -H 'Content-Type: application/json''
 
 {
   "height": 76482,
@@ -2861,7 +2861,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/save_bc -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/save_bc -H 'Content-Type: application/json'
 
 {
   "status": "OK",
@@ -2902,7 +2902,7 @@ Example (No return information included here.):
 
 
 ```json
-$ curl http://127.0.0.1:18081/send_raw_transaction -d '{"tx_as_hex":"de6a3...", "do_not_relay":false}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/send_raw_transaction -d '{"tx_as_hex":"de6a3...", "do_not_relay":false}' -H 'Content-Type: application/json'
 ```
 
 
@@ -2929,7 +2929,7 @@ Example:
 Once set, the address will appear in `get_info` as `bootstrap_daemon_address`
 
 ```json
-$ curl http://127.0.0.1:18081/set_bootstrap_daemon -d '{"address": "http://getmonero.org:18081"}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/set_bootstrap_daemon -d '{"address": "http://getmonero.org:18281"}' -H 'Content-Type: application/json'
 
 {
   "status": "OK"
@@ -2959,7 +2959,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/set_limit -d '{"limit_down": 1024}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/set_limit -d '{"limit_down": 1024}' -H 'Content-Type: application/json'
 
 {
   "limit_down": 1024,
@@ -3043,7 +3043,7 @@ Outputs:
 Example to set all facilities to Security Level `Info`:
 
 ```json
-$ curl http://127.0.0.1:18081/set_log_categories -d '{"categories": "*:INFO"}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/set_log_categories -d '{"categories": "*:INFO"}' -H 'Content-Type: application/json'
 
 {
   "categories": "*:INFO",
@@ -3055,7 +3055,7 @@ $ curl http://127.0.0.1:18081/set_log_categories -d '{"categories": "*:INFO"}' -
 Example without input to set the default categories:
 
 ```json
-$ curl http://127.0.0.1:18081/set_log_categories -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/set_log_categories -H 'Content-Type: application/json'
 
 {
   "categories": "*:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO,logging:INFO,msgwriter:INFO",
@@ -3084,7 +3084,7 @@ Outputs:
 Example while mining:
 
 ```json
-$ curl http://127.0.0.1:18081/set_log_hash_rate -d '{"visible":true}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/set_log_hash_rate -d '{"visible":true}' -H 'Content-Type: application/json'
 
 {
   "status": "OK"
@@ -3095,7 +3095,7 @@ $ curl http://127.0.0.1:18081/set_log_hash_rate -d '{"visible":true}' -H 'Conten
 Error while not mining:
 
 ```json
-$ curl http://127.0.0.1:18081/set_log_hash_rate -d '{"visible":true}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/set_log_hash_rate -d '{"visible":true}' -H 'Content-Type: application/json'
 
 {
   "status": "NOT MINING",
@@ -3124,7 +3124,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/set_log_level -d '{"level":1}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/set_log_level -d '{"level":1}' -H 'Content-Type: application/json'
 
 {
   "status": "OK"
@@ -3154,7 +3154,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/start_mining -d '{"do_background_mining":false,"ignore_battery":true,"miner_address":"47xu3gQpF569au9C2ajo5SSMrWji6xnoE5vhr94EzFRaKAGw6hEGFXYAwVADKuRpzsjiU1PtmaVgcjUJF89ghGPhUXkndHc","threads_count":1}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/start_mining -d '{"do_background_mining":false,"ignore_battery":true,"miner_address":"47xu3gQpF569au9C2ajo5SSMrWji6xnoE5vhr94EzFRaKAGw6hEGFXYAwVADKuRpzsjiU1PtmaVgcjUJF89ghGPhUXkndHc","threads_count":1}' -H 'Content-Type: application/json'
 
 {
   "status": "OK",
@@ -3179,7 +3179,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/start_save_graph -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/start_save_graph -H 'Content-Type: application/json'
 
 {
   "status": "OK"
@@ -3203,7 +3203,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/stop_daemon -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/stop_daemon -H 'Content-Type: application/json'
 
 {
   "status": "OK"
@@ -3228,7 +3228,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/stop_mining -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/stop_mining -H 'Content-Type: application/json'
 
 {
   "status": "OK",
@@ -3253,7 +3253,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/stop_save_graph -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/stop_save_graph -H 'Content-Type: application/json'
 
 {
   "status": "OK"
@@ -3287,7 +3287,7 @@ Outputs:
 Example:
 
 ```json
-$ curl http://127.0.0.1:18081/update -d '{"command":"check"}' -H 'Content-Type: application/json'
+$ curl http://127.0.0.1:18281/update -d '{"command":"check"}' -H 'Content-Type: application/json'
 
 {
   "auto_uri": "",

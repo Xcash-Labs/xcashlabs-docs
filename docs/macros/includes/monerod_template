@@ -2,8 +2,8 @@
 
     # {{ configfile }}
     #
-    # Configuration file for monerod. For all available options see the MoneroDocs:
-    # https://docs.getmonero.org/interacting/monerod-reference/
+    # Configuration file for xcashd. For all available options see the MoneroDocs:
+    # https://docs.getmonero.org/interacting/xcashd-reference/
 
     # Data directory (blockchain db and indices)
     data-dir={{ datadir }}   # Blockchain storage location
@@ -60,8 +60,8 @@
     #tx-proxy=i2p,127.0.0.1:4447,12,disable_noise  # I2P
     #tx-proxy=tor,127.0.0.1:9050,12,disable_noise  # Tor
 
-    # Tor/I2P: tell monerod your onion address so it can be advertised on P2P network
-    #anonymous-inbound=PASTE_YOUR_I2P_HOSTNAME,127.0.0.1:18085,24         # I2P
+    # Tor/I2P: tell xcashd your onion address so it can be advertised on P2P network
+    #anonymous-inbound=PASTE_YOUR_I2P_HOSTNAME,127.0.0.1:18285,24         # I2P
     #anonymous-inbound=PASTE_YOUR_ONION_HOSTNAME:18084,127.0.0.1:18084,24 # Tor
 
     # Tor: be forgiving to connecting wallets

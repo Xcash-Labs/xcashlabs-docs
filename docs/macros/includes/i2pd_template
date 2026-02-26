@@ -1,7 +1,7 @@
     !!! success "The end goal"
         To enable the following services:
 
-        * yourlongb32i2paddress.b32.i2p:18085 - i2p P2P service (for other i2p nodes)
+        * yourlongb32i2paddress.b32.i2p:18285 - i2p P2P service (for other i2p nodes)
         * yourlongb32i2paddress.b32.i2p:18089 - i2p RPC service (for wallets connecting over i2p)
 
         **I2P service for P2P network** is useful for other full node users as it allows them to broadcast transactions over I2P (using `--tx-proxy` option).
@@ -22,14 +22,14 @@
         apt update
         apt install i2pd
         ```
-    3. Create a server tunnel for the Monero P2P and RPC ports:
+    3. Create a server tunnel for the XCash Klassic P2P and RPC ports:
         ``` ini
         cat << EOF > /etc/i2pd/tunnels.conf.d/monero-mainnet.conf
         [monero-node]
         type = server
         host = 127.0.0.1
         # Anonymous inbound port
-        port = 18085
+        port = 18285
         inport = 0
         keys = monero-mainnet.dat
 
@@ -55,10 +55,10 @@
             Go to the web console at 127.0.0.1:7070 -> [I2P tunnels page](http://127.0.0.1:7070/?page=i2p_tunnels).    
             Look for Server tunnels and you will see an address like **_`yourlongb32i2paddress.b32.i2p`_** next to **`monero-node`**.
 
-    6. Copy the result into your Monero [**config file** :link:{ title="Monerod Config" }]{{ config }}, enabling these options:
+    6. Copy the result into your XCash Klassic [**config file** :link:{ title="Monerod Config" }]{{ config }}, enabling these options:
 
         ``` ini
-        anonymous-inbound=yourlongb32i2paddress.b32.i2p,127.0.0.1:18085
+        anonymous-inbound=yourlongb32i2paddress.b32.i2p,127.0.0.1:18285
         tx-proxy=i2p,127.0.0.1:4447,disable_noise
         ```
 

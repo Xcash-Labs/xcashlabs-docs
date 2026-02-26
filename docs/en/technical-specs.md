@@ -18,7 +18,7 @@ title: XCash-Labs Technical Specification
 * DPOPS
     * Consensus: DPoPS (Delegated Proof of Private Stake)
     * Active since: genesis (block height 0/1)
-    * Based on Monero protocol era v18 (core codebase v0.18)
+    * Based on XCash Klassic protocol era v18 (core codebase v0.18)
 
 ## Difficulty retarget
 
@@ -31,7 +31,7 @@ title: XCash-Labs Technical Specification
 ## Block reward
 
 * smoothly decreasing and subject to penalties for blocks greater than median size of the last 100 blocks (M100)
-* 47.070 XMR as of February ; for the current reward check the coinbase transaction of the [latest block](https://xmrchain.net/)
+* 47.070 XCK as of February ; for the current reward check the coinbase transaction of the [latest block](https://xmrchain.net/)
 
 ## Block size
 
@@ -49,7 +49,7 @@ title: XCash-Labs Technical Specification
 
 * ~50% emitted (~50M XCK): ~2.8 years
 * ~90% emitted (~90M XCK): ~9.2 years
-* Emission model: Monero-style exponential decay toward the supply target, with a fixed tail emission floor
+* Emission model: XCash Klassic-style exponential decay toward the supply target, with a fixed tail emission floor
 
 
 ### Tail emission

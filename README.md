@@ -1,6 +1,6 @@
-# Monero Docs
+# XCash-Labs Docs
 
-This repository contains the source files to Monero Community documentation hosted at [docs.getmonero.org](https://docs.getmonero.org)
+This repository contains the source files to XCash-Labs Community documentation hosted at [docs.getmonero.org](https://docs.getmonero.org)
 
 - [About](#about)
 - [Contributing](#contributing)
@@ -9,7 +9,7 @@ This repository contains the source files to Monero Community documentation host
 
 ## About
 
-Monero Docs intends to be a Knowledge Base and User Guide for interacting with Monero.
+XCash-Labs Docs intends to be a Knowledge Base and User Guide for interacting with XCash Klassic.
 
 ## Contributing
 
