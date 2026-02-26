@@ -1178,7 +1178,7 @@ Outputs:
   - _orphan_status_ - boolean; Usually `false`. If `true`, this block is not part of the longest chain.
   - _pow_hash_ - string; The hash, as a hexadecimal string, calculated from the block as proof-of-work.
   - _prev_hash_ - string; The hash of the block immediately preceding this block in the chain.
-  - _reward_ - unsigned int; The amount of [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.") rewarded to the miner. The reward is the sum of new coins created (the emission) and fees paid by transactions in this block. Note: 1 XCK = 1e12 [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
+  - _reward_ - unsigned int; The amount of atomic-units rewarded to the staker. The reward is the sum of new coins created (the emission) and fees paid by transactions in this block. Note: 1 XCK = 1e6 atomic-units.
   - _timestamp_ - unsigned int; The unix time at which the block was recorded into the blockchain.
   - _wide_cumulative_difficulty_ - Cumulative difficulty of all blocks in the blockchain as a hexadecimal string representing a 128-bit number.
   - _wide_difficulty_ - string; Network difficulty (analogous to the strength of the network) as a hexadecimal string representing a 128-bit number.
