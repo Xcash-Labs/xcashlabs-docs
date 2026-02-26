@@ -14,17 +14,16 @@ nav:
     - Overview: 'interacting/overview.md'
     - Tokenomics: 'technical-specs.md'
     - Networks: 'infrastructure/networks.md'
-    - Download:
-      - Download: 'interacting/download-xcash-binaries.md'
-      - Verify: 'interacting/verify-xcash-binaries.md'
-      - Install: 'interacting/install-xcash.md'
+    - Download: 'interacting/download-xcash-binaries.md'
+    - Verify: 'interacting/verify-xcash-binaries.md'
+    - Install: 'interacting/install-xcash.md'
+    - Vote & Staking: 'interacting/vote-and-staking.md'
   - Delegated Proof of Private Stake (DPOPS):
     - 'interacting/dpops/get-started.md'
     - 'interacting/dpops/server-setup-guide.md'
     - 'interacting/dpops/node-installation.md'
     - 'interacting/dpops/register-delegate.md'
     - 'interacting/dpops/management-and-monitoring.md'
-    - 'interacting/dpops/vote-and-staking.md'
 - RPC Library:
   - Node RPC: 'rpc-library/xcashd-rpc.md'
   - Wallet RPC: 'rpc-library/wallet-rpc.md'
