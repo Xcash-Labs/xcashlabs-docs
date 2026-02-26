@@ -75,5 +75,6 @@ So now you have downloaded and verified the software package. This secting is fr
     
     3. There should be two files extracted (the bat file and the exe).  Just double click the .bat file to get started.
 
-    4. In the batch file, you may want to change the daemon address to one that is geographically close to you:
+    4. In the batch file, you may want to change the daemon address to one that is geographically close to you.
+    !!! info
         --daemon-address seeds.xcashseeds.us:18281
