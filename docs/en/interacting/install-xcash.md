@@ -7,22 +7,31 @@ So now you have downloaded and verified the software package. This secting is fr
 
 ## Wallet Instalation
 
-??? abstract ## "Installing xcash-gui on Windows (tested on windows 10/11)"
+??? abstract "Installing xcash-gui on Windows (tested on Windows 10/11)"
 
-    1. At this point you should have xcash-gui-win-x64-v0.18.4.3.exe install package on your desktop.
-    
-    2. Right click the install package icon and clik Properties.
-    
-    3. At the bottom of the general block, click Unblock and then OK.
-    
-    4. Then double click the install package icon and just follow the prompts.
+    1. At this point you should have `xcash-gui-win-x64-v0.18.4.3.exe` on your desktop.
+
+    2. Right-click the installer and select **Properties**.
+
+    3. At the bottom of the **General** tab, click **Unblock**, then click **OK**.
+
+    4. Double-click the installer and follow the setup prompts.
+
+    5. After installation, launch **XCash Wallet GUI** from the Start Menu.
+
+    The wallet will automatically start the network daemon (`xcashd`) and begin blockchain synchronization.
 
 ??? abstract "Installing xcash-gui on Ubuntu (tested on Ubuntu Desktop 22.04)"
 
-    1. At this point you should have `xcash-gui-linux-x64-v0.18.4.3.tar.bz2` on your desktop.
+    1. At this point you should have `xcash-gui-linux-x64-v0.18.4.3.tar.bz2` on your server or desktop.
 
-    2. Open a terminal and navigate to your Desktop
-    
+    2. Open a terminal and navigate to the download location
+
+    ```
+    cd ~/Desktop
+    ```
+    *(or wherever the file was downloaded)*
+
     3. Extract the archive
 
     ```
@@ -35,26 +44,45 @@ So now you have downloaded and verified the software package. This secting is fr
     xcash-gui-linux-x64-v0.18.4.3
     ```
 
-    4. Open the folder and make the GUI wallet and the appimage executable (only needed once)
+    4. Open the folder
+
+    ```
+    cd xcash-gui-linux-x64-v0.18.4.3
+    ```
+
+    5. Make the GUI wallet executable (only needed once)
 
     ```
     chmod +x xcash-wallet-gui
+    ```
+
+    If an AppImage is included, also run:
+
+    ```
     chmod +x xcash-wallet-gui.AppImage
     ```
 
-    5. Start the wallet
+    6. Start the wallet
 
     ```
-    ./xcash-wallet-gui.AppImage (or just double click the icon if on Ubuntu Desktop)
+    ./xcash-wallet-gui
     ```
 
-??? abstract "Installing xcash-wallet-cli on Windows (tested on windows 10/11)"
+    If using the AppImage:
 
-    1. At this point you should have xcash-gui-win-x64-v0.18.4.3.exe install package on your desktop.
+    ```
+    ./xcash-wallet-gui.AppImage
+    ```
 
-    2. Right click the zip file and clik Properties.
-    
-    3. At the bottom of the general block, click Unblock and then OK.
+    You can also double-click the file if using Ubuntu Desktop.
+
+??? abstract "Installing xcash-wallet-cli on Windows (tested on Windows 10/11)"
+
+    1. At this point you should have `win-x64-v0.18.3.4-xck-beta1.zip` on your desktop.
+
+    2. Right-click the `.zip` file and select **Properties**.
+
+    3. At the bottom of the **General** tab, click **Unblock**, then click **OK**.
 
     !!! warning "Windows SmartScreen / Antivirus warning"
 
@@ -62,7 +90,7 @@ So now you have downloaded and verified the software package. This secting is fr
 
         This is a **false positive** that can occur with newly built or unsigned binaries.
 
-        The official XCash-Labs releases are safe when downloaded from the official site and when the SHA-256 hash matches the value published on the downloads page.
+        Official XCash-Labs releases are safe when downloaded from the official site and when the SHA-256 hash matches the value published on the downloads page.
 
         If Windows quarantines the file:
 
@@ -71,10 +99,66 @@ So now you have downloaded and verified the software package. This secting is fr
         3. Locate the blocked file
         4. Choose **Allow on device**
 
-    2. Right click on the download zip file and extract all.
-    
-    3. There should be two files extracted (the bat file and the exe).  Just double click the .bat file to get started.
+    4. Right-click the `.zip` file and select **Extract All**.
 
-    4. In the batch file, you may want to change the daemon address to one that is geographically close to you.
+    5. Open the extracted folder. You should see:
+
+       - `xcash-wallet-cli.exe`
+       - `run-wallet.bat`
+
+    6. Double-click `run-wallet.bat` to start the wallet.
+
+    7. (Optional) You may edit the batch file to change the daemon address to one geographically close to you.
+
     !!! info
+        Example daemon address:
+
+        ```
         --daemon-address seeds.xcashseeds.us:18281
+        ```
+
+??? abstract "Installing xcash-wallet-cli on Ubuntu (tested on Ubuntu Desktop 22.04)"
+
+    1. At this point you should have `linux-x64-v0.18.3.4-xck-beta1.zip` on your server or desktop.
+
+    2. Open a terminal and navigate to the download location
+
+    ```
+    cd ~/Desktop
+    ```
+    *(or wherever the file was downloaded)*
+
+    3. Extract the archive
+
+    ```
+    unzip linux-x64-v0.18.3.4-xck-beta1.zip
+    ```
+
+    This will create a folder such as:
+
+    ```
+    linux-x64-v0.18.3.4-xck-beta1
+    ```
+
+    4. Open the folder
+
+    ```
+    cd linux-x64-v0.18.3.4-xck-beta1
+    ```
+
+    5. Make the wallet executable (only needed once)
+
+    ```
+    chmod +x xcash-wallet-cli
+    chmod +x run-wallet.sh
+    ```
+
+    6. Start the wallet
+
+    ```
+    ./run-wallet.sh
+    ```
+
+    7. In the .sh file, you may want to change the daemon address to one that is geographically close to you.
+    !!! info
+        --daemon-address seeds.xcashseeds.us:1828
