@@ -7,7 +7,7 @@ So now you have downloaded and verified the software package. This secting is fr
 
 ## Wallet
 
-??? abstract "Installing xcash-gui on Windows (tested on 10/11)"
+??? abstract "Installing xcash-gui on Windows (tested on windows 10/11)"
 
     1. At this point you should have xcash-gui-win-x64-v0.18.4.3.exe install package on your desktop.
     
@@ -48,15 +48,13 @@ So now you have downloaded and verified the software package. This secting is fr
     ./xcash-wallet-gui.AppImage (or just double click the icon if on Ubuntu Desktop)
     ```
 
-??? abstract "Installing xcash-wallet-cli on Windows (tested on 10/11)"
+??? abstract "Installing xcash-wallet-cli on Windows (tested on windows 10/11)"
 
     1. At this point you should have xcash-gui-win-x64-v0.18.4.3.exe install package on your desktop.
 
-    Note: Our PC flaged the download was quarantined with this message Win32/Contebrew.A!ml
-
-    Note: Our PC flaged the download was quarantined with this message Win32/Contebrew.A!ml
-
-
+    2. Right click the zip file and clik Properties.
+    
+    3. At the bottom of the general block, click Unblock and then OK.
 
     !!! warning "Windows SmartScreen / Antivirus warning"
 
@@ -73,8 +71,9 @@ So now you have downloaded and verified the software package. This secting is fr
         3. Locate the blocked file
         4. Choose **Allow on device**
 
-    2. Right click the install package icon and clik Properties.
+    2. Right click on the download zip file and extract all.
     
-    3. At the bottom of the general block, click Unblock and then OK.
-    
-    4. Then double click the install package icon and just follow the prompts.
+    3. There should be two files extracted (the bat file and the exe).  Just double click the .bat file to get started.
+
+    4. In the batch file, you may want to change the daemon address to one that is geographically close to you:
+        --daemon-address seeds.xcashseeds.us:18281
