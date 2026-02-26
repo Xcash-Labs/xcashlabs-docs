@@ -30,11 +30,6 @@ title: Mainnet, Stagenet, Testnet
 - Prefer connecting to trusted or well-known delegates  
 - Avoid using unknown public nodes for sensitive activity 
 
-
-### Block Explorers - Self-Hosted
-
-- [XCash Klassic Blockchain Explorer](https://explorer.xcashlabs.org/) *(recommended)*
-
 ## Mainnet
 
 !!! info ""
@@ -52,33 +47,19 @@ title: Mainnet, Stagenet, Testnet
     - 18281 - [Default] Unrestricted JSON-RPC
     - 18282 - [Default] ZMQ RPC *(if enabled)*
     - 18283 - DPoPS / delegate network transport (XCASH_DPOPS_PORT)
+    - 18287 - [Default] Payouts Daemon
     - 18285 - Wallet RPC
-    - 18289 - Restricted JSON-RPC *(if enabled)*
 
 ??? abstract "Database - internal services"
     - MongoDB: 127.0.0.1:27017 (DATABASE_CONNECTION)
 
-## Stagenet
-    **Stagenet is planned for a future release.**
-    Stagenet will be available for users and developers to learn and build on XCash-Labs safely, without using mainnet coins.
-
-    When launched, stagenet will be intended to remain technically equivalent to mainnet, both in terms of features and consensus rules.
-
-??? tip "Stagenet resources"
-
-??? abstract "Stagenet TCP ports"
-
 ## Testnet
     **Testnet is planned for a future release.**
 
-    Testnet will be the "experimental" network and blockchain where protocol features can be tested long before mainnet.
+    Testnet will be the "experimental" network and blockchain where protocol features can be tested before transitioning to mainnet.
 
     Testnet may fork earlier and more often than mainnet.
     Developers should keep their sources up to date and compile often.
-
-??? tip "Testnet resources"
-
-??? abstract "Testnet TCP ports"
 
 ## FAQ
 
