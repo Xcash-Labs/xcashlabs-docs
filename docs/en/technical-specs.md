@@ -5,7 +5,7 @@ title: XCash-Labs Technical Specification
 
 ## Live
 
-* XCash Klassic blockchain is live since 2026-01-10 (genesis)
+* The XCash Klassic blockchain by XCash-Labs has been live since January 10, 2026 (genesis).
 
 ## No premine, no instamine, no ICO, no token
 
