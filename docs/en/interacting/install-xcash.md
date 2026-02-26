@@ -9,8 +9,45 @@ So now you have downloaded and verified the software package. This secting is fr
 
 ??? abstract "Installing xcash-gui on Windows (tested on 10/11)"
 
-    ### 1. At this point you should have xcash-gui-win-x64-v0.18.4.3.exe install package. For this example we are going to asume it is on your desktop.
-    ### 2. Right click the icon and at the bottome of the General block, click Unblock and then OK.
-    ### 3. Then just follow the prompts. I would suggest that you create a dektop icon.
+    ### 1. At this point you should have xcash-gui-win-x64-v0.18.4.3.exe install package on your desktop.
+    ### 2. Right click the install package icon and clik Properties.
+    ### 3. At the bottom of the general block, click Unblock and then OK.
+    ### 3. Then double click the install package icon and just follow the prompts.
 
-??? abstract "Installing xcash-gui on Ubuntu (tested on ubuntu desktop 22.04)"
+??? abstract "Installing xcash-gui on Ubuntu (tested on Ubuntu Desktop 22.04)"
+
+    ### 1. At this point you should have `xcash-gui-linux-x64-v0.18.4.3.tar.bz2` on your desktop.
+    ### 2. Open a terminal and navigate to your Desktop
+    ### 3. Extract the archive
+
+    ```
+    tar -xjf xcash-gui-linux-x64-v0.18.4.3.tar.bz2
+    ```
+
+    This will create a folder such as:
+
+    ```
+    xcash-gui-linux-x64-v0.18.4.3
+    ```
+
+    ### 4. Open the folder
+
+    ```
+    cd xcash-gui-linux-x64-v0.18.4.3
+    ```
+
+    ### 5. Make the GUI wallet executable (only needed once)
+
+    ```
+    chmod +x xcash-wallet-gui
+    ```
+
+    ### 6. Start the wallet
+
+    ```
+    ./xcash-wallet-gui
+    ```
+
+    The wallet will launch and automatically start the network daemon (`xcashd`).
+
+    The first startup will begin blockchain synchronization, which may take some time.

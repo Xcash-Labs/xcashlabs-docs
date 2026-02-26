@@ -14,10 +14,10 @@ nav:
     - Overview: 'interacting/overview.md'
     - Tokenomics: 'technical-specs.md'
     - Networks: 'infrastructure/networks.md'
-    - Download & Verify:
+    - Download:
       - Download: 'interacting/download-xcash-binaries.md'
       - Verify: 'interacting/verify-xcash-binaries.md'
-      - Installation: 'interacting/install-xcash.md'
+      - Install: 'interacting/install-xcash.md'
   - Delegated Proof of Private Stake (DPOPS):
     - 'interacting/dpops/get-started.md'
     - 'interacting/dpops/server-setup-guide.md'
