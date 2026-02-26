@@ -63,7 +63,7 @@ title: Mainnet, Stagenet, Testnet
 
 ## FAQ
 
-??? question "Why do stagenet and testnet coins have no value?"
+??? question "Why do testnet coins have no value?"
 
     A: This is simply the convention the community embraces.
     Value only comes from a shared belief that mainnet coins will be accepted by other people in the future.
