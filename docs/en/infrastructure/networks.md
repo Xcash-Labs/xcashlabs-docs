@@ -54,12 +54,12 @@ title: Mainnet, Stagenet, Testnet
     - MongoDB: 127.0.0.1:27017 (DATABASE_CONNECTION)
 
 ## Testnet
-    **Testnet is planned for a future release.**
+**Testnet is planned for a future release.**
 
-    Testnet will be the "experimental" network and blockchain where protocol features can be tested before transitioning to mainnet.
+Testnet will be the "experimental" network and blockchain where protocol features can be tested before transitioning to mainnet.
 
-    Testnet may fork earlier and more often than mainnet.
-    Developers should keep their sources up to date and compile often.
+Testnet may fork earlier and more often than mainnet.
+Developers should keep their sources up to date and compile often.
 
 ## FAQ
 
