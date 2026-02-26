@@ -4,8 +4,6 @@ title: "Wallet RPC documentation"
 
 # Wallet RPC
 
-**`xcash-wallet-rpc`** [Overview](../interacting/xcash-wallet-rpc-reference.md)
-
 ## Introduction
 
 This is a list of the xcash-wallet-rpc calls, their inputs and outputs, and examples of each. The program xcash-wallet-rpc replaced the rpc interface that was in simplewallet and then xcash-wallet-clii.    

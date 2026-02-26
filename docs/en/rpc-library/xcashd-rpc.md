@@ -4,8 +4,6 @@ title: "Daemon RPC documentation"
 
 # Daemon RPC
 
-**`xcashd`** [Overview](../interacting/xcash-reference.md)
-
 ## Introduction
 
 This is a list of the xcashd daemon RPC calls, their inputs and outputs, and examples of each.
