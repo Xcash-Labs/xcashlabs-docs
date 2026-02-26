@@ -47,3 +47,34 @@ So now you have downloaded and verified the software package. This secting is fr
     ```
     ./xcash-wallet-gui.AppImage (or just double click the icon if on Ubuntu Desktop)
     ```
+
+??? abstract "Installing xcash-wallet-cli on Windows (tested on 10/11)"
+
+    1. At this point you should have xcash-gui-win-x64-v0.18.4.3.exe install package on your desktop.
+
+    Note: Our PC flaged the download was quarantined with this message Win32/Contebrew.A!ml
+
+    Note: Our PC flaged the download was quarantined with this message Win32/Contebrew.A!ml
+
+
+
+    !!! warning "Windows SmartScreen / Antivirus warning"
+
+        Some antivirus tools may flag the download as `Win32/Contebrew.A!ml` or similar.
+
+        This is a **false positive** that can occur with newly built or unsigned binaries.
+
+        The official XCash-Labs releases are safe when downloaded from the official site and when the SHA-256 hash matches the value published on the downloads page.
+
+        If Windows quarantines the file:
+
+        1. Open **Windows Security**
+        2. Go to **Protection history**
+        3. Locate the blocked file
+        4. Choose **Allow on device**
+
+    2. Right click the install package icon and clik Properties.
+    
+    3. At the bottom of the general block, click Unblock and then OK.
+    
+    4. Then double click the install package icon and just follow the prompts.
