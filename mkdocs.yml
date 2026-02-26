@@ -17,6 +17,7 @@ nav:
     - Download & Verify:
       - Download: 'interacting/download-xcash-binaries.md'
       - Verify: 'interacting/verify-xcash-binaries.md'
+      - Verify: 'interacting/install-xcash.md'
   - Delegated Proof of Private Stake (DPOPS):
     - 'interacting/dpops/get-started.md'
     - 'interacting/dpops/server-setup-guide.md'
