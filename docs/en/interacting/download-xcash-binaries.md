@@ -13,8 +13,7 @@ You can download the latest binaries directly from:
 - **GUI wallet** — graphical desktop wallet for everyday use  
 - **CLI wallet** — command-line wallet for advanced users and servers  
 
-It is strongly recommended that you **verify the signature** of any downloaded archive before using:  
-[Verify XCash-Labs binaries](../interacting/verify-xcash-binaries.md)
+It is strongly recommended that you **verify the signature** of any downloaded archive before using: [Verify XCash-Labs binaries](../interacting/verify-xcash-binaries.md)
 
 ---
 
