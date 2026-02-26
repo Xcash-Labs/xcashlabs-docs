@@ -19,11 +19,11 @@ So now you have downloaded and verified the software package. This secting is fr
 
 ??? abstract "Installing xcash-gui on Ubuntu (tested on Ubuntu Desktop 22.04)"
 
-    ### 1. At this point you should have `xcash-gui-linux-x64-v0.18.4.3.tar.bz2` on your desktop.
+    1. At this point you should have `xcash-gui-linux-x64-v0.18.4.3.tar.bz2` on your desktop.
 
-    ### 2. Open a terminal and navigate to your Desktop
+    2. Open a terminal and navigate to your Desktop
     
-    ### 3. Extract the archive
+    3. Extract the archive
 
     ```
     tar -xjf xcash-gui-linux-x64-v0.18.4.3.tar.bz2
@@ -35,14 +35,14 @@ So now you have downloaded and verified the software package. This secting is fr
     xcash-gui-linux-x64-v0.18.4.3
     ```
 
-    ### 4. Open the folder and make the GUI wallet and the appimage executable (only needed once)
+    4. Open the folder and make the GUI wallet and the appimage executable (only needed once)
 
     ```
     chmod +x xcash-wallet-gui
     chmod +x xcash-wallet-gui.AppImage
     ```
 
-    ### 6. Start the wallet
+    5. Start the wallet
 
     ```
     ./xcash-wallet-gui.AppImage (or just double click the icon if on Ubuntu Desktop)
