@@ -7,7 +7,7 @@ title: Mainnet, Stagenet, Testnet
     XCash-Labs plans to offers multiple network environments to support both real-world usage and future development/testing:
 
     [**mainnet**](#mainnet)      
-    [**testnet**](#testnet)   Planned for a future release.
+    [**testnet**](#testnet)    - Planned for a future release.
 
     Every network has its own genesis block and is entirely separate from others.
 
@@ -26,16 +26,14 @@ title: Mainnet, Stagenet, Testnet
 - Most users interact with the network through these delegate nodes  
 
 **Choosing a Remote Node (Use Care)**  
-- Remote node operators may observe connection metadata such as IP address and request timing  
+- Remote node operators may observe connection metadata such as IP address
 - Prefer connecting to trusted or well-known delegates  
 - Avoid using unknown public nodes for sensitive activity 
 
 
 ### Block Explorers - Self-Hosted
 
-- XCash-Labs Explorer (self-hosted) *(recommended)*
-- Community explorers *(when available)*
-
+- [XCash Klassic Blockchain Explorer](https://explorer.xcashlabs.org/) *(recommended)*
 
 ## Mainnet
 
@@ -47,7 +45,7 @@ title: Mainnet, Stagenet, Testnet
     Mainnet is the default network.
 
 ??? tip "Mainnet Block Explorers"
-    - XCash-Labs Explorer: *(https://explorer.xcashlabs.org/)*
+    - [XCash Klassic Blockchain Explorer](https://explorer.xcashlabs.org/)
 
 ??? abstract "Mainnet TCP ports"
     - 18280 - [Default] P2P Network
