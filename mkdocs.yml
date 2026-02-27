@@ -27,6 +27,7 @@ nav:
 - RPC Library:
   - Node RPC: 'rpc-library/xcashd-rpc.md'
   - Wallet RPC: 'rpc-library/wallet-rpc.md'
+  - Wallet RPC DPOPS: 'rpc-library/wallet-rpc-dpops.md'
 
 theme:
   name: material
