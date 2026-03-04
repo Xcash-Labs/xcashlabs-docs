@@ -58,8 +58,7 @@ https://www.xcashlabs.org/downloads/hashes.txt
 Always verify the signature before trusting the file.
 
 ```bash
-gpg --verify <(curl -fsSL https://www.xcashlabs.org/downloads/hashes.txt.sig) \
-             <(curl -fsSL https://www.xcashlabs.org/downloads/hashes.txt)
+curl -fsSL https://www.xcashlabs.org/downloads/hashes.txt | gpg --verify
 ```
 
 Expected output should include:
