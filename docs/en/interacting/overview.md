@@ -36,4 +36,4 @@ While XCash Klassic shares its privacy technology and transaction structure with
 
 ## Acknowledgments and Open-Source Credits
 
-  XCash Klassic is built on a foundation of open-source work made possible by the broader privacy-focused cryptocurrency community. We would like to acknowledge and thank the teams behind the CryptoNoteStarter, the XCash Klassic Project, and the original X-CASH team for developing and maintaining open-source code that made this project possible. Their work provided the technical groundwork upon which XCash Klassic has been rebuilt and modernized.
+  XCash Klassic is built on a foundation of open-source work made possible by the broader privacy-focused cryptocurrency community. We would like to acknowledge and thank the teams behind the CryptoNoteStarter, the Monero Project, and the original X-CASH team for developing and maintaining open-source code that made this project possible. Their work provided the technical groundwork upon which XCash Klassic has been rebuilt and modernized.
