@@ -31,7 +31,7 @@ title: XCash-Labs Technical Specification
 ## Block reward
 
 * smoothly decreasing and subject to penalties for blocks greater than median size of the last 100 blocks (M100)
-* 47.070 XCK as of February ; for the current reward check the coinbase transaction of the [latest block](https://xmrchain.net/)
+* 47.070 XCK as of February ; for the current reward check the coinbase transaction of the [latest block](https://xcashlabs.org/)
 
 ## Block size
 
