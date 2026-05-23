@@ -9,6 +9,11 @@ copyright: '© 2026 XCash-Labs Community under <a href="https://opensource.org/l
 
 nav:
 - Home: 'index.md'
+- White Paper:
+    - Overview: 'whitepaper/index.md'
+    - XCash Klassic White Paper (PDF): 'whitepaper/xcash-klassic-whitepaper-v1.0.pdf'
+    - Original X-CASH White Paper (PDF): 'whitepaper/xcash-whitepaper-v1.0.pdf'
+    - Original X-CASH Yellow Paper (PDF): 'whitepaper/xcash-yellow-paper-DPoPS.pdf'
 - Using XCash Klassic:
   - The Basics:
     - Overview: 'interacting/overview.md'
