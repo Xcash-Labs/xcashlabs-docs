@@ -17,7 +17,7 @@ nav:
 - Using XCash Klassic:
   - The Basics:
     - Overview: 'interacting/overview.md'
-    - Tokenomics: 'technical-specs.md'
+    - Supply and Emission: 'technical-specs.md'
     - Networks: 'infrastructure/networks.md'
     - Download: 'interacting/download-xcash-binaries.md'
     - Verify: 'interacting/verify-xcash-binaries.md'
