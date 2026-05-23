@@ -32,14 +32,9 @@ curl -X POST http://localhost:18285/json_rpc -d '{"jsonrpc":"2.0","id":"0","meth
 ```
 
 ``` json
-{
-  "id": "0",
-  "jsonrpc": "2.0",
-  "result": {
-    "status": "success"
-  }
-}
+{ "id": "0", "jsonrpc": "2.0", "result": {"vote_status": "success"} }
 ```
+
 ------------------------------------------------------------------------
 
 ## revote
