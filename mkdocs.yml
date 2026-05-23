@@ -9,6 +9,8 @@ copyright: '© 2026 XCash-Labs Community under <a href="https://opensource.org/l
 
 nav:
 - Home: 'index.md'
+- Announcements:
+  - Introducing XCash Klassic (XCK): xcash-klassic-launch.md
 - White Paper:
     - Overview: 'whitepaper/index.md'
     - XCash Klassic White Paper (PDF): 'whitepaper/xcash-klassic-whitepaper-v1.0.pdf'
