@@ -159,6 +159,51 @@ So now you have downloaded and verified the software package. This secting is fr
     ./run-wallet.sh
     ```
 
-    7. In the .sh file, you may want to change the daemon address to one that is geographically close to you.
+    7. (Optional) In `run-wallet.sh`, you may want to change the daemon address to one that is geographically close to you.
+
     !!! info
-        --daemon-address seeds.xcashseeds.us:1828
+        Example:
+
+        ```text
+        --daemon-address seeds.xcashseeds.us:18281
+        ```
+
+??? abstract "Installing the Android wallet APK"
+
+    The Android release includes separate APK files for different Android CPU architectures.
+
+    Most modern Android phones should use:
+
+    ```text
+    arm64-v8a
+    ```
+
+    Older 32-bit Android devices may require:
+
+    ```text
+    armeabi-v7a
+    ```
+
+    1. Download the APK that matches your device:
+
+    ```text
+    android-arm64-v8a-v0.18.3.4-xck-beta1.apk
+    ```
+
+    or:
+
+    ```text
+    android-armeabi-v7a-v0.18.3.4-xck-beta1.apk
+    ```
+
+    2. Open the APK file on your Android device.
+
+    3. If prompted, allow installation from unknown sources for your browser or file manager.
+
+    4. Install the wallet.
+
+    5. Open the XCash Labs wallet app.
+
+    !!! info
+        For most users, the `arm64-v8a` APK is the correct choice.
+        Use `armeabi-v7a` only if your device does not support 64-bit apps.
