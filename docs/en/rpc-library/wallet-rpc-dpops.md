@@ -31,7 +31,15 @@ Place your vote for a delegate.
 curl -X POST http://localhost:18285/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"vote","params":{"delegate_data":"DELEGATES_NAME_OR_PUBLIC_ADDRESS","amount":"all"}}' -H 'Content-Type: application/json'
 ```
 
-
+``` json
+{
+  "id": "0",
+  "jsonrpc": "2.0",
+  "result": {
+    "status": "success"
+  }
+}
+```
 ------------------------------------------------------------------------
 
 ## revote
