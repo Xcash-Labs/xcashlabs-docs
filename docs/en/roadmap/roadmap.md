@@ -86,37 +86,37 @@ Expand documentation, examples, and development tools for building on XCash Klas
 
 ## Community Involvement
 
-## Community Involvement
-
-### XCash Klassic Tipping Bot
-
-**Status:** 🚀 Active
-
-## Community Involvement
-
 ### Community Resources
-
-**Status:** 🚀 Active
 
 Community member TuAF094 has contributed several resources that help expand the XCash Klassic ecosystem and improve accessibility for both new and existing users.
 
 #### XCash Klassic Tipping Bot
 
+**Status:** 🚀 Active
+
 Enables users to send and receive XCK directly through Telegram, providing a simple way to test transactions and introduce new users to the network.
 
-Telegram: https://t.me/XCK_TippingBot
+Username: @XCKAutoEscrowBot
+
+Telegram: [XCash Klassic Tipping Bot](https://t.me/XCK_TippingBot)
 
 #### XCash Klassic Telegram Community
 
+**Status:** 🚀 Active
+
 A community-driven Telegram group where users can discuss XCash Klassic, ask questions, share updates, and connect with other community members.
 
-Telegram: https://t.me/XCASH_Klassic
+Telegram: [XCash Klassic Telegram Community](https://t.me/XCASH_Klassic)
 
 #### XCK Auto Escrow Bot
 
+**Status:** 🚀 Active
+
 An automated escrow service for buying XCK directly through Telegram. The bot helps facilitate peer-to-peer transactions and provides an additional avenue for acquiring XCash Klassic.
 
-Telegram: https://t.me/XCKAutoEscrowBot
+username: @XCKAutoEscrowBot
+
+Telegram: [XCash Klassic Escrow Bot](https://t.me/XCKAutoEscrowBot)
 
 Community-developed tools, services, and initiatives play an important role in strengthening adoption and expanding the utility of XCash Klassic.
 
