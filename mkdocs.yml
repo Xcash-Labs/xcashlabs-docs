@@ -30,7 +30,7 @@ nav:
   - Node RPC: 'rpc-library/xcashd-rpc.md'
   - Wallet RPC: 'rpc-library/wallet-rpc.md'
   - Wallet RPC DPOPS: 'rpc-library/wallet-rpc-dpops.md'
-- Roadmap: 'roadmap.md'
+- Roadmap: 'roadmap/roadmap.md'
 - White Paper:
     - Overview: 'whitepaper/index.md'
     - XCash Klassic White Paper (PDF): 'whitepaper/xcash-klassic-whitepaper-v1.0.pdf'
