@@ -22,7 +22,7 @@ Android wallet with transaction support, delegate voting, and privacy-focused fu
 
 ### Block Explorer
 
-**READY**
+**Status:** 🟢 Ready
 
 Public explorer for viewing blocks, transactions, network statistics, and blockchain activity.
 
