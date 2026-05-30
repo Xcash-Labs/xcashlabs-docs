@@ -11,11 +11,6 @@ nav:
 - Home: 'index.md'
 - Announcements:
   - Introducing XCash Klassic (XCK): 'announcements/xcash-klassic-launch.md'
-- White Paper:
-    - Overview: 'whitepaper/index.md'
-    - XCash Klassic White Paper (PDF): 'whitepaper/xcash-klassic-whitepaper-v1.0.pdf'
-    - Original X-CASH White Paper (PDF): 'whitepaper/xcash-whitepaper-v1.0.pdf'
-    - Original X-CASH Yellow Paper (PDF): 'whitepaper/xcash-yellowpaper-DPoPS.pdf'
 - Using XCash Klassic:
   - The Basics:
     - Overview: 'interacting/overview.md'
@@ -35,6 +30,12 @@ nav:
   - Node RPC: 'rpc-library/xcashd-rpc.md'
   - Wallet RPC: 'rpc-library/wallet-rpc.md'
   - Wallet RPC DPOPS: 'rpc-library/wallet-rpc-dpops.md'
+- Roadmap: 'roadmap.md'
+- White Paper:
+    - Overview: 'whitepaper/index.md'
+    - XCash Klassic White Paper (PDF): 'whitepaper/xcash-klassic-whitepaper-v1.0.pdf'
+    - Original X-CASH White Paper (PDF): 'whitepaper/xcash-whitepaper-v1.0.pdf'
+    - Original X-CASH Yellow Paper (PDF): 'whitepaper/xcash-yellowpaper-DPoPS.pdf'
 
 theme:
   name: material
