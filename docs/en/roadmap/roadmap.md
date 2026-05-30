@@ -50,47 +50,77 @@ Delegate voting and network governance systems are operational and continue to b
 
 ### Wallet Ecosystem
 
+**Status:** 📋 Planned
+
 Continue improving wallet functionality, usability, performance, and platform support.
 
-### Developer Ecosystem
+### Wrapped XCK
 
-Expand SDKs, libraries, API documentation, and integration resources for developers.
+**Status:** 🚧 In Progress
 
-### Governance & Transparency
+Investigate and evaluate the feasibility of introducing wrapped XCK on external blockchain ecosystems such as Base or Polygon.
 
-Enhance delegate analytics, governance reporting, voting transparency, and network participation tools.
+### Network Growth
 
-### Infrastructure & Network Growth
+**Status:** 📋 Planned
 
-Expand public infrastructure, monitoring capabilities, and network participation to strengthen decentralization and reliability.
-
-### Exchange Accessibility
-
-Increase accessibility through additional exchange listings, trading options, and ecosystem integrations.
-
-### Network Analytics
-
-Expand explorer functionality, network statistics, and public reporting tools..
+Increase the number of public nodes, delegates, and community-operated infrastructure.
 
 ---
 
 ## Long-Term
 
-### Increased Decentralization
+### Exchange Listings
 
-Expand participation among delegates, node operators, and community contributors.
+**Status:** 📋 Planned
 
-### Ecosystem Development
+Pursue exchange listing to improve accessibility and liquidity.
 
-Support applications, services, and tools built on top of the XCash Klassic blockchain.
+### Developer Tools
 
-### Privacy Innovation
+**Status:** 📋 Planned
 
-Continue improving privacy-focused technology while maintaining accessibility and usability.
+Expand documentation, examples, and development tools for building on XCash Klassic.
 
-### Sustainable Growth
+---
 
-Build a long-term, community-driven ecosystem focused on transparency, security, and practical utility.
+## Community Involvement
+
+## Community Involvement
+
+### XCash Klassic Tipping Bot
+
+**Status:** 🚀 Active
+
+## Community Involvement
+
+### Community Resources
+
+**Status:** 🚀 Active
+
+Community member TuAF094 has contributed several resources that help expand the XCash Klassic ecosystem and improve accessibility for both new and existing users.
+
+#### XCash Klassic Tipping Bot
+
+Enables users to send and receive XCK directly through Telegram, providing a simple way to test transactions and introduce new users to the network.
+
+Telegram: https://t.me/XCK_TippingBot
+
+#### XCash Klassic Telegram Community
+
+A community-driven Telegram group where users can discuss XCash Klassic, ask questions, share updates, and connect with other community members.
+
+Telegram: https://t.me/XCASH_Klassic
+
+#### XCK Auto Escrow Bot
+
+An automated escrow service for buying XCK directly through Telegram. The bot helps facilitate peer-to-peer transactions and provides an additional avenue for acquiring XCash Klassic.
+
+Telegram: https://t.me/XCKAutoEscrowBot
+
+Community-developed tools, services, and initiatives play an important role in strengthening adoption and expanding the utility of XCash Klassic.
+
+Community members continue to develop ecosystem tools and services.
 
 ---
 
