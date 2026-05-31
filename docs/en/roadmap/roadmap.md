@@ -84,43 +84,46 @@ Expand documentation, examples, and development tools for building on XCash Klas
 
 ---
 
-## Community Involvement
+## Community Involvement 🤝
 
-### Community Resources
+The strength of XCash Klassic lies in its active, creative community. Beyond core development, community members like TuAF094 have built essential tools that make XCK accessible, fun, and easy to use.
 
-Community member TuAF094 has contributed several resources that help expand the XCash Klassic ecosystem and improve accessibility for both new and existing users.
+Here are the key community hubs and tools you can use right now:
 
-#### XCash Klassic Tipping Bot
-
-**Status:** 🚀 Active
-
-Enables users to send and receive XCK directly through Telegram, providing a simple way to test transactions and introduce new users to the network.
-
-Username: @XCKAutoEscrowBot
-
-Telegram: [XCash Klassic Tipping Bot](https://t.me/XCK_TippingBot)
-
-#### XCash Klassic Telegram Community
+### 💬 The Official Community Hub
 
 **Status:** 🚀 Active
 
-A community-driven Telegram group where users can discuss XCash Klassic, ask questions, share updates, and connect with other community members.
+Connect, discuss, and stay updated.
+Join the main Telegram group to chat with developers and other members, ask questions, and share news.
 
-Telegram: [XCash Klassic Telegram Community](https://t.me/XCASH_Klassic)
+    Username: @XCASH_Klassic
 
-#### XCK Auto Escrow Bot
+    Direct Link: https://t.me/XCASH_Klassic
+
+### 🛒 Buy XCK with TON
 
 **Status:** 🚀 Active
 
-An automated escrow service for buying XCK directly through Telegram. The bot helps facilitate peer-to-peer transactions and provides an additional avenue for acquiring XCash Klassic.
+Instant, automated crypto-to-crypto purchases.
+The XCK Auto Escrow Bot allows you to buy XCash Klassic (XCK) directly using TON (The Open Network) from any TON-compatible wallet. It’s a fast, escrow-protected way to acquire XCK.
 
-username: @XCKAutoEscrowBot
+    Username: @XCKAutoEscrowBot
 
-Telegram: [XCash Klassic Escrow Bot](https://t.me/XCKAutoEscrowBot)
+    Direct Link: https://t.me/XCKAutoEscrowBot
 
-Community-developed tools, services, and initiatives play an important role in strengthening adoption and expanding the utility of XCash Klassic.
+### 🎁 Tip & Play Lottery
 
-Community members continue to develop ecosystem tools and services.
+**Status:** 🚀 Active
+
+Reward users and have fun.
+Use the XCK Tipping Bot to send micro-tips to anyone on Telegram, perfect for onboarding new users. Plus, it features a built-in lottery game – with more interactive features planned for the future!
+
+    Username: @XCK_TippingBot
+
+    Direct Link: https://t.me/XCK_TippingBot
+
+Community-developed tools like these are vital for adoption, usability, and expanding the XCash Klassic ecosystem. Have an idea for a new tool? Jump into the community chat and make it happen!
 
 ---
 
