@@ -123,7 +123,6 @@ Use the XCK Tipping Bot to send micro-tips to anyone on Telegram, perfect for on
 
     Direct Link: https://t.me/XCK_TippingBot
 
-
 Community-developed tools like these are vital for adoption, usability, and expanding the XCash Klassic ecosystem. Have an idea for a new tool? Jump into the community chat and make it happen!
 
 ---
