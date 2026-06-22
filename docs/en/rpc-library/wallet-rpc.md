@@ -234,8 +234,8 @@ Inputs:
 Outputs:
 
 -   _good_  - boolean; States if the inputs proves the reserve.
--   _spent_  - unsigned int; Amount (in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.")) of the total that has been spent.
--   _total_  - unsigned int; Total amount (in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.")) of the reserve that was proven.
+-   _spent_  - unsigned int; Amount (in "Atomic Units refer to the smallest fraction of 1 XCK.") of the total that has been spent.
+-   _total_  - unsigned int; Total amount (in atomic-uint "Atomic Units refer to the smallest fraction of 1 XCK.") of the reserve that was proven.
 
 In the example below, the reserve has been proven:
 
@@ -593,17 +593,17 @@ Inputs:
 Outputs:
 
 -   _desc_  - The description of the transfer as a list of:
-    -   _amount_in_  - unsigned int (64 bit); The sum of the inputs spent by the transaction in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
-    -   _amount_out_  - unsigned int (64 bit); The sum of the outputs created by the transaction in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
+    -   _amount_in_  - unsigned int (64 bit); The sum of the inputs spent by the transaction in atomic-uint "Atomic Units refer to the smallest fraction of 1 XCK.".
+    -   _amount_out_  - unsigned int (64 bit); The sum of the outputs created by the transaction in atomic-uint "Atomic Units refer to the smallest fraction of 1 XCK.".
     -   _recipients_  - list of:
         -   _address_  - string; The public address of the recipient.
-        -   _amount_  - unsigned int; The amount sent to the recipient in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
+        -   _amount_  - unsigned int; The amount sent to the recipient in atomic-uint "Atomic Units refer to the smallest fraction of 1 XCK.".
     -   _change_address_  - string; The address of the change recipient.
-    -   _change_amount_  - unsigned int; The amount sent to the change address in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
-    -   _fee_  - unsigned int; The fee charged for the transaction in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
+    -   _change_amount_  - unsigned int; The amount sent to the change address in atomic-uint "Atomic Units refer to the smallest fraction of 1 XCK.".
+    -   _fee_  - unsigned int; The fee charged for the transaction in atomic-uint "Atomic Units refer to the smallest fraction of 1 XCK.".
     -   _payment_id_  - string; payment ID for this transfer.
     -   _ring_size_  - unsigned int; The number of inputs in the ring (1 real output + the number of decoys from the blockchain) (Unless dealing with pre rct outputs, this field is ignored on mainnet).
-    -   _unlock_time_  - unsigned int; The number of blocks before the monero can be spent (0 for no lock).
+    -   _unlock_time_  - unsigned int; The number of blocks before the xcash klassic can be spent (0 for no lock).
     -   _dummy_outputs_  - unsigned int; The number of fake outputs added to single-output transactions.  Fake outputs have 0 amount and are sent to a random address.
     -   _extra_  - string; Arbitrary transaction data in hexadecimal format.
 
@@ -1443,7 +1443,7 @@ Inputs:
 
 -   _all_  - boolean; Proves all wallet balance to be disposable.
 -   _account_index_  - unsigned int; Specify the account from which to prove reserve. (ignored if `all` is set to true)
--   _amount_  - unsigned int; Amount (in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.")) to prove the account has in reserve. (ignored if `all` is set to true)
+-   _amount_  - unsigned int; Amount (in atomic-uint "Atomic Units refer to the smallest fraction of 1 XCK.") to prove the account has in reserve. (ignored if `all` is set to true)
 -   _message_  - string; (Optional) add a message to the signature to further authenticate the proving process. If a _message_ is added to `get_reserve_proof` (optional), this message will be required when using `check_reserve_proof`
 
 Outputs:
@@ -1909,8 +1909,8 @@ Inputs:
 Outputs:
 
 -   _height_  - unsigned int;
--   _spent_  - unsigned int; Amount (in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.")) spent from those key images.
--   _unspent_  - unsigned int; Amount (in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.")) still available from those key images.
+-   _spent_  - unsigned int; Amount (in atomic-uint "Atomic Units refer to the smallest fraction of 1 XCK.") spent from those key images.
+-   _unspent_  - unsigned int; Amount (in atomic-uint "Atomic Units refer to the smallest fraction of 1 XCK.") still available from those key images.
 
 Example:
 
@@ -2218,7 +2218,7 @@ $ curl -X POST http://127.0.0.1:18285 /json_rpc -d '{"jsonrpc":"2.0","id":"0","m
 
 ### validate_address
 
-Analyzes a string to determine whether it is a valid monero wallet address and returns the result and the address specifications.
+Analyzes a string to determine whether it is a valid xcash klassic wallet address and returns the result and the address specifications.
 
 Inputs:
 
@@ -2336,7 +2336,7 @@ Alias:  _None_.
 Inputs:
 
 -   _address_  - string; Wallet address
--   _amount_  - unsigned int; (optional) the integer amount to receive, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
+-   _amount_  - unsigned int; (optional) the integer amount to receive, in atomic-uint "Atomic Units refer to the smallest fraction of 1 XCK.".
 -   _payment_id_  - string; (Optional, defaults to a random ID) 16 characters hex encoded.
 -   _recipient_name_  - string; (optional) name of the payment recipient
 -   _tx_description_  - string; (optional) Description of the reason for the tx
@@ -2397,7 +2397,7 @@ Outputs:
 
 -   _uri_  - JSON object containing payment information:
     -   _address_  - string; Wallet address
-    -   _amount_  - unsigned int; Integer amount to receive, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.") (0 if not provided)
+    -   _amount_  - unsigned int; Integer amount to receive, in atomic-uint "Atomic Units refer to the smallest fraction of 1 XCK." (0 if not provided)
     -   _payment_id_  - string; (Optional, defaults to a random ID) 16 characters hex encoded.
     -   _recipient_name_  - string; Name of the payment recipient (empty if not provided)
     -   _tx_description_  - string; Description of the reason for the tx (empty if not provided)
@@ -3144,7 +3144,7 @@ Inputs:
 -   _priority_  - unsigned int; (Optional) Priority for sending the sweep transfer, partially determines fee.
 -   _outputs_  - unsigned int; specify the number of separate outputs of smaller denomination that will be created by sweep operation.
 -   _ring_size_  - unsigned int; Sets ringsize to n (mixin + 1). (Unless dealing with pre rct outputs, this field is ignored on mainnet).
--   _unlock_time_  - unsigned int; Number of blocks before the monero can be spent (0 to not add a lock).
+-   _unlock_time_  - unsigned int; Number of blocks before the xcash klassic can be spent (0 to not add a lock).
 -   _payment_id_  - string; (Optional, defaults to a random ID) 16 characters hex encoded.
 -   _get_tx_keys_  - boolean; (Optional) Return the transaction keys after sending.
 -   _below_amount_  - unsigned int; (Optional) Include outputs below this amount.
@@ -3201,7 +3201,7 @@ Alias:  _sweep_unmixable_.
 Inputs:
 
 -   _get_tx_keys_  - boolean; (Optional) Return the transaction keys after sending.
--   _do_not_relay_  - boolean; (Optional) If true, the newly created transaction will not be relayed to the monero network. (Defaults to false)
+-   _do_not_relay_  - boolean; (Optional) If true, the newly created transaction will not be relayed to the xcash klassic network. (Defaults to false)
 -   _get_tx_hex_  - boolean; (Optional) Return the transactions as hex string after sending. (Defaults to false)
 -   _get_tx_metadata_  - boolean; (Optional) Return list of transaction metadata needed to relay the transfer later. (Defaults to false)
 
@@ -3248,7 +3248,7 @@ Inputs:
 -   _priority_  - unsigned int; (Optional) Priority for sending the sweep transfer, partially determines fee.
 -   _outputs_  - unsigned int; specify the number of separate outputs of smaller denomination that will be created by sweep operation.
 -   _ring_size_  - unsigned int; Sets ringsize to n (mixin + 1). (Unless dealing with pre rct outputs, this field is ignored on mainnet).
--   _unlock_time_  - unsigned int; Number of blocks before the monero can be spent (0 to not add a lock).
+-   _unlock_time_  - unsigned int; Number of blocks before the xcash klassic can be spent (0 to not add a lock).
 -   _payment_id_  - string; (Optional, defaults to a random ID) 16 characters hex encoded.
 -   _get_tx_key_  - boolean; (Optional) Return the transaction keys after sending.
 -   _key_image_  - string; Key image of specific output to sweep.
@@ -3348,9 +3348,9 @@ $ curl -X POST http://127.0.0.1:18285 /json_rpc -d '{"jsonrpc":"2.0","id":"0","m
 
 ```
 
-### **transfer**
+### **transfer** jed 
 
-Send monero to a number of recipients.
+Send xcash klassic to a number of recipients.
 
 !!! note "Note"
 
@@ -3361,17 +3361,18 @@ Alias:  _None_.
 Inputs:
 
 -   _destinations_  - array of destinations to receive XCK:
-    -   _amount_  - unsigned int; Amount to send to each destination, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
+    -   _amount_  - unsigned int; Amount to send to each destination, in atomic-uint "Atomic Units refer to the smallest fraction of 1 XCK.".
     -   _address_  - string; Destination public address.
 -   _account_index_  - unsigned int; (Optional) Transfer from this account index. (Defaults to 0)
 -   _subaddr_indices_  - array of unsigned int; (Optional) Transfer from this set of subaddresses. (Defaults to empty - all indices)
 -   _subtract_fee_from_outputs_ - array of unsigned int; (Optional) Choose which destinations to fund the tx fee from instead of the change output. The fee will be subtracted evenly from each destination (regardless of amount). Do not use this if recipient requires an exact amount.
+-   _tx_privacy_settings_ - string; (Optional) Transaction privacy setting. Valid values are `"public"` or `"private"`. If omitted, the default value is `"private"`.
 -   _priority_  - unsigned int; Set a priority for the transaction. Accepted Values are: 0-3 for: default, unimportant, normal, elevated, priority.
 -   _mixin_  - unsigned int; Number of outputs from the blockchain to mix with (0 means no mixing).
 -   _ring_size_  - unsigned int; Number of outputs to mix in the transaction (this output + N decoys from the blockchain). (Unless dealing with pre rct outputs, this field is ignored on mainnet).
--   _unlock_time_  - unsigned int; Number of blocks before the monero can be spent (0 to not add a lock).
+-   _unlock_time_  - unsigned int; Number of blocks before the xcash klassic can be spent (0 to not add a lock).
 -   _get_tx_key_  - boolean; (Optional) Return the transaction key after sending.
--   _do_not_relay_  - boolean; (Optional) If true, the newly created transaction will not be relayed to the monero network. (Defaults to false)
+-   _do_not_relay_  - boolean; (Optional) If true, the newly created transaction will not be relayed to the xcash klassic network. (Defaults to false)
 -   _get_tx_hex_  - boolean; Return the transaction as hex string after sending (Defaults to false)
 -   _get_tx_metadata_  - boolean; Return the metadata needed to relay the transaction. (Defaults to false)
 
@@ -3442,16 +3443,17 @@ Alias:  _None_.
 Inputs:
 
 -   _destinations_  - array of destinations to receive XCK:
-    -   _amount_  - unsigned int; Amount to send to each destination, in [atomic-units](https://www.getmonero.org/resources/moneropedia/atomic-units.html "Atomic Units refer to the smallest fraction of 1 XCK.").
+    -   _amount_  - unsigned int; Amount to send to each destination, in atomic-uint "Atomic Units refer to the smallest fraction of 1 XCK.".
     -   _address_  - string; Destination public address.
 -   _account_index_  - unsigned int; (Optional) Transfer from this account index. (Defaults to 0)
 -   _subaddr_indices_  - array of unsigned int; (Optional) Transfer from this set of subaddresses. (Defaults to empty - all indices)
 -   _ring_size_  - unsigned int; Sets ringsize to n (mixin + 1). (Unless dealing with pre rct outputs, this field is ignored on mainnet).
--   _unlock_time_  - unsigned int; Number of blocks before the monero can be spent (0 to not add a lock).
+-   _unlock_time_  - unsigned int; Number of blocks before the xcash klassic can be spent (0 to not add a lock).
 -   _payment_id_  - string; (Optional, defaults to a random ID) 16 characters hex encoded.
 -   _get_tx_keys_  - boolean; (Optional) Return the transaction keys after sending.
+-   _tx_privacy_settings_ - string; (Optional) Transaction privacy setting. Valid values are `"public"` or `"private"`. If omitted, the default value is `"private"`.
 -   _priority_  - unsigned int; Set a priority for the transactions. Accepted Values are: 0-3 for: default, unimportant, normal, elevated, priority.
--   _do_not_relay_  - boolean; (Optional) If true, the newly created transaction will not be relayed to the monero network. (Defaults to false)
+-   _do_not_relay_  - boolean; (Optional) If true, the newly created transaction will not be relayed to the xcash klassic network. (Defaults to false)
 -   _get_tx_hex_  - boolean; Return the transactions as hex string after sending
 -   _get_tx_metadata_  - boolean; Return list of transaction metadata needed to relay the transfer later.
 
