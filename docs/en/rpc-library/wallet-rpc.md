@@ -3348,7 +3348,7 @@ $ curl -X POST http://127.0.0.1:18285 /json_rpc -d '{"jsonrpc":"2.0","id":"0","m
 
 ```
 
-### **transfer** jed 
+### **transfer** 
 
 Send xcash klassic to a number of recipients.
 
