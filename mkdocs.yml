@@ -20,6 +20,7 @@ nav:
     - Verify: 'interacting/verify-xcash-binaries.md'
     - Install: 'interacting/install-xcash.md'
     - Vote & Staking: 'interacting/vote-and-staking.md'
+    - wXCK: 'WXCash Klassic'
   - Delegated Proof of Private Stake (DPOPS):
     - 'interacting/dpops/get-started.md'
     - 'interacting/dpops/server-setup-guide.md'
