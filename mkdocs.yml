@@ -27,6 +27,7 @@ nav:
     - 'interacting/dpops/node-installation.md'
     - 'interacting/dpops/register-delegate.md'
     - 'interacting/dpops/management-and-monitoring.md'
+  - Wrapped XCash-Klassic: 'wrapped-xca.md'
 - RPC Library:
   - Node RPC: 'rpc-library/xcashd-rpc.md'
   - Wallet RPC: 'rpc-library/wallet-rpc.md'

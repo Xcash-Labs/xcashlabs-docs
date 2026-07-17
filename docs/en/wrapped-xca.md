@@ -60,20 +60,29 @@ As an additional safety measure, the bridge continuously verifies that sufficien
 
 # Converting XCK into wXCK
 
-When converting native XCK into wrapped XCK:
-
 ![XCK to wXCK](../../images/xck-to-wxck.png)
 
-1. From your browser, open the XCash Bridge and your MetaMask wallet
-2. Select **XCK → wXCK**.
+When converting native XCK into wrapped XCK:
+
+1. From the XCash Klassic Lite Wallet and open one of your wallets.
+2. Open the XCash Bridge using the "Bridge" button and open your MetaMask wallet. Make sure the dapp icon and the displayed network show the network you wish to bridge to.
 3. Choose the destination network (Polygon or Base).
-4. Connect your EVM wallet.
+4. Then, click the arrow to determine the direction for your transfer.
 5. Enter the amount to bridge.
-6. Send your XCK to the bridge deposit address.
+6. Now you are ready start the bridge process. Clikc the "Start Bridge" button.
 7. Wait for 10 blockchain confirmations until the funds are unlocked.
-8. Claim your wXCK using your connected wallet.
+8. Once the funds are unlocked and verified the "Claim" buttom will appear.  
+9. Claim your wXCK and confirm using your connected MetaMask wallet.
 
 After the claim transaction is confirmed, your wXCK will appear in your wallet.
+
+
+
+
+
+
+Note: You can exit out of the bridge screen once you have clicked the "Start Bridge" button.   When you go back in any active 
+bridge request will be pulled up automatically.  
 
 ---
 
