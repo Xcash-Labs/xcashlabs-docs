@@ -10,7 +10,7 @@ This guide explains what wXCK is, how the XCash Bridge operates, and how to safe
 
 The XCash Bridge and your complete bridge request history are available directly from the **XCash Klassic Lite Wallet**:
 
-**https://wallet.xcashlabs.org/**
+[XCash Klassic Lite Wallet](https://wallet.xcashlabs.org/)
 
 To use the bridge, you will need:
 
@@ -37,7 +37,6 @@ As an additional safety measure, the bridge continuously verifies that sufficien
 
 ---
 
-
 ## Bridge Fees
 
 Using the bridge involves one or more network transaction fees.
@@ -59,17 +58,22 @@ When converting wXCK back into native XCK, you are responsible for:
 
 ---
 
-## Converting XCK → wXCK
+## Converting XCK into wXCK
 
 ![XCK to wXCK](../../images/xck-to-wxck.png)
+
+Bridging **XCK** to **wXCK** requires two separate transactions:
+
+- A native **XCK** transaction that sends your XCK to the bridge.
+- A **MetaMask** transaction that claims your **wXCK** on the destination network.
 
 To convert native **XCK** into **wXCK**:
 
 1. Open the **XCash Klassic Lite Wallet** and unlock the wallet you want to use.
 2. Click the **Bridge** button to open the XCash Bridge.
-3. Select the destination network  (**Polygon** or **Base**).
-4. Open **MetaMask** and ensure the connected dApp and selected network match the destination network you want to bridge to.
-5. Click the arrow to determine the direction for your transfer. For this transfer whe want the arrow to be in this direction: →
+3. Open **MetaMask** and ensure the connected dApp and selected network match the destination network you want to bridge to.
+4. Select the destination network  (**Polygon** or **Base**).
+5. Click the arrow to determine the direction for your transfer. Ensure the bridge direction is **XCK → wXCK**.
 6. Enter the amount of XCK you want to bridge.
 7. Click **Start Bridge**.
 8. Review and confirm the XCK transaction, then click **Done**.
@@ -77,37 +81,50 @@ To convert native **XCK** into **wXCK**:
 10. Once your deposit has been verified, the **Claim wXCK** button will appear.
 11. Click **Claim wXCK** and approve the transaction in your connected MetaMask wallet.
 
-After the claim transaction is confirmed on the destination network, your **wXCK** will appear in your MetaMask wallet. If this is your first time using wXCK, you may be prompted to add the token to MetaMask.
+After the claim transaction has been confirmed on the destination network, your **wXCK** is available in your connected MetaMask wallet. If this is your first time using wXCK, you will need to import the token into MetaMask before your balance is displayed. You can import the token by clicking the **Import into MetaMask** button from the **Bridge History** screen. Be sure to select the correct bridge record for the network you are using (**Polygon** or **Base**).
 
+The token only needs to be imported once for each network and MetaMask wallet.
 
-
-
-
-Note: You can exit out of the bridge screen once you have clicked the "Start Bridge" button.   When you go back in any active 
-bridge request will be pulled up automatically.  
+Note: You can close the bridge screen once you have clicked the "Start Bridge" button. When you click the bridge button again, any active 
+bridge request will be restored automatically.
 
 ---
 
 ## Converting wXCK back into XCK
 
-To return to the native blockchain:
+![wXCK to XCK](../../images/wxck-to-xck.png)
 
-1. Open the XCash Bridge.
-2. Select **wXCK → XCK**.
-3. Select the network that currently holds your wXCK.
-4. Connect your wallet.
-5. Enter your native XCK address.
-6. Enter the amount to bridge.
-7. Approve the transaction if necessary.
-8. Burn your wXCK.
-9. Wait for the bridge to verify the burn.
-10. The bridge sends native XCK to the destination address.
+Bridging **wXCK** back into **XCK** also requires two separate transactions:
+
+- A **MetaMask** transaction that burns your **wXCK** on the selected EVM network.
+- A native **XCK** transaction sent by the bridge to your XCash Klassic wallet after the burn has been verified.
+
+To convert **wXCK** back into native **XCK**:
+
+1. Open the **XCash Klassic Lite Wallet** and unlock the wallet you want to receive the XCK.
+2. Click the **Bridge** button to open the XCash Bridge.
+3. Select the network that currently holds your **wXCK** (**Polygon** or **Base**).
+4. Click the arrow to determine the direction for your transfer. Ensure the bridge direction is **XCK ← WXCK**.
+5. Open **MetaMask** and verify that the connected dApp and selected network match the network you selected.
+6. Enter the amount of **wXCK** you want to bridge.
+7. Click **Start Bridge**.
+8. Confirm the burn transaction in your connected MetaMask wallet.
+9. Wait while the bridge verifies the burn transaction and releases the corresponding native **XCK**.
+10. Once the bridge has completed the transfer, the native **XCK** will be sent to your currently unlocked XCash Klassic wallet.
+
+> **Note:** You may close the Bridge window after clicking **Start Bridge**. When you open the Bridge again, any active bridge request will be restored automatically so you can continue where you left off.
 
 ---
 
 ## Bridge History
 
-To return to the native blockchain:
+![bridge history](../../images/bridge-history.png)
+
+The **Bridge History** screen allows you to view your current and completed bridge requests. Each record includes links to the appropriate blockchain explorers so you can easily verify both the native XCK transaction and the corresponding EVM transaction.
+
+For completed **XCK → wXCK** bridge requests, an **Import into MetaMask** button is available. Clicking this button imports the **wXCK** token definition into MetaMask, allowing your wallet to display your wXCK balance if the token has not already been imported.
+
+The token only needs to be imported once for each MetaMask wallet on each supported network.
 
 ---
 
