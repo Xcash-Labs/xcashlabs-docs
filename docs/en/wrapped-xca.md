@@ -22,7 +22,23 @@ Always verify that you are using the official XCash Labs website before connecti
 
 ---
 
-# Bridge Fees
+## How the Bridge Works
+
+The XCash Bridge allows you to move funds securely between the native XCash-Klassic blockchain and supported EVM networks. 
+
+The bridge supports movement in both directions:
+
+- **XCK → wXCK**
+- **wXCK → XCK**
+
+Every bridge request is verified before assets are minted or released. The bridge verifies deposits, burn transactions, network confirmations, and available reserves before completing a transfer.
+
+As an additional safety measure, the bridge continuously verifies that sufficient native XCK reserves are available to back all issued wXCK. If the bridge ever detects insufficient reserves, bridge operations are automatically suspended until the issue has been investigated and resolved. This is a protective safeguard and is not expected to occur during normal operation.
+
+---
+
+
+## Bridge Fees
 
 Using the bridge involves one or more network transaction fees.
 
@@ -43,39 +59,25 @@ When converting wXCK back into native XCK, you are responsible for:
 
 ---
 
-# How the Bridge Works
-
-The XCash Bridge allows you to move funds securely between the native XCash-Klassic blockchain and supported EVM networks. 
-
-The bridge supports movement in both directions:
-
-- **XCK → wXCK**
-- **wXCK → XCK**
-
-Every bridge request is verified before assets are minted or released. The bridge verifies deposits, burn transactions, network confirmations, and available reserves before completing a transfer.
-
-As an additional safety measure, the bridge continuously verifies that sufficient native XCK reserves are available to back all issued wXCK. If the bridge ever detects insufficient reserves, bridge operations are automatically suspended until the issue has been investigated and resolved. This is a protective safeguard and is not expected to occur during normal operation.
-
----
-
-# Converting XCK into wXCK
+## Converting XCK → wXCK
 
 ![XCK to wXCK](../../images/xck-to-wxck.png)
 
-When converting native XCK into wrapped XCK:
+To convert native **XCK** into **wXCK**:
 
-1. From the XCash Klassic Lite Wallet and open one of your wallets.
-2. Open the XCash Bridge using the "Bridge" button and open your MetaMask wallet. Make sure the dapp icon and the displayed network show the network you wish to bridge to.
-3. Choose the destination network (Polygon or Base).
-4. Then, click the arrow to determine the direction for your transfer.
-5. Enter the amount to bridge.
-6. Now you are ready start the bridge process. Clikc the "Start Bridge" button.
-7. Wait for 10 blockchain confirmations until the funds are unlocked.
-8. Once the funds are unlocked and verified the "Claim" buttom will appear.  
-9. Claim your wXCK and confirm using your connected MetaMask wallet.
+1. Open the **XCash Klassic Lite Wallet** and unlock the wallet you want to use.
+2. Click the **Bridge** button to open the XCash Bridge.
+3. Select the destination network  (**Polygon** or **Base**).
+4. Open **MetaMask** and ensure the connected dApp and selected network match the destination network you want to bridge to.
+5. Click the arrow to determine the direction for your transfer. For this transfer whe want the arrow to be in this direction: →
+6. Enter the amount of XCK you want to bridge.
+7. Click **Start Bridge**.
+8. Review and confirm the XCK transaction, then click **Done**.
+9. Wait for **10 XCash blockchain confirmations** (approximately **10 to 11 minutes**) while the bridge verifies your deposit. You can click **Refresh** at any time to check the current bridge status.
+10. Once your deposit has been verified, the **Claim wXCK** button will appear.
+11. Click **Claim wXCK** and approve the transaction in your connected MetaMask wallet.
 
-After the claim transaction is confirmed, your wXCK will appear in your wallet.
-
+After the claim transaction is confirmed on the destination network, your **wXCK** will appear in your MetaMask wallet. If this is your first time using wXCK, you may be prompted to add the token to MetaMask.
 
 
 
@@ -86,7 +88,7 @@ bridge request will be pulled up automatically.
 
 ---
 
-# Converting wXCK back into XCK
+## Converting wXCK back into XCK
 
 To return to the native blockchain:
 
@@ -103,13 +105,13 @@ To return to the native blockchain:
 
 ---
 
-# Bridge History
+## Bridge History
 
 To return to the native blockchain:
 
 ---
 
-# Supported Networks
+## Supported Networks
 
 The bridge currently supports:
 
@@ -120,7 +122,7 @@ Additional EVM networks may be added in the future.
 
 ---
 
-# Bridge Safety
+## Bridge Safety
 
 To protect your funds:
 
