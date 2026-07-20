@@ -21,7 +21,7 @@ Always verify that you are interacting with the official wXCK smart contract for
 0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b
 ```
 
-> **Note:** The official wXCK smart contract uses the same contract address on both the Base and Polygon networks, making it easier to identify the authentic token regardless of the supported network.
+> **Note:** As of now, the official wXCK smart contract uses the same contract address on both the Base and Polygon networks, making it easier to identify the authentic token regardless of the supported network.
 
 > **Important:** Only use the official contract addresses published by XCash Labs. Interacting with unofficial or impersonating contracts may result in the permanent loss of funds.
 
@@ -33,7 +33,7 @@ Always verify that you are interacting with the official wXCK smart contract for
 
 | Resource | Link |
 |----------|------|
-| Token | https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b |
+| Token | [Token](https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b/) |
 | Verified Contract | https://basescan.org/address/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#code |
 | Holders | https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#balances |
 | Transfers | https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#tokentxns |
