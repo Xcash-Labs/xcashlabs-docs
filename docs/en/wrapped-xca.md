@@ -15,7 +15,11 @@ Always verify that you are interacting with the official wXCK smart contract for
 | Network | Contract Address |
 |---------|------------------|
 | **Base** | `0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b` |
-| **Polygon** | `0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b` |
+| **Polygon** | ```bash 0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b``` |
+
+```bash
+0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b
+```
 
 > **Note:** The official wXCK smart contract uses the same contract address on both the Base and Polygon networks, making it easier to identify the authentic token regardless of the supported network.
 
