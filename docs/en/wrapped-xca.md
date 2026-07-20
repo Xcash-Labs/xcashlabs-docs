@@ -12,16 +12,18 @@ This guide explains what wXCK is, how the XCash Bridge operates, and how to safe
 
 Always verify that you are interacting with the official wXCK smart contract for your network.
 
-| Network Contract Address |
+| Network  |
 |----------|
 | **Base** |
+| Contract Address|
+
 ```text
 0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b
 ```
 | **Polygon** |
 |0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b|
 
-### Base
+Base
 
 ```text
 0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b
@@ -32,21 +34,6 @@ Always verify that you are interacting with the official wXCK smart contract for
 ```text
 0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b
 ```
-
-<table>
-<tr>
-  <th>Network</th>
-  <th>Contract Address</th>
-</tr>
-<tr>
-  <td><strong>Base</strong></td>
-  <td><code>0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b</code></td>
-</tr>
-<tr>
-  <td><strong>Polygon</strong></td>
-  <td><code>0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b</code></td>
-</tr>
-</table>
 
 > **Note:** The official wXCK smart contract uses the same contract address on both the Base and Polygon networks, making it easier to identify the authentic token regardless of the supported network.
 
