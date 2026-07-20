@@ -2,13 +2,28 @@
 
 ## Introduction
 
-Wrapped XCash Klassic (**wXCK**) is an ERC-20 representation of native **XCash Klassic (XCK)** that enables XCK to be used on supported EVM-compatible blockchains. Currently, the XCash Bridge supports the **Polygon** and **Base** networks.
+Wrapped **XCash Klassic (wXCK)** is the official ERC-20 representation of native **XCash Klassic (XCK)**, enabling XCK to be used on supported EVM-compatible blockchains. The XCash Bridge currently supports the **Base** and **Polygon** networks, allowing users to seamlessly move assets between the native XCash Klassic blockchain and supported EVM ecosystems.
 
-Every **1 wXCK** is backed by **1 XCK** securely held by the XCash Labs Bridge, maintaining a 1:1 backing between wrapped and native assets. This allows XCK holders to interact with decentralized applications (dApps), decentralized exchanges (DEXs), wallets, and other EVM-compatible services while preserving the value of their native XCK.
+Every **1 wXCK** is backed by **1 XCK** securely held in reserve by the XCash Labs Bridge, maintaining a fully backed 1:1 relationship between wrapped and native assets. This design enables XCK holders to access decentralized exchanges (DEXs), decentralized applications (dApps), wallets, and other EVM-compatible services without changing the underlying value of their holdings.
 
-This guide explains what wXCK is, how the XCash Bridge operates, and how to safely transfer assets between native XCK and supported EVM networks. It also describes the bridge process, associated fees, security considerations, and best practices for using the bridge.
+This guide explains what wXCK is, how the XCash Bridge operates, and how to safely transfer assets between native XCK and supported EVM networks. It also covers the bridge process, supported networks, contract information, fees, security considerations, and recommended best practices.
 
-The XCash Bridge and your complete bridge request history are available directly from the **XCash Klassic Lite Wallet**:
+## Official wXCK Contract Information
+
+Always verify that you are interacting with the official wXCK smart contract for your network.
+
+| Network | Contract Address |
+|---------|------------------|
+| **Base** | `0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b` |
+| **Polygon** | `0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b` |
+
+> **Note:** The official wXCK smart contract uses the same contract address on both the Base and Polygon networks, making it easier to identify the authentic token regardless of the supported network.
+
+> **Important:** Only use the official contract addresses published by XCash Labs. Interacting with unofficial or impersonating contracts may result in the permanent loss of funds.
+
+> **Warning:** Only use the official contract addresses published by XCash Labs. Interacting with unofficial or impersonating contracts may result in the permanent loss of funds.
+
+The XCash Bridge, along with your complete bridge request history, is available directly within the **XCash Klassic Lite Wallet**:
 
 [XCash Klassic Lite Wallet](https://wallet.xcashlabs.org/)
 
