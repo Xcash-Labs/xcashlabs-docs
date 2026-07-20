@@ -33,10 +33,10 @@ Always verify that you are interacting with the official wXCK smart contract for
 
 | Resource | Link |
 |----------|------|
-| Token | [Token](https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b/) |
-| Verified Contract | https://basescan.org/address/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#code |
-| Holders | https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#balances |
-| Transfers | https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#tokentxns |
+| Token | [https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b/](https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b/){target="_blank"} |
+| Verified Contract | [https://basescan.org/address/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#code](https://basescan.org/address/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#code) |
+| Holders | [https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#balances/](https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#balances/) |
+| Transfers | [https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#tokentxns/](https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#tokentxns/) |
 
 ### Polygon
 
