@@ -23,6 +23,21 @@ Always verify that you are interacting with the official wXCK smart contract for
 
 > **Warning:** Only use the official contract addresses published by XCash Labs. Interacting with unofficial or impersonating contracts may result in the permanent loss of funds.
 
+## Block Explorer
+
+### Base
+
+| Resource | Link |
+|----------|------|
+| Token | https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b |
+| Verified Contract | https://basescan.org/address/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#code |
+| Holders | https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#balances |
+| Transfers | https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#tokentxns |
+
+### Polygon
+
+*Coming Soon*
+
 The XCash Bridge, along with your complete bridge request history, is available directly within the **XCash Klassic Lite Wallet**:
 
 [XCash Klassic Lite Wallet](https://wallet.xcashlabs.org/)
