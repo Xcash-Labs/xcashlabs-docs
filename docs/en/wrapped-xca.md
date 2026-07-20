@@ -33,14 +33,19 @@ Always verify that you are interacting with the official wXCK smart contract for
 
 | Resource | Link |
 |----------|------|
-| Token | [https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b/](https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b/){target="_blank"} |
-| Verified Contract | [https://basescan.org/address/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#code](https://basescan.org/address/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#code) |
-| Holders | [https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#balances/](https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#balances/) |
-| Transfers | [https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#tokentxns/](https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#tokentxns/) |
+| Token | [View Token](https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b){target="_blank"} |
+| Verified Contract | [View Contract](https://basescan.org/address/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#code){target="_blank"} |
+| Holders | [View Holders](https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#balances){target="_blank"} |
+| Transfers | [View Transfers](https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#tokentxns){target="_blank"} |
 
 ### Polygon
 
-*Coming Soon*
+| Resource | Link |
+|----------|------|
+| Token | [View Token](https://polygonscan.com/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b){target="_blank"} |
+| Verified Contract | [View Contract](https://polygonscan.com/address/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#code){target="_blank"} |
+| Holders | [View Holders](https://polygonscan.com/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#balances){target="_blank"} |
+| Transfers | [View Transfers](https://polygonscan.com/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#tokentxns){target="_blank"} |
 
 The XCash Bridge, along with your complete bridge request history, is available directly within the **XCash Klassic Lite Wallet**:
 
