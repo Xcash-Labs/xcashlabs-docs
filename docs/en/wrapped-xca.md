@@ -37,6 +37,7 @@ Always verify that you are interacting with the official wXCK smart contract for
 | Verified Contract | [View Contract](https://basescan.org/address/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#code){target="_blank"} |
 | Holders | [View Holders](https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#balances){target="_blank"} |
 | Transfers | [View Transfers](https://basescan.org/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#tokentxns){target="_blank"} |
+| Liquidity Pool Contraction | [View Pool on BaseScan](https://basescan.org/address/0xfccca3a04f1b924dfc52dac630487d209867e989){target="_blank"} |
 
 ### Polygon
 
@@ -46,6 +47,15 @@ Always verify that you are interacting with the official wXCK smart contract for
 | Verified Contract | [View Contract](https://polygonscan.com/address/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#code){target="_blank"} |
 | Holders | [View Holders](https://polygonscan.com/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#balances){target="_blank"} |
 | Transfers | [View Transfers](https://polygonscan.com/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#tokentxns){target="_blank"} |
+
+
+### Liquidity Pool
+
+**Platform:** Aerodrome Finance (Base)
+
+| Resource | Link |
+|----------|------|
+| Pool Contract | [View on BaseScan](https://basescan.org/address/0xfccca3a04f1b924dfc52dac630487d209867e989){target="_blank"} |
 
 The XCash Bridge, along with your complete bridge request history, is available directly within the **XCash Klassic Lite Wallet**:
 
