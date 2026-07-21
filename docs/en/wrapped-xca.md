@@ -48,7 +48,6 @@ Always verify that you are interacting with the official wXCK smart contract for
 | Holders | [View Holders](https://polygonscan.com/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#balances){target="_blank"} |
 | Transfers | [View Transfers](https://polygonscan.com/token/0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b#tokentxns){target="_blank"} |
 
-
 ### Liquidity Pool
 
 **Platform:** Aerodrome Finance (Base)
@@ -56,6 +55,8 @@ Always verify that you are interacting with the official wXCK smart contract for
 | Resource | Link |
 |----------|------|
 | Pool Contract | [View on BaseScan](https://basescan.org/address/0xfccca3a04f1b924dfc52dac630487d209867e989){target="_blank"} |
+| Swap USDC → wXCK | [Open on Aerodrome](https://aerodrome.finance/swap?from=0x833589fcd6edb6e08f4c7c32d4f71b54bda02913&to=0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b&chain0=8453&chain1=8453){target="_blank"} |
+| Swap wXCK → USDC | [Open on Aerodrome](https://aerodrome.finance/swap?from=0x26194f4cC88FfcfbABfa22e1fAF7fE5Eb0eE802b&to=0x833589fcd6edb6e08f4c7c32d4f71b54bda02913&chain0=8453&chain1=8453){target="_blank"} |
 
 The XCash Bridge, along with your complete bridge request history, is available directly within the **XCash Klassic Lite Wallet**:
 
