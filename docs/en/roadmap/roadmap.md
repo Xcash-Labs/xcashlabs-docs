@@ -56,15 +56,33 @@ Continue improving wallet functionality, usability, performance, and platform su
 
 ### Wrapped XCK
 
-**Status:** 🚧 In Progress
+**Status:** 🚀 Complete
 
 Investigate and evaluate the feasibility of introducing wrapped XCK on external blockchain ecosystems such as Base or Polygon.
+
+### Wrapped XCK
+
+**Status:** 📋 Planned
+
+Investigate and evaluate the feasibility of introducing wrapped XCK on Cronos.
 
 ### Network Growth
 
 **Status:** 📋 Planned
 
 Increase the number of public nodes, delegates, and community-operated infrastructure.
+
+### Base Liquidity Pool
+
+**Status:** 🚀 Completed
+
+Launch the official **wXCK/USDC** liquidity pool on **Aerodrome Finance** on the Base network, providing decentralized trading and establishing the initial on-chain liquidity for the wXCK ecosystem.
+
+### Liquidity Pool Growth
+
+**Status:** 📋 Planned
+
+Grow the official wXCK liquidity pools through community participation, strategic partnerships, and organic ecosystem growth to improve accessibility and market depth. Evaluate expanding liquidity to additional supported networks, including **Polygon** and **Cronos**, to increase trading opportunities and ecosystem reach.
 
 ---
 
@@ -80,7 +98,7 @@ Pursue exchange listing to improve accessibility and liquidity.
 
 **Status:** 📋 Planned
 
-Expand documentation, examples, and development tools for building on XCash Klassic.
+Expand documentation, examples, and development tools for building on XCash Klassic. Also, create a testnet.
 
 ---
 
